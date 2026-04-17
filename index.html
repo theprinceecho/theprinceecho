@@ -3,98 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThePrinceEcho — The Bridge</title>
+    <title>ThePrinceEcho</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        
-        :root {
-            --bg: #0f0f0f;
-            --gold: #d4af77;
-        }
         
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
-            color: #e5e5e5;
-            font-family: 'Inter', system-ui, sans-serif;
-            line-height: 1.6;
+            background: #0a0a0a;
+            color: #d4af77;
+            font-family: 'Inter', sans-serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             text-align: center;
         }
-        
-        .container {
-            max-width: 720px;
-            padding: 40px 20px;
+
+        .logo-container {
+            margin-bottom: 40px;
         }
-        
+
         .logo {
             width: 180px;
             height: 180px;
-            margin: 0 auto 30px;
             border-radius: 20px;
-            overflow: hidden;
             box-shadow: 0 0 40px rgba(212, 175, 119, 0.3);
+            transition: transform 0.3s ease;
         }
-        
+
+        .logo:hover {
+            transform: scale(1.03);
+        }
+
         h1 {
             font-size: 2.8rem;
             font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 16px;
+            margin: 20px 0 12px 0;
+            letter-spacing: -1px;
         }
-        
-        p {
-            font-size: 1.25rem;
-            max-width: 520px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+
+        .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            max-width: 320px;
+            margin: 0 auto 40px auto;
+            line-height: 1.4;
         }
-        
-        .x-link {
+
+        .button {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background-color: #1a1a1a;
-            color: var(--gold);
-            padding: 14px 32px;
+            background: transparent;
+            color: #d4af77;
+            border: 2px solid #d4af77;
             border-radius: 50px;
-            text-decoration: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
             font-weight: 500;
+            text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(212, 175, 119, 0.25);
         }
-        
-        .x-link:hover {
-            background-color: #2a2a2a;
+
+        .button:hover {
+            background: rgba(212, 175, 119, 0.1);
             transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(212, 175, 119, 0.4);
         }
-        
+
         .footer {
-            margin-top: 80px;
-            font-size: 0.9rem;
+            margin-top: 60px;
+            font-size: 0.95rem;
             opacity: 0.6;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Replace the src with your actual lion+fox logo image URL after upload -->
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="ThePrinceEcho" class="logo">
-        
-        <h1>ThePrinceEcho</h1>
-        <p>The bridge for those who sense the urge.</p>
-        
-        <a href="https://x.com/ThePrinceEcho" target="_blank" class="x-link">
-            <span>Visit on X</span>
-            <span>→</span>
-        </a>
-        
-        <div class="footer">
-            Sovereign landing page • The bridge
-        </div>
+    <div class="logo-container">
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" 
+             alt="ThePrinceEcho" class="logo">
+    </div>
+    
+    <h1>ThePrinceEcho</h1>
+    <p class="subtitle">The bridge for those who sense the urge.</p>
+    
+    <a href="https://x.com/theprinceecho" target="_blank" class="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25L15.25 8.5L22 15.75L15.5 15L18.244 2.25Z" fill="#d4af77"/>
+            <path d="M6 2.25L9.5 15L3 15.75L9.5 8.5L6 2.25Z" fill="#d4af77"/>
+        </svg>
+        Visit on X →
+    </a>
+    
+    <div class="footer">
+        Sovereign landing page • The bridge
     </div>
 </body>
 </html>
