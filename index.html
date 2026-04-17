@@ -10,8 +10,9 @@
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            min-height: 100dvh;           /* fixes white bars on mobile */
+            height: 100dvh;                    /* strongest mobile fix */
+            min-height: 100dvh;
+            overflow: hidden;                  /* prevents any white bars */
             background: radial-gradient(circle at center, #0a0a0a 0%, #050505 65%, #020202 100%);
             color: #d4af77;
             font-family: 'Inter', sans-serif;
