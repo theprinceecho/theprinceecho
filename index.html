@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon & Tab Icon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
+
     <title>ThePrinceEcho</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -40,9 +45,10 @@
 
         h1, .subtitle, .footer {
             text-shadow: 
-                0 2px 4px rgba(0,0,0,0.6),
-                0 4px 8px rgba(0,0,0,0.4),
-                2px 2px 0 rgba(255,255,255,0.1);
+                0 4px 8px rgba(0,0,0,0.7),
+                0 8px 16px rgba(0,0,0,0.5),
+                2px 2px 4px rgba(255,255,255,0.15),
+                -2px -2px 4px rgba(255,255,255,0.08);
         }
 
         h1 {
@@ -75,19 +81,21 @@
             font-weight: 500;
             text-decoration: none;
             box-shadow: 
-                0 6px 12px rgba(0,0,0,0.5),
-                inset 0 2px 4px rgba(255,255,255,0.2),
-                0 0 45px rgba(240, 212, 160, 0.55);
+                0 8px 16px rgba(0,0,0,0.6),
+                inset 0 3px 6px rgba(255,255,255,0.25),
+                inset -3px -3px 6px rgba(0,0,0,0.4),
+                0 0 55px rgba(240, 212, 160, 0.65);
             transition: all 0.3s ease;
         }
 
         .button:hover {
             background: rgba(240, 212, 160, 0.12);
             box-shadow: 
-                0 8px 16px rgba(0,0,0,0.6),
-                inset 0 3px 6px rgba(255,255,255,0.25),
-                0 0 60px rgba(240, 212, 160, 0.75);
-            transform: translateY(-2px);
+                0 10px 20px rgba(0,0,0,0.7),
+                inset 0 4px 8px rgba(255,255,255,0.3),
+                inset -4px -4px 8px rgba(0,0,0,0.45),
+                0 0 70px rgba(240, 212, 160, 0.85);
+            transform: translateY(-3px);
         }
 
         .button img {
@@ -98,7 +106,7 @@
         .footer {
             margin-top: 70px;
             font-size: 0.95rem;
-            opacity: 0.85;
+            opacity: 0.88;
             letter-spacing: 0.8px;
             display: flex;
             align-items: center;
