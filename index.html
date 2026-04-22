@@ -258,7 +258,8 @@
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
                 The sovereign bridge
                 <span style="margin-left: 20px; opacity: 0.6">•</span>
-                <a href="#impressum" style="margin-left: 16px; color: #d4af77; text-decoration: none;">Impressum</a>
+                <!-- Impressum link - now properly shows the section -->
+                <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 16px; color: #d4af77; text-decoration: none;">Impressum</a>
                 <span style="margin-left: 8px; opacity: 0.6">•</span>
                 <a href="contact.html" style="margin-left: 8px; color: #d4af77; text-decoration: none;">Contact</a>
             </div>
@@ -266,7 +267,7 @@
         </div>
     </section>
 
-    <!-- Impressum Section (Full Legal Version - Restored) -->
+    <!-- Impressum Section (Full Legal Version) -->
     <section id="impressum" class="section">
         <h2>Impressum</h2>
         <p><strong>Angaben gemäß § 5 DDG (ehem. TMG)</strong></p>
