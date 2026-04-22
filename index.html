@@ -17,6 +17,7 @@
             background: #050505;
             color: #d4af77;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
         
         .nav {
@@ -48,7 +49,7 @@
         
         .section {
             min-height: 100vh;
-            padding: 120px 40px 300px;
+            padding: 120px 40px 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -62,6 +63,7 @@
         
         #about {
             background: #0a0a0a;
+            padding-bottom: 120px;
         }
         
         .logo {
@@ -114,7 +116,7 @@
         }
         
         .footer {
-            margin-top: 80px;
+            margin-top: 100px;
             font-size: 0.95rem;
             opacity: 0.75;
             display: flex;
@@ -163,14 +165,6 @@
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/Substack.png" alt="Substack Journal">
             Substack Journal
         </a>
-        
-        <div class="footer">
-            The sovereign landing page
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
-            The sovereign bridge
-            <span style="margin-left: 30px; opacity: 0.6">•</span>
-            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 20px; color: #d4af77; text-decoration: none;">Impressum</a>
-        </div>
     </section>
 
     <!-- About Section -->
@@ -184,10 +178,23 @@
             <p>Those who have already recognized the signal on X will know why they are here.</p>
         </div>
         
+        <a href="https://x.com/theprinceecho" target="_blank" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
+            @theprinceecho
+        </a>
         <a href="https://theprinceecho.substack.com" target="_blank" class="button">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/Substack.png" alt="Substack Journal">
             Subscribe on Substack
         </a>
+        
+        <!-- Footer now at the bottom of About section -->
+        <div class="footer">
+            The sovereign landing page
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
+            The sovereign bridge
+            <span style="margin-left: 30px; opacity: 0.6">•</span>
+            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 20px; color: #d4af77; text-decoration: none;">Impressum</a>
+        </div>
     </section>
 
     <!-- Impressum (hidden) -->
