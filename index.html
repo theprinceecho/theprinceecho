@@ -21,8 +21,10 @@
             overflow-x: hidden;
         }
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             background: rgba(5, 5, 5, 0.98);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(212, 175, 119, 0.2);
@@ -52,7 +54,7 @@
         }
 
         .section {
-            padding: 80px 20px;
+            padding: 100px 20px 80px;   /* extra top padding because nav is fixed */
             text-align: center;
         }
         .logo {
