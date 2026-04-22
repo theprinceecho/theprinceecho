@@ -6,24 +6,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- SEO + Page Title -->
     <title>ThePrinceEcho</title>
     <meta name="description" content="The bridge for those who sense the urge. Sovereign reflections on macro cycles, sovereignty, and the carbon-silicon convergence.">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="ThePrinceEcho">
     <meta property="og:description" content="The bridge for those who sense the urge.">
     <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
     <meta property="og:url" content="https://theprinceecho.com">
     <meta property="og:type" content="website">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ThePrinceEcho">
     <meta name="twitter:description" content="The bridge for those who sense the urge.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
     
-    <!-- Performance Preloads -->
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" as="image">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
     
@@ -59,6 +55,7 @@
         
         .nav-logo {
             height: 32px;
+            cursor: pointer;
         }
         
         .nav-links a {
@@ -202,7 +199,11 @@
 <body>
     <!-- Navigation -->
     <nav class="nav">
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="ThePrinceEcho" class="nav-logo">
+        <!-- Small top-left icon is now clickable and links to Home -->
+        <a href="#home">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="ThePrinceEcho" class="nav-logo">
+        </a>
+        
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
