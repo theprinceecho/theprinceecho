@@ -50,7 +50,7 @@
         
         .section {
             min-height: 100vh;
-            padding: 80px 24px 120px; /* reduced top padding */
+            padding: 55px 24px 120px; /* moved higher */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -68,10 +68,10 @@
         }
         
         .logo {
-            width: 200px;
-            height: 200px;
+            width: 220px;  /* +10% */
+            height: 220px;
             border-radius: 20px;
-            box-shadow: 0 0 70px rgba(212, 175, 119, 0.7);
+            box-shadow: 0 0 75px rgba(212, 175, 119, 0.7);
             margin-bottom: 32px;
         }
         
@@ -157,8 +157,8 @@
         
         @media (max-width: 480px) {
             .logo {
-                width: 180px;
-                height: 180px;
+                width: 200px;
+                height: 200px;
                 margin-bottom: 28px;
             }
             
@@ -219,6 +219,12 @@
         <iframe src="https://theprinceecho.substack.com/embed" width="100%" height="320" 
                 style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 40px; max-width: 480px;" 
                 frameborder="0" scrolling="no"></iframe>
+        
+        <!-- X Button below the embed -->
+        <a href="https://x.com/theprinceecho" target="_blank" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
+            @theprinceecho
+        </a>
         
         <!-- Footer at the bottom of About section -->
         <div class="footer">
