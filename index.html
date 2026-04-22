@@ -15,9 +15,6 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100dvh;
-            min-height: 100dvh;
-            min-height: -webkit-fill-available;
             background: #050505;
             color: #d4af77;
             font-family: 'Inter', sans-serif;
@@ -39,32 +36,150 @@
             margin: 0 24px;
             font-size: 1.05rem;
             font-weight: 500;
-            transition: all 0.3s ease;
         }
-        nav a:hover {
-            color: #f0d4a0;
-        }
+        nav a:hover { color: #f0d4a0; }
+
         .section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 80px 20px;
             text-align: center;
-            padding: 0 20px;
-        }
-        .logo-container {
-            margin-bottom: 32px;
         }
         .logo {
             width: 240px;
             height: 240px;
             border-radius: 24px;
             box-shadow: 0 0 65px rgba(212, 175, 119, 0.65);
+            margin-bottom: 32px;
         }
         h1 {
             font-size: 2.45rem;
             font-weight: 600;
             margin: 18px 0 12px 0;
             letter-spacing: -1px;
-            text-shadow: 0 0 20px rgba(212, 175, 119, 0.
+            text-shadow: 0 0 20px rgba(212, 175, 119, 0.6);
+        }
+        .subtitle {
+            font-size: 1.08rem;
+            opacity: 0.88;
+            max-width: 340px;
+            margin: 0 auto 48px;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(212, 175, 119, 0.08);
+            color: #d4af77;
+            border: 1px solid rgba(212, 175, 119, 0.4);
+            border-radius: 50px;
+            padding: 15px 32px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin: 8px;
+            box-shadow: 0 0 45px rgba(212, 175, 119, 0.5);
+            width: 260px;
+            max-width: 90%;
+        }
+        .button:hover {
+            background: rgba(212, 175, 119, 0.12);
+            box-shadow: 0 0 60px rgba(212, 175, 119, 0.65);
+            transform: translateY(-2px);
+        }
+        .button img {
+            width: 26px;
+            height: 26px;
+            border-radius: 4px;
+        }
+        .footer {
+            padding: 40px 20px 30px;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            letter-spacing: 0.6px;
+            border-top: 1px solid rgba(212, 175, 119, 0.15);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .footer a {
+            color: #d4af77;
+            text-decoration: none;
+        }
+        .footer a:hover { color: #f0d4a0; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="section">
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="theprinceecho" class="logo">
+        <h1>ThePrinceEcho</h1>
+        <p class="subtitle">The bridge for those who sense the urge.</p>
+        
+        <a href="https://x.com/theprinceecho" target="_blank" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
+            @theprinceecho
+        </a>
+        <a href="https://theprinceecho.substack.com" target="_blank" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/Substack.png" alt="Substack Journal">
+            Substack Journal
+        </a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" style="background: #0a0a0a;">
+        <h1>ThePrinceEcho</h1>
+        <p class="subtitle">The bridge for those who sense the urge.</p>
+        
+        <div style="max-width: 620px; margin: 40px auto; text-align: left; line-height: 1.7;">
+            <p>This space is reserved for deeper reflections on macro cycles, sovereignty, and the quiet convergence where carbon meets silicon — where energy becomes reality.</p>
+            <p>What appears here will always be chapter-like, deliberate, and high-signal. No noise. No urgency. Only the frequency.</p>
+            <p>Those who have already recognized the signal on X will know why they are here.</p>
+        </div>
+
+        <iframe src="https://theprinceecho.substack.com/embed" width="480" height="320" style="border: 1px solid #EEE; background: white; border-radius: 12px; max-width: 90%;" frameborder="0" scrolling="no"></iframe>
+
+        <a href="https://x.com/theprinceecho" target="_blank" class="button" style="margin-top: 40px;">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
+            Follow @theprinceecho
+        </a>
+    </section>
+
+    <!-- Impressum -->
+    <section id="impressum" class="section" style="background: #0a0a0a;">
+        <div style="max-width: 620px; margin: 0 auto; text-align: left; line-height: 1.7; font-size: 0.95rem;">
+            <h2>Impressum</h2>
+            <p>Angaben gemäß § 5 TMG</p>
+            <p><strong>Jens Friedrich</strong><br>
+            c/o SCHUTZADRESSE.COM #535<br>
+            Waidmannsluster Damm 1<br>
+            13507 Berlin</p>
+            
+            <p><strong>Kontakt</strong><br>
+            E-Mail: info@theprinceecho.com</p>
+            
+            <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV<br>
+            Jens Friedrich</p>
+        </div>
+    </section>
+
+    <!-- Tiny Footer -->
+    <div class="footer">
+        The sovereign landing page
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" style="width:22px;height:22px;">
+        The sovereign bridge
+        <span style="margin-left: 30px; opacity:0.6">•</span>
+        <a href="#impressum" style="margin-left: 20px;">Impressum</a>
+    </div>
+
+</body>
+</html>
