@@ -98,20 +98,21 @@
             letter-spacing: 0.6px;
             border-top: 1px solid rgba(212, 175, 119, 0.15);
             text-align: center;
+            line-height: 1.6;
+        }
+        .footer-line1 {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            margin-bottom: 8px;
         }
         .footer a {
             color: #d4af77;
             text-decoration: none;
         }
         .footer a:hover { color: #f0d4a0; }
-
-        /* Hide Impressum by default */
-        #impressum { display: none; }
     </style>
 </head>
 <body>
@@ -149,19 +150,17 @@
             <p>Those who have already recognized the signal on X will know why they are here.</p>
         </div>
 
-        <!-- Centered Substack Embed -->
         <div style="display: flex; justify-content: center; margin: 40px 0;">
             <iframe src="https://theprinceecho.substack.com/embed" width="480" height="320" style="border: 1px solid #EEE; background: white; border-radius: 12px; max-width: 90%;" frameborder="0" scrolling="no"></iframe>
         </div>
 
-        <!-- Centered X Button -->
         <a href="https://x.com/theprinceecho" target="_blank" class="button" style="margin: 20px auto;">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
             Follow @theprinceecho
         </a>
     </section>
 
-    <!-- Impressum Section (hidden by default) -->
+    <!-- Impressum Section -->
     <section id="impressum" class="section" style="background: #0a0a0a; padding-top: 100px;">
         <div style="max-width: 620px; margin: 0 auto; text-align: left; line-height: 1.7; font-size: 0.95rem;">
             <h2>Impressum</h2>
@@ -179,13 +178,15 @@
         </div>
     </section>
 
-    <!-- Tiny Footer -->
+    <!-- Footer -->
     <div class="footer">
-        The sovereign landing page
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" style="width:22px;height:22px;">
-        The sovereign bridge
-        <span style="margin-left: 30px; opacity:0.6">•</span>
-        <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 20px;">Impressum</a>
+        <div class="footer-line1">
+            The sovereign landing page
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" style="width:22px; height:22px;">
+            The sovereign bridge
+        </div>
+        <div>© 2026 ThePrinceEcho</div>
+        <a href="#impressum" style="margin-top: 6px;">Impressum</a>
     </div>
 
 </body>
