@@ -23,21 +23,33 @@
         nav {
             position: sticky;
             top: 0;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(8px);
+            background: rgba(5, 5, 5, 0.98);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(212, 175, 119, 0.2);
-            z-index: 100;
-            padding: 18px 0;
-            text-align: center;
+            z-index: 1000;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        nav a {
+        .nav-logo {
+            height: 38px;
+            width: auto;
+            border-radius: 6px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
             color: #d4af77;
             text-decoration: none;
-            margin: 0 24px;
             font-size: 1.05rem;
             font-weight: 500;
         }
-        nav a:hover { color: #f0d4a0; }
+        .nav-links a:hover {
+            color: #f0d4a0;
+        }
 
         .section {
             padding: 80px 20px;
@@ -114,16 +126,20 @@
         }
         .footer a:hover { color: #f0d4a0; }
 
-        /* Hide Impressum by default */
         #impressum { display: none; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Pinned Navigation -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#home">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="TPE" class="nav-logo">
+        </a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+        </div>
     </nav>
 
     <!-- Home Section -->
@@ -163,7 +179,7 @@
         </a>
     </section>
 
-    <!-- Impressum Section (hidden by default) -->
+    <!-- Impressum Section -->
     <section id="impressum" class="section" style="background: #0a0a0a; padding-top: 100px;">
         <div style="max-width: 620px; margin: 0 auto; text-align: left; line-height: 1.7; font-size: 0.95rem;">
             <h2>Impressum</h2>
