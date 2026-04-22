@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- SEO + Page Title -->
     <title>ThePrinceEcho</title>
+    <meta name="description" content="The bridge for those who sense the urge. Sovereign reflections on macro cycles, sovereignty, and the carbon-silicon convergence.">
+    
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="ThePrinceEcho">
+    <meta property="og:description" content="The bridge for those who sense the urge.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
+    <meta property="og:url" content="https://theprinceecho.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ThePrinceEcho">
+    <meta name="twitter:description" content="The bridge for those who sense the urge.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
+    
+    <!-- Performance: Preload critical assets -->
+    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
         
@@ -50,7 +71,7 @@
         
         .section {
             min-height: 100vh;
-            padding: 30px 24px 120px; /* moved higher */
+            padding: 30px 24px 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -68,7 +89,7 @@
         }
         
         .logo {
-            width: 280px;  /* final increase */
+            width: 280px;
             height: 280px;
             border-radius: 24px;
             box-shadow: 0 0 90px rgba(212, 175, 119, 0.8);
@@ -96,11 +117,11 @@
             gap: 14px;
             background: rgba(212, 175, 119, 0.08);
             color: #d4af77;
-            padding: 20px 40px;  /* bigger */
+            padding: 20px 40px;
             border-radius: 9999px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.12rem;  /* bigger */
+            font-size: 1.12rem;
             border: 1px solid rgba(212, 175, 119, 0.3);
             box-shadow: 0 0 45px rgba(212, 175, 119, 0.5);
             transition: all 0.3s ease;
@@ -215,10 +236,14 @@
             <p>Those who have already recognized the signal on X will know why they are here.</p>
         </div>
         
-        <!-- Substack Embed -->
-        <iframe src="https://theprinceecho.substack.com/embed" width="100%" height="320" 
+        <!-- Substack Embed (with lazy loading) -->
+        <iframe src="https://theprinceecho.substack.com/embed" 
+                width="100%" 
+                height="320" 
                 style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 32px; max-width: 480px;" 
-                frameborder="0" scrolling="no"></iframe>
+                frameborder="0" 
+                scrolling="no"
+                loading="lazy"></iframe>
         
         <!-- X Button below the embed -->
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
