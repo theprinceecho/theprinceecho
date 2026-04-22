@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="robots" content="noindex">
-    
     <title>ThePrinceEcho</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -15,129 +13,135 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            min-height: 100vh;
             background: #050505;
             color: #d4af77;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-        nav {
+        
+        .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(5, 5, 5, 0.98);
+            height: 70px;
+            background: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(212, 175, 119, 0.2);
-            z-index: 1000;
-            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 119, 0.1);
         }
+        
         .nav-logo {
             height: 38px;
-            width: auto;
-            border-radius: 6px;
         }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-        }
+        
         .nav-links a {
             color: #d4af77;
             text-decoration: none;
-            font-size: 1.05rem;
+            margin-left: 32px;
             font-weight: 500;
+            transition: opacity 0.2s;
         }
+        
         .nav-links a:hover {
-            color: #f0d4a0;
+            opacity: 0.7;
         }
-
+        
         .section {
-            padding: 100px 20px 160px;   /* increased bottom padding on all sections */
+            min-height: 100vh;
+            padding: 120px 40px 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
+        
+        #home {
+            background: #050505;
+        }
+        
+        #about {
+            background: #0a0a0a;
+        }
+        
         .logo {
             width: 240px;
             height: 240px;
             border-radius: 24px;
-            box-shadow: 0 0 65px rgba(212, 175, 119, 0.65);
-            margin-bottom: 32px;
+            box-shadow: 0 0 80px rgba(212, 175, 119, 0.7);
+            margin-bottom: 40px;
         }
+        
         h1 {
-            font-size: 2.45rem;
+            font-size: 3.2rem;
             font-weight: 600;
-            margin: 18px 0 12px 0;
-            letter-spacing: -1px;
-            text-shadow: 0 0 20px rgba(212, 175, 119, 0.6);
+            margin: 0 0 16px 0;
+            letter-spacing: -1.5px;
+            text-shadow: 0 0 30px rgba(212, 175, 119, 0.6);
         }
+        
         .subtitle {
-            font-size: 1.08rem;
-            opacity: 0.88;
-            max-width: 340px;
-            margin: 0 auto 48px;
+            font-size: 1.25rem;
+            max-width: 420px;
+            opacity: 0.9;
+            margin-bottom: 50px;
         }
+        
         .button {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 12px;
             background: rgba(212, 175, 119, 0.08);
             color: #d4af77;
-            border: 1px solid rgba(212, 175, 119, 0.4);
-            border-radius: 50px;
-            padding: 15px 32px;
-            font-size: 1.05rem;
-            font-weight: 500;
+            padding: 16px 32px;
+            border-radius: 9999px;
             text-decoration: none;
-            margin: 8px;
-            box-shadow: 0 0 45px rgba(212, 175, 119, 0.5);
-            width: 260px;
-            max-width: 90%;
+            font-weight: 500;
+            font-size: 1.05rem;
+            border: 1px solid rgba(212, 175, 119, 0.3);
+            box-shadow: 0 0 40px rgba(212, 175, 119, 0.4);
+            transition: all 0.3s ease;
+            margin: 0 12px;
         }
+        
         .button:hover {
-            background: rgba(212, 175, 119, 0.12);
-            box-shadow: 0 0 60px rgba(212, 175, 119, 0.65);
+            background: rgba(212, 175, 119, 0.15);
+            box-shadow: 0 0 60px rgba(212, 175, 119, 0.7);
             transform: translateY(-2px);
         }
+        
         .button img {
-            width: 26px;
-            height: 26px;
-            border-radius: 4px;
+            width: 28px;
+            height: 28px;
         }
+        
         .footer {
-            padding: 40px 20px 30px;
-            font-size: 0.9rem;
+            margin-top: 80px;
+            font-size: 0.95rem;
             opacity: 0.75;
-            letter-spacing: 0.6px;
-            border-top: 1px solid rgba(212, 175, 119, 0.15);
-            text-align: center;
-            line-height: 1.6;
-        }
-        .footer-line1 {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 12px;
-            flex-wrap: nowrap;
-            margin-bottom: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .footer a {
-            color: #d4af77;
-            text-decoration: none;
+        
+        .footer img {
+            width: 22px;
+            height: 22px;
         }
-        .footer a:hover { color: #f0d4a0; }
-
-        #impressum { display: none; }
     </style>
 </head>
 <body>
-
-    <!-- Pinned Navigation -->
-    <nav>
-        <a href="#home">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="TPE" class="nav-logo">
-        </a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="ThePrinceEcho" class="nav-logo">
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -158,57 +162,42 @@
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/Substack.png" alt="Substack Journal">
             Substack Journal
         </a>
+        
+        <div class="footer">
+            The sovereign landing page
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
+            The sovereign bridge
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section" style="background: #0a0a0a;">
+    <section id="about" class="section">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">The bridge for those who sense the urge.</p>
         
-        <div style="max-width: 620px; margin: 40px auto; text-align: left; line-height: 1.7;">
+        <div style="max-width: 620px; text-align: left; font-size: 1.05rem; line-height: 1.75; opacity: 0.95;">
             <p>This space is reserved for deeper reflections on macro cycles, sovereignty, and the quiet convergence where carbon meets silicon — where energy becomes reality.</p>
             <p>What appears here will always be chapter-like, deliberate, and high-signal. No noise. No urgency. Only the frequency.</p>
             <p>Those who have already recognized the signal on X will know why they are here.</p>
         </div>
-
-        <div style="display: flex; justify-content: center; margin: 40px 0;">
-            <iframe src="https://theprinceecho.substack.com/embed" width="480" height="320" style="border: 1px solid #EEE; background: white; border-radius: 12px; max-width: 90%;" frameborder="0" scrolling="no"></iframe>
-        </div>
-
-        <a href="https://x.com/theprinceecho" target="_blank" class="button" style="margin: 20px auto;">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
-            Follow @theprinceecho
+        
+        <a href="https://theprinceecho.substack.com" target="_blank" style="margin-top: 60px;" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/Substack.png" alt="Substack Journal">
+            Subscribe on Substack
         </a>
     </section>
 
-    <!-- Impressum Section -->
-    <section id="impressum" class="section" style="background: #0a0a0a; padding-top: 100px;">
-        <div style="max-width: 620px; margin: 0 auto; text-align: left; line-height: 1.7; font-size: 0.95rem;">
-            <h2>Impressum</h2>
-            <p>Angaben gemäß § 5 TMG</p>
-            <p><strong>Jens Friedrich</strong><br>
-            c/o SCHUTZADRESSE.COM #535<br>
-            Waidmannsluster Damm 1<br>
-            13507 Berlin</p>
-            
-            <p><strong>Kontakt</strong><br>
-            E-Mail: info@theprinceecho.com</p>
-            
-            <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV<br>
-            Jens Friedrich</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="footer">
-        <div class="footer-line1">
-            The sovereign landing page
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" style="width:22px; height:22px;">
-            The sovereign bridge
-        </div>
-        <div>© 2026 ThePrinceEcho</div>
-        <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;">Impressum</a>
-    </div>
-
+    <script>
+        // Optional: smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#impressum') return;
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
