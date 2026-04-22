@@ -50,7 +50,7 @@
         
         .section {
             min-height: 100vh;
-            padding: 100px 24px 120px;
+            padding: 80px 24px 120px; /* reduced top padding */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -122,6 +122,13 @@
             font-size: 0.9rem;
             opacity: 0.75;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-line1 {
+            display: flex;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
@@ -131,6 +138,12 @@
         .footer img {
             width: 20px;
             height: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 8px;
         }
         
         #impressum {
@@ -207,19 +220,16 @@
                 style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 40px; max-width: 480px;" 
                 frameborder="0" scrolling="no"></iframe>
         
-        <!-- X Button below the embed -->
-        <a href="https://x.com/theprinceecho" target="_blank" class="button">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
-            @theprinceecho
-        </a>
-        
         <!-- Footer at the bottom of About section -->
         <div class="footer">
-            The sovereign landing page
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
-            The sovereign bridge
-            <span style="margin-left: 20px; opacity: 0.6">•</span>
-            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 16px; color: #d4af77; text-decoration: none;">Impressum</a>
+            <div class="footer-line1">
+                The sovereign landing page
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
+                The sovereign bridge
+                <span style="margin-left: 20px; opacity: 0.6">•</span>
+                <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 16px; color: #d4af77; text-decoration: none;">Impressum</a>
+            </div>
+            <div class="copyright">Copyright 2026 ThePrinceEcho</div>
         </div>
     </section>
 
