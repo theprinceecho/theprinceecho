@@ -113,6 +113,9 @@
             text-decoration: none;
         }
         .footer a:hover { color: #f0d4a0; }
+
+        /* Hide Impressum by default */
+        #impressum { display: none; }
     </style>
 </head>
 <body>
@@ -160,7 +163,7 @@
         </a>
     </section>
 
-    <!-- Impressum Section -->
+    <!-- Impressum Section (hidden by default) -->
     <section id="impressum" class="section" style="background: #0a0a0a; padding-top: 100px;">
         <div style="max-width: 620px; margin: 0 auto; text-align: left; line-height: 1.7; font-size: 0.95rem;">
             <h2>Impressum</h2>
@@ -186,7 +189,7 @@
             The sovereign bridge
         </div>
         <div>© 2026 ThePrinceEcho</div>
-        <a href="#impressum" style="margin-top: 6px;">Impressum</a>
+        <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;">Impressum</a>
     </div>
 
 </body>
