@@ -7,21 +7,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <title>ThePrinceEcho</title>
-    <meta name="description" content="The bridge for those who sense the urge. Sovereign reflections on macro cycles, sovereignty, and the carbon-silicon convergence.">
+    <meta name="description" content="The bridge for those who sense the urge.">
     
     <meta property="og:title" content="ThePrinceEcho">
     <meta property="og:description" content="The bridge for those who sense the urge.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
+    <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.jpg">
     <meta property="og:url" content="https://theprinceecho.com">
     <meta property="og:type" content="website">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ThePrinceEcho">
     <meta name="twitter:description" content="The bridge for those who sense the urge.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.jpg">
     
-    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.jpg" as="image">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -68,21 +67,12 @@
         
         .section {
             min-height: 100vh;
-            padding: 30px 24px 120px;
+            padding: 30px 24px 140px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-        
-        #home {
-            background: #050505;
-        }
-        
-        #about {
-            background: #0a0a0a;
-            padding-bottom: 100px;
         }
         
         .logo {
@@ -123,7 +113,7 @@
             box-shadow: 0 0 45px rgba(212, 175, 119, 0.5);
             transition: all 0.3s ease;
             margin: 10px;
-            min-width: 280px;          /* ← This makes both buttons the same size */
+            min-width: 280px;
             justify-content: center;
         }
         
@@ -138,7 +128,7 @@
         }
         
         .footer {
-            margin-top: 50px;
+            margin-top: 60px;
             font-size: 0.9rem;
             opacity: 0.75;
             display: flex;
@@ -176,26 +166,10 @@
         }
         
         @media (max-width: 480px) {
-            .logo {
-                width: 250px;
-                height: 250px;
-                margin-bottom: 22px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-                max-width: 320px;
-            }
-            
-            .button {
-                padding: 18px 34px;
-                font-size: 1.05rem;
-                min-width: 260px;
-            }
+            .logo { width: 250px; height: 250px; }
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .button { padding: 18px 34px; font-size: 1.05rem; min-width: 260px; }
         }
     </style>
 </head>
@@ -203,9 +177,8 @@
     <!-- Navigation -->
     <nav class="nav">
         <a href="#home">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="ThePrinceEcho" class="nav-logo">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.jpg" alt="ThePrinceEcho" class="nav-logo">
         </a>
-        
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -214,7 +187,7 @@
 
     <!-- Home Section -->
     <section id="home" class="section">
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="theprinceecho" class="logo">
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.jpg" alt="theprinceecho" class="logo">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">The bridge for those who sense the urge.</p>
         
@@ -238,22 +211,16 @@
             <p>Those who have already recognized the signal on X will know why they are here.</p>
         </div>
         
-        <!-- Substack Embed -->
         <iframe src="https://theprinceecho.substack.com/embed" 
-                width="100%" 
-                height="320" 
+                width="100%" height="320" 
                 style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 32px; max-width: 480px;" 
-                frameborder="0" 
-                scrolling="no"
-                loading="lazy"></iframe>
+                frameborder="0" scrolling="no" loading="lazy"></iframe>
         
-        <!-- X Button -->
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
             @theprinceecho
         </a>
         
-        <!-- Footer -->
         <div class="footer">
             <div class="footer-line1">
                 The sovereign landing page
@@ -268,7 +235,7 @@
         </div>
     </section>
 
-    <!-- Impressum Section -->
+    <!-- Impressum -->
     <section id="impressum" class="section">
         <h2>Impressum</h2>
         <p><strong>Angaben gemäß § 5 DDG (ehem. TMG)</strong></p>
