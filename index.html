@@ -10,9 +10,13 @@
     <meta name="description" content="The bridge for those who sense the urge.">
 
     <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
         html, body {
             margin: 0;
             padding: 0;
@@ -20,7 +24,7 @@
             min-height: 100vh;
             background: #050505;
             color: #d4af77;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             overflow-x: hidden;
         }
 
@@ -155,9 +159,9 @@
         }
 
         @media (max-width: 480px) {
-            .logo { width: 240px; height: 240px; }
-            h1 { font-size: 2.4rem; }
-            .subtitle { font-size: 1.05rem; }
+            .logo { width: 250px; height: 250px; }
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
             .button { padding: 18px 34px; font-size: 1.05rem; min-width: 260px; }
         }
     </style>
@@ -184,7 +188,7 @@
              decoding="async"
              loading="eager"
              fetchpriority="high"
-             sizes="(max-width: 480px) 240px, 280px">
+             sizes="(max-width: 480px) 250px, 280px">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">The bridge for those who sense the urge.</p>
         
