@@ -9,7 +9,7 @@
     <title>ThePrinceEcho</title>
     <meta name="description" content="The bridge for those who sense the urge.">
 
-    <!-- Performance -->
+    <!-- Strong performance headers -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
@@ -24,7 +24,7 @@
             min-height: 100vh;
             background: #050505;
             color: #d4af77;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             overflow-x: hidden;
         }
 
@@ -159,9 +159,9 @@
         }
 
         @media (max-width: 480px) {
-            .logo { width: 250px; height: 250px; }
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.1rem; }
+            .logo { width: 240px; height: 240px; }
+            h1 { font-size: 2.4rem; }
+            .subtitle { font-size: 1.05rem; }
             .button { padding: 18px 34px; font-size: 1.05rem; min-width: 260px; }
         }
     </style>
@@ -187,7 +187,8 @@
              height="280"
              decoding="async"
              loading="eager"
-             fetchpriority="high">
+             fetchpriority="high"
+             sizes="(max-width: 480px) 240px, 280px">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">The bridge for those who sense the urge.</p>
         
