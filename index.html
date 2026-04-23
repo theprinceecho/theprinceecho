@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+   
     <title>ThePrinceEcho</title>
     <meta name="description" content="The bridge for those who sense the urge.">
-
     <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
         html, body {
             margin: 0;
             padding: 0;
@@ -27,7 +24,6 @@
             font-family: 'Inter', system-ui, sans-serif;
             overflow-x: hidden;
         }
-
         .nav {
             position: fixed;
             top: 0;
@@ -43,12 +39,10 @@
             z-index: 100;
             border-bottom: 1px solid rgba(212, 175, 119, 0.1);
         }
-
         .nav-logo {
             height: 32px;
             cursor: pointer;
         }
-
         .nav-links a {
             color: #d4af77;
             text-decoration: none;
@@ -56,7 +50,6 @@
             font-weight: 500;
             font-size: 0.95rem;
         }
-
         .section {
             min-height: 100vh;
             padding: 30px 24px 140px;
@@ -66,7 +59,6 @@
             justify-content: center;
             text-align: center;
         }
-
         .logo {
             width: 280px;
             height: 280px;
@@ -75,14 +67,12 @@
             margin-bottom: 24px;
             object-fit: contain;
         }
-
         h1 {
             font-size: 2.8rem;
             font-weight: 600;
             margin: 0 0 10px 0;
             letter-spacing: -1.4px;
         }
-
         .subtitle {
             font-size: 1.2rem;
             max-width: 380px;
@@ -90,7 +80,6 @@
             margin-bottom: 32px;
             line-height: 1.5;
         }
-
         .button {
             display: inline-flex;
             align-items: center;
@@ -109,27 +98,24 @@
             min-width: 280px;
             justify-content: center;
         }
-
         .button:hover {
             background: rgba(212, 175, 119, 0.15);
             box-shadow: 0 0 65px rgba(212, 175, 119, 0.8);
         }
-
         .button img {
             width: 28px;
             height: 28px;
         }
-
         .footer {
-            margin-top: 60px;
+            margin-top: 80px;           /* increased breathing room */
             font-size: 0.9rem;
             opacity: 0.75;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 8px;
+            line-height: 1.8;           /* doubled line spacing */
         }
-
         .footer-line1 {
             display: flex;
             align-items: center;
@@ -137,18 +123,15 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-
         .footer img {
             width: 20px;
             height: 20px;
         }
-
         .copyright {
             font-size: 0.8rem;
             opacity: 0.6;
-            margin-top: 8px;
+            margin-top: 28px;           /* extra breathing room above copyright */
         }
-
         #impressum {
             display: none;
             padding: 80px 24px;
@@ -157,12 +140,12 @@
             margin: 0 auto;
             text-align: left;
         }
-
         @media (max-width: 480px) {
             .logo { width: 250px; height: 250px; }
             h1 { font-size: 2.5rem; }
             .subtitle { font-size: 1.1rem; }
             .button { padding: 18px 34px; font-size: 1.05rem; min-width: 260px; }
+            .footer { margin-top: 100px; }
         }
     </style>
 </head>
@@ -177,13 +160,12 @@
             <a href="#about">About</a>
         </div>
     </nav>
-
     <!-- Home Section -->
     <section id="home" class="section">
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" 
-             alt="theprinceecho" 
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp"
+             alt="theprinceecho"
              class="logo"
-             width="280" 
+             width="280"
              height="280"
              decoding="async"
              loading="eager"
@@ -191,7 +173,7 @@
              sizes="(max-width: 480px) 250px, 280px">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">The bridge for those who sense the urge.</p>
-        
+       
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="28" height="28">
             @theprinceecho
@@ -200,28 +182,27 @@
             Substack Journal
         </a>
     </section>
-
     <!-- About Section -->
     <section id="about" class="section">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">A sovereign threshold for those who already sense the urge.</p>
-        
+       
         <div style="max-width: 620px; text-align: left; font-size: 1.05rem; line-height: 1.75; opacity: 0.95; margin-bottom: 32px;">
             <p>This is a calm space for deliberate reflections on macro cycles, sovereignty, and the quiet convergence where carbon meets silicon — where energy becomes reality.</p>
             <p>Chapter-like. High-signal. No noise. No urgency. Only the frequency.</p>
             <p>Those who have already recognized the signal on X will know why they are here.</p>
         </div>
-        
-        <iframe src="https://theprinceecho.substack.com/embed" 
-                width="100%" height="320" 
-                style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 32px; max-width: 480px;" 
+       
+        <iframe src="https://theprinceecho.substack.com/embed"
+                width="100%" height="320"
+                style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 32px; max-width: 480px;"
                 frameborder="0" scrolling="no" loading="lazy"></iframe>
-        
+       
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="28" height="28">
             @theprinceecho
         </a>
-        
+       
         <div class="footer">
             <div class="footer-line1">
                 The sovereign landing page
@@ -235,7 +216,6 @@
             <div class="copyright">Copyright © 2026 ThePrinceEcho, All rights reserved.</div>
         </div>
     </section>
-
     <!-- Impressum -->
     <section id="impressum" class="section">
         <h2>Impressum</h2>
@@ -247,7 +227,6 @@
         <p><strong>Contact:</strong><br>
         E-Mail: info@theprinceecho.com</p>
     </section>
-
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
