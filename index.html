@@ -9,18 +9,9 @@
     <title>ThePrinceEcho</title>
     <meta name="description" content="The bridge for those who sense the urge.">
 
-    <meta property="og:title" content="ThePrinceEcho">
-    <meta property="og:description" content="The bridge for those who sense the urge.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
-    <meta property="og:url" content="https://theprinceecho.com">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ThePrinceEcho">
-    <meta name="twitter:description" content="The bridge for those who sense the urge.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
-
-    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image">
+    <!-- Performance & SEO -->
+    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -81,6 +72,7 @@
             border-radius: 24px;
             box-shadow: 0 0 90px rgba(212, 175, 119, 0.8);
             margin-bottom: 24px;
+            object-fit: contain;
         }
 
         h1 {
@@ -177,7 +169,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <a href="#home">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
         </a>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -187,12 +179,16 @@
 
     <!-- Home Section -->
     <section id="home" class="section">
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="theprinceecho" class="logo">
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" 
+             alt="theprinceecho" 
+             class="logo"
+             width="280" 
+             height="280">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">The bridge for those who sense the urge.</p>
         
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="28" height="28">
             @theprinceecho
         </a>
         <a href="https://theprinceecho.substack.com" target="_blank" class="button">
@@ -217,14 +213,14 @@
                 frameborder="0" scrolling="no" loading="lazy"></iframe>
         
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="28" height="28">
             @theprinceecho
         </a>
         
         <div class="footer">
             <div class="footer-line1">
                 The sovereign landing page
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" width="20" height="20">
                 The sovereign bridge
                 <span style="margin-left: 20px; opacity: 0.6">•</span>
                 <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 16px; color: #d4af77; text-decoration: none;">Impressum</a>
