@@ -8,6 +8,7 @@ Calm, precise, high-signal observations.
 No noise. No urgency. No performance.
 
 The Prince does not chase.  
+
 He simply stands as the bridge.
 
 ---
