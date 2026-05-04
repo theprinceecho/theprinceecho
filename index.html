@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+   
     <title>ThePrinceEcho</title>
+    <meta name="description" content="The bridge for those who sense the urge.">
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
             background: #050505;
             color: #d4af77;
-            min-height: 100vh;
+            font-family: 'Inter', system-ui, sans-serif;
             overflow-x: hidden;
         }
         .nav {
@@ -30,6 +37,7 @@
             justify-content: space-between;
             padding: 0 24px;
             z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 119, 0.1);
         }
         .nav-logo {
             height: 32px;
@@ -98,10 +106,50 @@
             width: 28px;
             height: 28px;
         }
+        .footer {
+            margin-top: 80px;           /* increased breathing room */
+            font-size: 0.9rem;
+            opacity: 0.75;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.8;           /* doubled line spacing */
+        }
+        .footer-line1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer img {
+            width: 20px;
+            height: 20px;
+        }
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 28px;           /* extra breathing room above copyright */
+        }
+        #impressum {
+            display: none;
+            padding: 80px 24px;
+            background: #050505;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        @media (max-width: 480px) {
+            .logo { width: 250px; height: 250px; }
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .button { padding: 18px 34px; font-size: 1.05rem; min-width: 260px; }
+            .footer { margin-top: 100px; }
+        }
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav class="nav">
         <a href="#home">
@@ -112,7 +160,6 @@
             <a href="#about">About</a>
         </div>
     </nav>
-
     <!-- Home Section -->
     <section id="home" class="section">
         <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp"
@@ -135,54 +182,61 @@
             Substack Journal
         </a>
     </section>
-
     <!-- About Section -->
     <section id="about" class="section">
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">A sovereign threshold for those who sense the urge.</p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem;">
-            A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology - where energy becomes reality.
-        </p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem;">
-            Here you will find high-signal, chapter-like observations that cut through noise and distraction. No urgency. No hype. Only precise insight.
-        </p>
-        
-        <h2 style="margin-top: 3rem; text-align:center;">Where to find what</h2>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 0.8rem;">
-            <strong>On X (@ThePrinceEcho)</strong>: Short, sharp daily observations and Prince Notes. Real-time decoding of macro developments, sovereignty in practice, and quiet strategic positioning. Ideal for those who want frequent, high-resolution sparks throughout the week.
-        </p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 0.8rem auto 2.5rem;">
-            <strong>On Substack (ThePrinceEcho)</strong>: Longer, in-depth essays and chapter-like explorations. Deeper dives into the philosophical foundations, long-term patterns, and the interplanetary breakout. 
-            <strong>Best suited for those seeking more comprehensive understanding and reflection.</strong>
-        </p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 2.5rem auto 0;">
-            If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.
-        </p>
-    </section>
-
-    <!-- Footer / Subscribe -->
-    <div style="max-width: 680px; margin: 0 auto; padding: 0 24px 60px;">
-        <div style="background:#1a1a1a; border-radius: 16px; padding: 32px; text-align:center;">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="TPE" style="height:48px; margin-bottom:16px;">
-            <h2>ThePrinceEcho</h2>
-            <p style="margin:12px 0 24px; opacity:0.85;">The bridge for those who sense the urge | Macro cycles | Sovereignty | When Energy becomes Reality</p>
-            
-            <iframe src="https://theprinceecho.substack.com/embed" width="100%" height="320" style="border:1px solid #333; background:#1a1a1a; border-radius:12px; margin-bottom: 32px;" frameborder="0" scrolling="no" loading="lazy"></iframe>
+       
+        <div style="max-width: 620px; text-align: left; font-size: 1.05rem; line-height: 1.75; opacity: 0.95; margin-bottom: 32px;">
+            <p>A calm and sovereign space for clear reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology - where energy becomes reality.</p>
+            <p>Here you will find high-signal, chapter-like observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
+            <p>If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
         </div>
-    </div>
-
-    <!-- Bottom bar -->
-    <div style="text-align:center; padding:20px; background:#050505; border-top:1px solid #222;">
-        <a href="https://x.com/theprinceecho" style="display:inline-flex; align-items:center; gap:8px; color:#d4af77; text-decoration:none; font-size:1.05rem;">
-            <span style="font-size:1.4rem;">𝕏</span>
+       
+        <iframe src="https://theprinceecho.substack.com/embed"
+                width="100%" height="320"
+                style="border: 1px solid #EEE; background: white; border-radius: 12px; margin-bottom: 32px; max-width: 480px;"
+                frameborder="0" scrolling="no" loading="lazy"></iframe>
+       
+        <a href="https://x.com/theprinceecho" target="_blank" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="28" height="28">
             @theprinceecho
         </a>
-    </div>
-
+       
+        <div class="footer">
+            <div class="footer-line1">
+                The sovereign landing page
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" width="20" height="20">
+                The sovereign bridge
+                <span style="margin-left: 20px; opacity: 0.6">•</span>
+                <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="margin-left: 16px; color: #d4af77; text-decoration: none;">Impressum</a>
+                <span style="margin-left: 8px; opacity: 0.6">•</span>
+                <a href="contact.html" style="margin-left: 8px; color: #d4af77; text-decoration: none;">Contact</a>
+            </div>
+            <div class="copyright">Copyright © 2026 ThePrinceEcho, All rights reserved.</div>
+        </div>
+    </section>
+    <!-- Impressum -->
+    <section id="impressum" class="section">
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 DDG (ehem. TMG)</strong></p>
+        <p>Jens Friedrich<br>
+        c/o SCHUTZADRESSE.COM #535<br>
+        Waidmannsluster Damm 1<br>
+        13507 Berlin</p>
+        <p><strong>Contact:</strong><br>
+        E-Mail: info@theprinceecho.com</p>
+    </section>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
