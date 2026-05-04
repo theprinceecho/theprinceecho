@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+   
     <title>ThePrinceEcho</title>
+    <meta name="description" content="The bridge for those who sense the urge.">
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
             background: #050505;
             color: #d4af77;
-            min-height: 100vh;
+            font-family: 'Inter', system-ui, sans-serif;
             overflow-x: hidden;
         }
         .nav {
@@ -30,82 +37,157 @@
             justify-content: space-between;
             padding: 0 24px;
             z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 119, 0.1);
         }
-        .logo-nav {
-            height: 36px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            font-size: 1.05rem;
+        .nav-logo {
+            height: 32px;
+            cursor: pointer;
         }
         .nav-links a {
             color: #d4af77;
             text-decoration: none;
+            margin-left: 24px;
+            font-weight: 500;
+            font-size: 0.95rem;
         }
         .section {
-            padding: 80px 24px 60px;
-            max-width: 720px;
-            margin: 0 auto;
+            min-height: 100vh;
+            padding: 30px 24px 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .logo {
+            width: 280px;
+            height: 280px;
+            border-radius: 24px;
+            box-shadow: 0 0 90px rgba(212, 175, 119, 0.8);
+            margin-bottom: 24px;
+            object-fit: contain;
         }
         h1 {
             font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 12px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            letter-spacing: -1.4px;
         }
-        .tagline {
-            text-align: center;
-            font-size: 1.15rem;
-            opacity: 0.9;
-            margin-bottom: 2.5rem;
-        }
-        p {
-            line-height: 1.75;
-            font-size: 1.08rem;
-            margin-bottom: 1.8rem;
-            text-align: justify;
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 380px;
+            opacity: 0.92;
+            margin-bottom: 32px;
+            line-height: 1.5;
         }
         .button {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(212, 175, 119, 0.1);
+            gap: 14px;
+            background: rgba(212, 175, 119, 0.08);
             color: #d4af77;
-            padding: 14px 28px;
+            padding: 20px 40px;
             border-radius: 9999px;
             text-decoration: none;
             font-weight: 500;
-            margin: 12px 8px;
-            transition: all 0.3s;
+            font-size: 1.12rem;
+            border: 1px solid rgba(212, 175, 119, 0.3);
+            box-shadow: 0 0 45px rgba(212, 175, 119, 0.5);
+            transition: all 0.3s ease;
+            margin: 10px;
+            min-width: 280px;
+            justify-content: center;
         }
         .button:hover {
-            background: rgba(212, 175, 119, 0.2);
+            background: rgba(212, 175, 119, 0.15);
+            box-shadow: 0 0 65px rgba(212, 175, 119, 0.8);
+        }
+        .button img {
+            width: 28px;
+            height: 28px;
         }
         .footer {
-            margin-top: 80px;
-            text-align: center;
-            font-size: 0.95rem;
-            opacity: 0.7;
+            margin-top: 80px;           /* increased breathing room */
+            font-size: 0.9rem;
+            opacity: 0.75;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.8;           /* doubled line spacing */
+        }
+        .footer-line1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer img {
+            width: 20px;
+            height: 20px;
+        }
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 28px;           /* extra breathing room above copyright */
+        }
+        #impressum {
+            display: none;
+            padding: 80px 24px;
+            background: #050505;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        @media (max-width: 480px) {
+            .logo { width: 250px; height: 250px; }
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .button { padding: 18px 34px; font-size: 1.05rem; min-width: 260px; }
+            .footer { margin-top: 100px; }
         }
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav class="nav">
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.JPG" alt="ThePrinceEcho" class="logo-nav" style="height:38px;">
+        <a href="#home">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
+        </a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
+            <a href="#home">Home</a>
             <a href="#about">About</a>
         </div>
     </nav>
-
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp"
+             alt="theprinceecho"
+             class="logo"
+             width="280"
+             height="280"
+             decoding="async"
+             loading="eager"
+             fetchpriority="high"
+             sizes="(max-width: 480px) 250px, 280px">
+        <h1>ThePrinceEcho</h1>
+        <p class="subtitle">The bridge for those who sense the urge.</p>
+       
+        <a href="https://x.com/theprinceecho" target="_blank" class="button">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="28" height="28">
+            @theprinceecho
+        </a>
+        <a href="https://theprinceecho.substack.com" target="_blank" class="button">
+            Substack Journal
+        </a>
+    </section>
     <!-- About Section -->
-    <section id="about" class="section">
+  <section id="about" class="section">
         <h1>ThePrinceEcho</h1>
         <p class="tagline">A sovereign threshold for those who sense the urge.</p>
         
-        <p>A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology — where energy becomes reality.</p>
+        <p>A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology - where energy becomes reality.</p>
         
         <p>Here you will find high-signal, chapter-like observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
         
@@ -136,6 +218,29 @@
             @theprinceecho
         </a>
     </div>
-
+    </section>
+    
+    <!-- Impressum -->
+    <section id="impressum" class="section">
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 DDG (ehem. TMG)</strong></p>
+        <p>Jens Friedrich<br>
+        c/o SCHUTZADRESSE.COM #535<br>
+        Waidmannsluster Damm 1<br>
+        13507 Berlin</p>
+        <p><strong>Contact:</strong><br>
+        E-Mail: info@theprinceecho.com</p>
+    </section>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
