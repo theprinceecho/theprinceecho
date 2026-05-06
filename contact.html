@@ -145,16 +145,25 @@
             text-align: left;
         }
         
-        /* Stronger mobile fix for nav spacing */
+        /* Stronger mobile fix for nav spacing and Tally form */
         @media (max-width: 480px) {
             .nav-links {
-                gap: 14px !important;
+                gap: 12px !important;
             }
-            .main-content { padding-top: 100px; padding-bottom: 160px; }
-            .form-container { padding: 0 20px; }
+            .main-content { 
+                padding-top: 100px; 
+                padding-bottom: 160px; 
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            .form-container { 
+                padding: 0 12px; 
+                max-width: 100%;
+            }
             iframe {
                 max-width: 100% !important;
                 width: 100% !important;
+                box-sizing: border-box;
             }
             .language-switcher {
                 font-size: 1.2rem;
