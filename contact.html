@@ -145,7 +145,6 @@
             text-align: left;
         }
         
-        /* Mobile-first refinements */
         @media (max-width: 480px) {
             .main-content { padding-top: 100px; padding-bottom: 160px; }
             .form-container { padding: 0 20px; }
@@ -199,7 +198,7 @@
         </div>
     </div>
 
-    <!-- Footer — EXACT same as locked index.html -->
+    <!-- Footer -->
     <div class="footer">
         <div class="footer-line1">
             <span data-lang-key="footer-line1">The sovereign landing page</span>
@@ -228,7 +227,6 @@
     </section>
 
     <script>
-        // Translation dictionary (same as index.html)
         const translations = {
             en: {
                 "nav-home": "Home",
@@ -276,7 +274,6 @@
             });
         }
 
-        // Language Switcher
         const switcher = document.getElementById('language-switcher');
         const dropdown = document.getElementById('language-dropdown');
         const currentLangDisplay = document.getElementById('current-lang-display');
@@ -286,9 +283,7 @@
             dropdown.classList.toggle('show');
         });
 
-        document.addEventListener('click', () => {
-            dropdown.classList.remove('show');
-        });
+        document.addEventListener('click', () => dropdown.classList.remove('show'));
 
         dropdown.addEventListener('click', (e) => {
             const option = e.target.closest('.language-option');
@@ -299,7 +294,6 @@
             }
         });
 
-        // Initial translation
         translatePage('en');
     </script>
 
