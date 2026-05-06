@@ -57,7 +57,7 @@
         }
         .main-content {
             padding-top: 120px;
-            padding-bottom: 140px;           /* extra space for mobile */
+            padding-bottom: 140px;
             max-width: 720px;
             margin: 0 auto;
             text-align: center;
@@ -104,10 +104,12 @@
             text-align: left;
         }
         
-        /* Mobile improvements for Tally form */
+        /* Aggressive mobile fix for Tally banner */
         @media (max-width: 480px) {
             .main-content { padding-top: 100px; padding-bottom: 160px; }
-            .form-container { padding: 0 20px; }
+            .form-container { 
+                padding: 0 12px; 
+            }
             iframe {
                 max-width: 100% !important;
                 width: 100% !important;
@@ -136,7 +138,7 @@
             A direct line for those who sense the urge.
         </p>
         
-        <!-- Tally Form – increased height to ensure reCAPTCHA renders fully -->
+        <!-- Tally Form – maximized mobile width -->
         <div class="form-container">
             <iframe src="https://tally.so/r/44NWYd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
                     width="100%" 
