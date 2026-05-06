@@ -145,12 +145,19 @@
             text-align: left;
         }
         
+        /* Stronger mobile fix for nav spacing */
         @media (max-width: 480px) {
+            .nav-links {
+                gap: 14px !important;
+            }
             .main-content { padding-top: 100px; padding-bottom: 160px; }
             .form-container { padding: 0 20px; }
             iframe {
                 max-width: 100% !important;
                 width: 100% !important;
+            }
+            .language-switcher {
+                font-size: 1.2rem;
             }
         }
     </style>
