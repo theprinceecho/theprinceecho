@@ -47,6 +47,7 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 28px;
             font-size: 0.95rem;
         }
@@ -54,6 +55,46 @@
             color: #d4af77;
             text-decoration: none;
             font-weight: 500;
+        }
+        .language-switcher {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .current-lang {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.35rem;
+        }
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #111111;
+            border: 1px solid rgba(212, 175, 119, 0.3);
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            min-width: 140px;
+        }
+        .language-dropdown.show {
+            display: flex;
+        }
+        .language-option {
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.35rem;
+            color: #d4af77;
+            text-decoration: none;
+        }
+        .language-option:hover {
+            background: rgba(212, 175, 119, 0.15);
         }
         .main-content {
             padding-top: 120px;
@@ -104,12 +145,10 @@
             text-align: left;
         }
         
-        /* Aggressive mobile fix for Tally banner */
+        /* Mobile-first refinements */
         @media (max-width: 480px) {
             .main-content { padding-top: 100px; padding-bottom: 160px; }
-            .form-container { 
-                padding: 0 12px; 
-            }
+            .form-container { padding: 0 20px; }
             iframe {
                 max-width: 100% !important;
                 width: 100% !important;
@@ -119,26 +158,36 @@
 </head>
 <body>
 
-    <!-- Navigation (identical to index.html) -->
+    <!-- Navigation -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
         </a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#recent-transmissions">Recent Transmissions</a>
+            <a href="index.html" data-lang-key="nav-home">Home</a>
+            <a href="index.html#about" data-lang-key="nav-about">About</a>
+            <a href="index.html#recent-transmissions" data-lang-key="nav-recent">Recent Transmissions</a>
+            
+            <!-- Flag + Code Language Switcher -->
+            <div class="language-switcher" id="language-switcher">
+                <span class="current-lang" id="current-lang-display">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
+                <div class="language-dropdown" id="language-dropdown">
+                    <a href="#" class="language-option" data-lang="en">🇺🇸 <span style="font-size:0.85rem;">US</span></a>
+                    <a href="#" class="language-option" data-lang="de">🇩🇪 <span style="font-size:0.85rem;">DE</span></a>
+                    <a href="#" class="language-option" data-lang="es">🇪🇸 <span style="font-size:0.85rem;">ES</span></a>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Contact Form Section -->
     <div class="main-content">
-        <h1 style="font-size: 2.8rem; margin-bottom: 12px; letter-spacing: -1.4px;">Contact</h1>
-        <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;">
+        <h1 data-lang-key="contact-title">Contact</h1>
+        <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;" data-lang-key="contact-subtitle">
             A direct line for those who sense the urge.
         </p>
         
-        <!-- Tally Form – maximized mobile width -->
+        <!-- Tally Form -->
         <div class="form-container">
             <iframe src="https://tally.so/r/44NWYd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
                     width="100%" 
@@ -153,30 +202,106 @@
     <!-- Footer — EXACT same as locked index.html -->
     <div class="footer">
         <div class="footer-line1">
-            The sovereign landing page
+            <span data-lang-key="footer-line1">The sovereign landing page</span>
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" width="20" height="20">
-            The sovereign bridge
+            <span data-lang-key="footer-line2">The sovereign bridge</span>
         </div>
         <div class="footer-line2" style="margin-top: 8px;">
-            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="color: #d4af77; text-decoration: none;">Legal disclosure</a>
+            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="color: #d4af77; text-decoration: none;" data-lang-key="footer-legal">Legal disclosure</a>
             <span style="margin: 0 12px; opacity: 0.6">•</span>
-            <a href="contact.html" style="color: #d4af77; text-decoration: none;">Contact</a>
+            <a href="contact.html" style="color: #d4af77; text-decoration: none;" data-lang-key="footer-contact">Contact</a>
         </div>
-        <div class="copyright" style="margin-top: 20px;">
+        <div class="copyright" style="margin-top: 20px;" data-lang-key="footer-copyright">
             Copyright © 2026 ThePrinceEcho, All rights reserved.
         </div>
     </div>
 
-    <!-- Impressum (identical to index.html) -->
+    <!-- Impressum -->
     <section id="impressum" style="display:none; padding:80px 24px; background:#050505; max-width:700px; margin:0 auto; text-align:left;">
-        <h2>Legal disclosure</h2>
+        <h2 data-lang-key="impressum-title">Legal disclosure</h2>
         <br>
-        <p><strong>Disclosure according to § 5 DDG (ex TMG)</strong></p>
+        <p><strong data-lang-key="impressum-subtitle">Disclosure according to § 5 DDG (ex TMG)</strong></p>
         <br>
-        <p>This Landing page is currently under construction.</p>
-        <p><strong>Contact:</strong><br>
+        <p data-lang-key="impressum-text1">This Landing page is currently under construction.</p>
+        <p><strong data-lang-key="impressum-contact">Contact:</strong><br>
         E-Mail: info@theprinceecho.com</p>
     </section>
+
+    <script>
+        // Translation dictionary (same as index.html)
+        const translations = {
+            en: {
+                "nav-home": "Home",
+                "nav-about": "About",
+                "nav-recent": "Recent Transmissions",
+                "contact-title": "Contact",
+                "contact-subtitle": "A direct line for those who sense the urge.",
+                "footer-line1": "The sovereign landing page",
+                "footer-line2": "The sovereign bridge",
+                "footer-legal": "Legal disclosure",
+                "footer-contact": "Contact",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho, All rights reserved.",
+                "impressum-title": "Legal disclosure",
+                "impressum-subtitle": "Disclosure according to § 5 DDG (ex TMG)",
+                "impressum-text1": "This Landing page is currently under construction.",
+                "impressum-contact": "Contact:"
+            },
+            de: {
+                "nav-home": "Start",
+                "nav-about": "Über",
+                "nav-recent": "Neueste Übertragungen",
+                "contact-title": "Kontakt",
+                "contact-subtitle": "Eine direkte Verbindung für jene, die den Drang spüren.",
+                "footer-line1": "Die souveräne Landing Page",
+                "footer-line2": "Die souveräne Brücke",
+                "footer-legal": "Impressum",
+                "footer-contact": "Kontakt",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho, Alle Rechte vorbehalten.",
+                "impressum-title": "Impressum",
+                "impressum-subtitle": "Angaben gemäß § 5 DDG (ehemals TMG)",
+                "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau.",
+                "impressum-contact": "Kontakt:"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function translatePage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Language Switcher
+        const switcher = document.getElementById('language-switcher');
+        const dropdown = document.getElementById('language-dropdown');
+        const currentLangDisplay = document.getElementById('current-lang-display');
+
+        switcher.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('show');
+        });
+
+        dropdown.addEventListener('click', (e) => {
+            const option = e.target.closest('.language-option');
+            if (option) {
+                currentLangDisplay.innerHTML = option.innerHTML;
+                dropdown.classList.remove('show');
+                translatePage(option.getAttribute('data-lang'));
+            }
+        });
+
+        // Initial translation
+        translatePage('en');
+    </script>
 
 </body>
 </html>
