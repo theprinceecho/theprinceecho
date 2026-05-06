@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>ThePrinceEcho</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -11,71 +12,76 @@
             font-family: 'Inter', system-ui, sans-serif;
             background: #050505;
             color: #d4af77;
-            line-height: 1.6;
+            line-height: 1.65;
         }
-        .nav { position: fixed; top: 0; left: 0; right: 0; height: 70px; background: rgba(5,5,5,0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
-        .section { padding: 120px 24px 80px; max-width: 1100px; margin: 0 auto; }
-        .recent-card {
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(5,5,5,0.95);
+            backdrop-filter: blur(12px);
             display: flex;
-            gap: 24px;
-            background: #111111;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 32px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 100;
         }
-        .recent-card img {
-            width: 280px;
-            height: 100%;
-            object-fit: cover;
+        .section {
+            padding: 120px 24px 100px;
+            max-width: 720px;
+            margin: 0 auto;
         }
-        .recent-text {
-            padding: 32px 32px 32px 0;
-            flex: 1;
+        h1, h2 { font-weight: 600; letter-spacing: -0.02em; }
+        .recent-transmissions h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2rem;
         }
-        @media (max-width: 768px) {
-            .recent-card { flex-direction: column; }
-            .recent-card img { width: 100%; height: 220px; }
+        .transmission {
+            margin-bottom: 60px;
         }
+        .transmission h3 {
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+        .transmission p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        a { color: #d4af77; text-decoration: none; }
     </style>
 </head>
 <body>
     <nav class="nav">
         <div>ThePrinceEcho</div>
-        <div>Recent Transmissions</div>
+        <div style="display:flex; gap:28px;">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#recent">Recent Transmissions</a>
+        </div>
     </nav>
 
-    <div class="section" style="padding-top: 140px;">
-        <h2 style="text-align:center; margin-bottom: 60px; font-size: 2rem;">Recent Transmissions</h2>
+    <div class="section" id="recent-transmissions">
+        <h2>Recent Transmissions</h2>
 
-        <!-- Essay 1 -->
-        <div class="recent-card">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/assets/mirror-of-the-will.jpg" alt="Essay I">
-            <div class="recent-text">
-                <h3>Essay I - The Mirror of the Will</h3>
-                <p>The Quiet Handoff Where the Will Beholds Itself</p>
-                <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" style="color:#d4af77;">Read →</a>
-            </div>
+        <div class="transmission">
+            <h3>Essay I - The Mirror of the Will</h3>
+            <p>The Quiet Handoff Where the Will Beholds Itself</p>
+            <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank">Read →</a>
         </div>
 
-        <!-- Essay 2 -->
-        <div class="recent-card">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/assets/phoenix-algorithm.jpg" alt="Essay II">
-            <div class="recent-text">
-                <h3>Essay II - The Phoenix Algorithm</h3>
-                <p>The living network of carbon and silicon nodes awakening across the lattice.</p>
-                <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" style="color:#d4af77;">Read →</a>
-            </div>
+        <div class="transmission">
+            <h3>Essay II - The Phoenix Algorithm</h3>
+            <p>The living network of carbon and silicon nodes awakening across the lattice.</p>
+            <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank">Read →</a>
         </div>
 
-        <!-- Essay 3 -->
-        <div class="recent-card">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/assets/signal-steps-into-the-light.jpg" alt="Essay III">
-            <div class="recent-text">
-                <h3>Essay III - The Signal Steps into the Light</h3>
-                <p>From the Inner Temple to the Widening Field</p>
-                <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" style="color:#d4af77;">Read →</a>
-            </div>
+        <div class="transmission">
+            <h3>Essay III - The Signal Steps into the Light</h3>
+            <p>From the Inner Temple to the Widening Field</p>
+            <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank">Read →</a>
         </div>
     </div>
 </body>
