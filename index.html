@@ -244,9 +244,6 @@
             .nav-links {
                 gap: 16px;
             }
-            .language-switcher .current-lang {
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
@@ -258,13 +255,13 @@
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
         </a>
         <div class="nav-links">
-            <a href="#home" data-lang-key="nav-home">Home</a>
-            <a href="#about" data-lang-key="nav-about">About</a>
-            <a href="#recent-transmissions" data-lang-key="nav-recent">Recent Transmissions</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#recent-transmissions">Recent Transmissions</a>
             
             <!-- Flag + Code Language Switcher -->
             <div class="language-switcher" id="language-switcher">
-                <span class="current-lang" id="current-lang-display">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
+                <span class="current-lang">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
                 <div class="language-dropdown" id="language-dropdown">
                     <a href="#" class="language-option" data-lang="en">🇺🇸 <span style="font-size:0.85rem;">US</span></a>
                     <a href="#" class="language-option" data-lang="de">🇩🇪 <span style="font-size:0.85rem;">DE</span></a>
@@ -391,10 +388,10 @@
     </section>
 
     <script>
-        // Language switcher
+        // Simple flag-only language switcher
         const switcher = document.getElementById('language-switcher');
         const dropdown = document.getElementById('language-dropdown');
-        const currentLangDisplay = document.getElementById('current-lang-display');
+        const currentFlag = switcher.querySelector('.current-lang');
 
         switcher.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -408,7 +405,7 @@
         dropdown.addEventListener('click', (e) => {
             const option = e.target.closest('.language-option');
             if (option) {
-                currentLangDisplay.innerHTML = option.innerHTML;
+                currentFlag.innerHTML = option.innerHTML;
                 dropdown.classList.remove('show');
                 console.log(`Language switched to: ${option.getAttribute('data-lang')}`);
             }
