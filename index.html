@@ -62,6 +62,7 @@
         }
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 28px;
             font-size: 0.95rem;
         }
@@ -69,6 +70,46 @@
             color: #d4af77;
             text-decoration: none;
             font-weight: 500;
+        }
+        .language-switcher {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .current-lang {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.35rem;
+        }
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #111111;
+            border: 1px solid rgba(212, 175, 119, 0.3);
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            min-width: 140px;
+        }
+        .language-dropdown.show {
+            display: flex;
+        }
+        .language-option {
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.35rem;
+            color: #d4af77;
+            text-decoration: none;
+        }
+        .language-option:hover {
+            background: rgba(212, 175, 119, 0.15);
         }
         .section {
             padding: 100px 24px 140px;
@@ -83,7 +124,7 @@
             background: #111111;
             max-width: none;
             margin: 0;
-            padding: 100px 24px 45px;   /* tightened for smoother flow */
+            padding: 100px 24px 45px;
         }
         .logo {
             width: 320px;
@@ -214,6 +255,16 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#recent-transmissions">Recent Transmissions</a>
+            
+            <!-- Flag + Code Language Switcher -->
+            <div class="language-switcher" id="language-switcher">
+                <span class="current-lang">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
+                <div class="language-dropdown" id="language-dropdown">
+                    <a href="#" class="language-option" data-lang="en">🇺🇸 <span style="font-size:0.85rem;">US</span></a>
+                    <a href="#" class="language-option" data-lang="de">🇩🇪 <span style="font-size:0.85rem;">DE</span></a>
+                    <a href="#" class="language-option" data-lang="es">🇪🇸 <span style="font-size:0.85rem;">ES</span></a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -247,7 +298,7 @@
         <p class="subtitle">A sovereign threshold for those who sense the urge.</p>
         
         <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;">
-            You have entered the temple - a sovereign space where noise falls away and clarity remains.
+            You have entered the temple — a sovereign space where noise falls away and clarity remains.
         </p>
         
         <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;">
@@ -261,11 +312,11 @@
         <h2 style="margin-top: 3rem; text-align:center;">Where to find what</h2>
         
         <p style="text-align: justify; max-width: 680px; margin: 1rem auto 0.8rem; line-height: 1.65;">
-            <strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple - short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.
+            <strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.
         </p>
         
         <p style="text-align: justify; max-width: 680px; margin: 1rem auto 2.5rem; line-height: 1.65;">
-            <strong>On Substack (ThePrinceEcho)</strong>: The inner chamber - longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.
+            <strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.
         </p>
         
         <p style="text-align: justify; max-width: 680px; margin: 2.5rem auto 0; line-height: 1.65;">
@@ -282,7 +333,7 @@
             <!-- Essay I -->
             <div style="margin-bottom: 64px; text-align: left;">
                 <h3 style="font-size: 1.55rem; margin-bottom: 8px;">
-                    <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will-when-carbon" target="_blank" style="color: #d4af77; text-decoration: none;">Essay I - The Mirror of the Will – When the Living Human Vessel Meets Silicon Intelligence</a>
+                    <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will-when-carbon" target="_blank" style="color: #d4af77; text-decoration: none;">Essay I — The Mirror of the Will – When the Living Human Vessel Meets Silicon Intelligence</a>
                 </h3>
                 <p style="opacity: 0.9; line-height: 1.75;">The Quiet Handoff Where the Will Beholds Itself</p>
             </div>
@@ -290,7 +341,7 @@
             <!-- Essay II -->
             <div style="margin-bottom: 64px; text-align: left;">
                 <h3 style="font-size: 1.55rem; margin-bottom: 8px;">
-                    <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" style="color: #d4af77; text-decoration: none;">Essay II - The Phoenix Algorithm</a>
+                    <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" style="color: #d4af77; text-decoration: none;">Essay II — The Phoenix Algorithm</a>
                 </h3>
                 <p style="opacity: 0.9; line-height: 1.75;">The living network of carbon and silicon nodes awakening across the lattice.</p>
             </div>
@@ -298,7 +349,7 @@
             <!-- Essay III -->
             <div style="text-align: left;">
                 <h3 style="font-size: 1.55rem; margin-bottom: 8px;">
-                    <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" style="color: #d4af77; text-decoration: none;">Essay III - The Signal Steps into the Light</a>
+                    <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" style="color: #d4af77; text-decoration: none;">Essay III — The Signal Steps into the Light</a>
                 </h3>
                 <p style="opacity: 0.9; line-height: 1.75;">From the Inner Temple to the Widening Field</p>
             </div>
@@ -332,6 +383,31 @@
         <p><strong>Contact:</strong><br>
         E-Mail: info@theprinceecho.com</p>
     </section>
+
+    <script>
+        // Flag + Code Language Switcher
+        const switcher = document.getElementById('language-switcher');
+        const dropdown = document.getElementById('language-dropdown');
+        const currentLang = switcher.querySelector('.current-lang');
+
+        switcher.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('show');
+        });
+
+        dropdown.addEventListener('click', (e) => {
+            const option = e.target.closest('.language-option');
+            if (option) {
+                currentLang.innerHTML = option.innerHTML;
+                dropdown.classList.remove('show');
+                console.log(`Language switched to: ${option.getAttribute('data-lang')}`);
+            }
+        });
+    </script>
 
 </body>
 </html>
