@@ -93,13 +93,10 @@
             background: #050505; 
         }
         .footer a { 
-            color: #d4af77; 
+            color: #d4af77 !important; 
             text-decoration: none; 
         }
-        .footer a:hover { 
-            text-decoration: underline; 
-            opacity: 0.9; 
-        }
+        .footer a:hover { opacity: 0.9; text-decoration: underline; }
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
         .footer img { width: 20px; height: 20px; }
         .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
@@ -126,7 +123,6 @@
         </div>
     </nav>
 
-    <!-- Home, About, Recent Transmissions (same as previous working version) -->
     <section id="home" class="section">
         <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="theprinceecho" class="logo" width="320" height="320" fetchpriority="high">
         <h1 data-lang-key="hero-title">ThePrinceEcho</h1>
@@ -160,7 +156,6 @@
         </div>
     </section>
 
-    <!-- Footer with golden links -->
     <div class="footer">
         <div class="footer-line1">
             <span data-lang-key="footer-line1">The sovereign landing page</span>
@@ -182,9 +177,100 @@
     </section>
 
     <script>
-        const translations = { /* [same complete EN/DE dictionary as in the previous version] */ };
-        /* ... full script with robust language switcher (unchanged from last working version) ... */
-        /* (I kept the exact same working script you already confirmed works) */
+        const translations = {
+            en: {
+                "nav-home": "Home", "nav-about": "About", "nav-recent": "Recent Transmissions",
+                "hero-title": "ThePrinceEcho", "hero-subtitle": "A quiet temple for those who sense the urge.",
+                "button-substack": "Substack Journal",
+                "about-subtitle": "A sovereign threshold for those who sense the urge.",
+                "about-p1": "You have entered the temple - a sovereign space where noise falls away and clarity remains.",
+                "about-p2": "A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.",
+                "about-p3": "Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.",
+                "where-to-find": "Where to find what",
+                "x-description": "<strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
+                "substack-description": "<strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.",
+                "about-closing": "If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.",
+                "recent-title": "Recent Transmissions",
+                "footer-line1": "The sovereign landing page", "footer-line2": "The sovereign bridge",
+                "footer-legal": "Legal disclosure", "footer-contact": "Contact",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho • All rights reserved.",
+                "impressum-title": "Legal disclosure", "impressum-subtitle": "Disclosure according to § 5 DDG",
+                "impressum-text1": "This Landing page is currently under construction."
+            },
+            de: {
+                "nav-home": "Start", "nav-about": "Über", "nav-recent": "Letzte Sendungen",
+                "hero-title": "ThePrinceEcho", "hero-subtitle": "Ein ruhiger Tempel für jene, die den Drang spüren.",
+                "button-substack": "Substack Journal",
+                "about-subtitle": "Eine souveräne Schwelle für jene, die den Drang spüren.",
+                "about-p1": "Du hast den Tempel betreten — ein souveräner Raum, in dem Lärm vergeht und Klarheit bleibt.",
+                "about-p2": "Ein ruhiger und souveräner Raum für klare Reflexionen über Makrozyklen, Souveränität, Energie-Neuordnung und die stille Konvergenz von menschlicher Intelligenz mit fortschreitender Technologie.",
+                "about-p3": "Hier findest du hochsignifikante Beobachtungen, die durch Rauschen und Ablenkung schneiden. Keine Dringlichkeit. Kein Hype. Nur präzise Einsicht.",
+                "where-to-find": "Wo du was findest",
+                "x-description": "<strong>Auf X (@ThePrinceEcho)</strong>: Der äußere Hof des Tempels — kurze, scharfe tägliche Beobachtungen und Prince Notes. Echtzeit-Funken, die entstehende Zyklen entschlüsseln und ruhige strategische Klarheit bieten.",
+                "substack-description": "<strong>Auf Substack (ThePrinceEcho)</strong>: Die innere Kammer — längere, kapitelartige Essays und tiefere Reflexionen. Für jene, die tiefer in die Architektur von Souveränität und langfristigen Mustern eintauchen möchten.",
+                "about-closing": "Falls du bereits gespürt hast, dass sich etwas Grundlegendes unter der Oberfläche verschiebt, bist du am richtigen Ort.",
+                "recent-title": "Letzte Sendungen",
+                "footer-line1": "Die souveräne Landing Page", "footer-line2": "Die souveräne Brücke",
+                "footer-legal": "Rechtliche Hinweise", "footer-contact": "Kontakt",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho • Alle Rechte vorbehalten.",
+                "impressum-title": "Rechtliche Hinweise", "impressum-subtitle": "Angaben gemäß § 5 DDG",
+                "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function translatePage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        function initLanguageSwitcher() {
+            const switcher = document.getElementById('language-switcher');
+            const dropdown = document.getElementById('language-dropdown');
+            const currentDisplay = document.getElementById('current-lang-display');
+            if (!switcher) return;
+
+            const toggle = (e) => { e.stopImmediatePropagation(); dropdown.classList.toggle('show'); };
+            switcher.addEventListener('click', toggle);
+            switcher.addEventListener('touchend', toggle);
+
+            document.addEventListener('click', () => dropdown.classList.remove('show'));
+            document.addEventListener('touchend', () => dropdown.classList.remove('show'));
+
+            const handleOption = (e) => {
+                const option = e.target.closest('.language-option');
+                if (option) {
+                    currentDisplay.innerHTML = option.innerHTML;
+                    dropdown.classList.remove('show');
+                    translatePage(option.getAttribute('data-lang'));
+                }
+            };
+            dropdown.addEventListener('click', handleOption);
+            dropdown.addEventListener('touchend', handleOption);
+
+            translatePage('en');
+        }
+
+        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+        window.addEventListener('load', initLanguageSwitcher);
+
+        // Dynamic nav
+        const navLinks = document.querySelectorAll('.nav-link');
+        function setActiveNav() {
+            const scrollY = window.scrollY + 200;
+            navLinks.forEach(l => l.classList.remove('active'));
+            if (scrollY < 400) document.querySelector('[data-section="home"]').classList.add('active');
+            else if (scrollY < document.getElementById('about').offsetTop + 400) document.querySelector('[data-section="about"]').classList.add('active');
+            else document.querySelector('[data-section="recent"]').classList.add('active');
+        }
+        window.addEventListener('scroll', setActiveNav);
+        setActiveNav();
     </script>
 </body>
 </html>
