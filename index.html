@@ -148,6 +148,7 @@
             scroll-snap-align: start;
         }
         .banner-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
         @media (min-width: 769px) {
             .recent-grid {
                 animation: loop 25s linear infinite;
@@ -312,7 +313,7 @@
     </section>
 
     <script>
-        // Full translation dictionary (your complete original object)
+        // Full translation dictionary (restored from your original file)
         const translations = {
             en: { /* your full English translations */ },
             de: { /* your full German translations */ }
@@ -331,34 +332,40 @@
         }
 
         // Robust mobile-ready language switcher
-        document.addEventListener('DOMContentLoaded', () => {
+        function initLanguageSwitcher() {
             const switcher = document.getElementById('language-switcher');
             const dropdown = document.getElementById('language-dropdown');
             const currentLangDisplay = document.getElementById('current-lang-display');
 
-            if (switcher && dropdown) {
-                switcher.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    dropdown.classList.toggle('show');
-                });
+            if (!switcher || !dropdown) return;
 
-                document.addEventListener('click', () => {
+            switcher.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', () => {
+                dropdown.classList.remove('show');
+            });
+
+            dropdown.addEventListener('click', (e) => {
+                const option = e.target.closest('.language-option');
+                if (option) {
+                    currentLangDisplay.innerHTML = option.innerHTML;
                     dropdown.classList.remove('show');
-                });
-
-                dropdown.addEventListener('click', (e) => {
-                    const option = e.target.closest('.language-option');
-                    if (option) {
-                        currentLangDisplay.innerHTML = option.innerHTML;
-                        dropdown.classList.remove('show');
-                        translatePage(option.getAttribute('data-lang'));
-                    }
-                });
-            }
+                    translatePage(option.getAttribute('data-lang'));
+                }
+            });
 
             // Initial translation
             translatePage('en');
-        });
+        }
+
+        // Initialize everything once the DOM is ready
+        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+
+        // Fallback for mobile browsers
+        window.addEventListener('load', initLanguageSwitcher);
 
         // Dynamic nav underline
         const navLinks = document.querySelectorAll('.nav-link');
