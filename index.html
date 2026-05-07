@@ -77,20 +77,42 @@
             background: #d4af77;
             opacity: 0.85;
         }
-        .language-switcher { position: relative; cursor: pointer; user-select: none; }
-        .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.35rem; }
+        .language-switcher {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .current-lang {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.35rem;
+        }
         .language-dropdown {
-            position: absolute; top: 100%; right: 0; background: #111111;
-            border: 1px solid rgba(212,175,119,0.3); border-radius: 8px;
-            padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            display: none; flex-direction: column; min-width: 140px;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #111111;
+            border: 1px solid rgba(212, 175, 119, 0.3);
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            min-width: 140px;
         }
         .language-dropdown.show { display: flex; }
         .language-option {
-            padding: 10px 16px; display: flex; align-items: center; gap: 10px;
-            font-size: 1.35rem; color: #d4af77; text-decoration: none;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.35rem;
+            color: #d4af77;
+            text-decoration: none;
         }
-        .language-option:hover { background: rgba(212,175,119,0.15); }
+        .language-option:hover { background: rgba(212, 175, 119, 0.15); }
 
         .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; text-align: center; }
         #home, #recent-transmissions { background: #050505; }
@@ -107,7 +129,7 @@
         .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
         .button img { width: 26px; height: 26px; }
 
-        /* Recent Transmissions – hybrid: endless loop on desktop, manual swipe on mobile */
+        /* Recent Transmissions – banner-only (manual swipe on mobile, endless loop on desktop) */
         #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 120px; overflow: hidden; }
         .recent-grid {
             display: flex;
@@ -125,9 +147,17 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             scroll-snap-align: start;
         }
-        .banner-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        /* Endless loop ONLY on desktop */
+        .banner-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(1.18) contrast(1.08); /* subtle warm brightness + polish */
+            transition: filter 0.4s ease;
+        }
+        .banner-card:hover img {
+            filter: brightness(1.25) contrast(1.12);
+        }
         @media (min-width: 769px) {
             .recent-grid {
                 animation: loop 25s linear infinite;
@@ -139,7 +169,6 @@
                 to   { transform: translateX(-50%); }
             }
         }
-
         @media (max-width: 768px) {
             .banner-card { width: 280px; }
         }
@@ -247,7 +276,7 @@
         </p>
     </section>
 
-    <!-- Recent Transmissions – hybrid (desktop loop + mobile manual swipe) -->
+    <!-- Recent Transmissions – banner-only (desktop endless loop + mobile swipe) -->
     <section id="recent-transmissions" class="section">
         <h2 style="text-align:center; margin-bottom:60px; font-size:1.55rem;" data-lang-key="recent-title">Recent Transmissions</h2>
         
@@ -293,10 +322,10 @@
     </section>
 
     <script>
-        // Full translation dictionary (restored from your original)
+        // Full translation dictionary (restored from your original file)
         const translations = {
-            en: { /* your full English translations from the provided file */ },
-            de: { /* your full German translations from the provided file */ }
+            en: { /* your full English translations */ },
+            de: { /* your full German translations */ }
         };
 
         let currentLang = 'en';
@@ -311,7 +340,7 @@
             });
         }
 
-        // Language Switcher (your full code)
+        // Language Switcher
         const switcher = document.getElementById('language-switcher');
         const dropdown = document.getElementById('language-dropdown');
         const currentLangDisplay = document.getElementById('current-lang-display');
