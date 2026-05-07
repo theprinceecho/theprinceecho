@@ -21,6 +21,7 @@
             background: #050505;
             color: #d4af77;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         .nav {
             position: fixed;
@@ -94,16 +95,16 @@
             max-width: 720px;
             margin: 0 auto;
             text-align: center;
+            padding-left: 24px;
+            padding-right: 24px;
         }
         
-        /* PrecisionSheets-quality mobile form integration – refined for exact left/right breathing room */
         .form-container {
-            padding: 0 24px;
-            max-width: 620px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
-        /* === EXACT MOBILE HEADER + FORM SPACING MATCH FROM PRECISIONSHEETS === */
+        /* === EXACT MOBILE SPACING MATCH FROM PRECISIONSHEETS === */
         @media (max-width: 480px) {
             .nav-links {
                 gap: 16px;
@@ -115,12 +116,11 @@
                 padding: 0 20px;
             }
             .main-content { 
-                padding-top: 100px; 
-                padding-bottom: 160px; 
+                padding: 100px 20px 160px 20px;   /* clean 20 px side breathing room */
             }
             .form-container { 
-                padding: 0 20px; 
-                max-width: 100%;          /* full-width feel on mobile */
+                padding: 0;
+                max-width: 100%;
             }
             iframe { 
                 width: 100% !important; 
@@ -177,7 +177,7 @@
         </div>
     </nav>
 
-    <!-- Contact Form -->
+    <!-- Contact Form – hero image removed (clean sovereign layout) -->
     <div class="main-content">
         <h1 data-lang-key="contact-title">Contact</h1>
         <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;" data-lang-key="contact-subtitle">
