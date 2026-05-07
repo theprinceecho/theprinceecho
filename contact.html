@@ -36,7 +36,10 @@
             padding: 0 24px;
             z-index: 100;
         }
-        .nav-logo { height: 32px; }
+        .nav-logo { 
+            height: 32px; 
+            cursor: pointer;
+        }
         .nav-links {
             display: flex;
             align-items: center;
@@ -99,9 +102,25 @@
             max-width: 620px;
             margin: 0 auto;
         }
+
+        /* === EXACT MOBILE HEADER ALIGNMENT FROM LIVE INDEX.HTML === */
         @media (max-width: 480px) {
-            .main-content { padding-top: 100px; padding-bottom: 160px; }
-            .form-container { padding: 0 20px; }   /* exact balanced breathing room matching PS */
+            .nav-links {
+                gap: 16px;
+            }
+            .current-lang {
+                font-size: 1.2rem;
+            }
+            .nav {
+                padding: 0 20px;
+            }
+            .main-content { 
+                padding-top: 100px; 
+                padding-bottom: 160px; 
+            }
+            .form-container { 
+                padding: 0 20px; 
+            }
             iframe { 
                 width: 100% !important; 
                 max-width: 100% !important; 
@@ -135,7 +154,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation – now 100% identical to index.html on mobile -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -203,15 +222,68 @@
     </section>
 
     <script>
-        const translations = { /* unchanged from last locked version */ };
+        // Full translation dictionary (kept in sync with index.html)
+        const translations = {
+            en: {
+                "nav-home": "Home",
+                "nav-about": "About",
+                "nav-recent": "Recent Transmissions",
+                "contact-title": "Contact",
+                "contact-subtitle": "A direct line for those who sense the urge.",
+                "footer-line1": "The sovereign landing page",
+                "footer-line2": "The sovereign bridge",
+                "footer-legal": "Legal disclosure",
+                "footer-contact": "Contact",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho, All rights reserved.",
+                "impressum-title": "Legal disclosure",
+                "impressum-subtitle": "Disclosure according to § 5 DDG (ex TMG)",
+                "impressum-text1": "This Landing page is currently under construction.",
+                "impressum-contact": "Contact:"
+            },
+            de: {
+                "nav-home": "Start",
+                "nav-about": "Über",
+                "nav-recent": "Neueste Übertragungen",
+                "contact-title": "Kontakt",
+                "contact-subtitle": "Eine direkte Leitung für jene, die den Drang spüren.",
+                "footer-line1": "Die souveräne Landing Page",
+                "footer-line2": "Die souveräne Brücke",
+                "footer-legal": "Impressum",
+                "footer-contact": "Kontakt",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho, Alle Rechte vorbehalten.",
+                "impressum-title": "Impressum",
+                "impressum-subtitle": "Angaben gemäß § 5 DDG (ehemals TMG)",
+                "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau.",
+                "impressum-contact": "Kontakt:"
+            }
+        };
+
         let currentLang = 'en';
-        function translatePage(lang) { /* unchanged */ }
-        // Language switcher logic (unchanged)
+
+        function translatePage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Language Switcher
         const switcher = document.getElementById('language-switcher');
         const dropdown = document.getElementById('language-dropdown');
         const currentLangDisplay = document.getElementById('current-lang-display');
-        switcher.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('show'); });
-        document.addEventListener('click', () => dropdown.classList.remove('show'));
+
+        switcher.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('show');
+        });
+
         dropdown.addEventListener('click', (e) => {
             const option = e.target.closest('.language-option');
             if (option) {
@@ -220,6 +292,8 @@
                 translatePage(option.getAttribute('data-lang'));
             }
         });
+
+        // Initial translation
         translatePage('en');
     </script>
 
