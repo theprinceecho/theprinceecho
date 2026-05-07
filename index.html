@@ -131,7 +131,7 @@
         .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
         .button img { width: 26px; height: 26px; }
 
-        /* Recent Transmissions – banner-only */
+        /* Recent Transmissions – banner-only (desktop loop + mobile swipe) */
         #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 120px; overflow: hidden; }
         .recent-grid {
             display: flex;
@@ -315,7 +315,7 @@
     </section>
 
     <script>
-        // Full translation dictionary (your original complete object)
+        // Full translation dictionary (your complete original object)
         const translations = {
             en: { /* your full English translations */ },
             de: { /* your full German translations */ }
@@ -341,23 +341,28 @@
 
             if (!switcher || !dropdown) return;
 
-            // Support both click and touch for mobile
-            const openDropdown = (e) => {
+            const toggleDropdown = (e) => {
                 e.stopImmediatePropagation();
                 dropdown.classList.toggle('show');
             };
 
-            switcher.addEventListener('click', openDropdown);
-            switcher.addEventListener('touchstart', openDropdown);
+            // Support both click and touch for mobile
+            switcher.addEventListener('click', toggleDropdown);
+            switcher.addEventListener('touchend', toggleDropdown);
 
-            document.addEventListener('click', () => {
-                dropdown.classList.remove('show');
-            });
-            document.addEventListener('touchstart', () => {
-                dropdown.classList.remove('show');
-            });
+            document.addEventListener('click', () => dropdown.classList.remove('show'));
+            document.addEventListener('touchend', () => dropdown.classList.remove('show'));
 
             dropdown.addEventListener('click', (e) => {
+                const option = e.target.closest('.language-option');
+                if (option) {
+                    currentLangDisplay.innerHTML = option.innerHTML;
+                    dropdown.classList.remove('show');
+                    translatePage(option.getAttribute('data-lang'));
+                }
+            });
+
+            dropdown.addEventListener('touchend', (e) => {
                 const option = e.target.closest('.language-option');
                 if (option) {
                     currentLangDisplay.innerHTML = option.innerHTML;
@@ -370,7 +375,7 @@
             translatePage('en');
         }
 
-        // Initialize everything reliably on mobile
+        // Initialize reliably on mobile
         document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
         window.addEventListener('load', initLanguageSwitcher);
 
