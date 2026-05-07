@@ -96,14 +96,14 @@
             text-align: center;
         }
         
-        /* PrecisionSheets-quality mobile form integration */
+        /* PrecisionSheets-quality mobile form integration – refined for exact left/right breathing room */
         .form-container {
             padding: 0 24px;
             max-width: 620px;
             margin: 0 auto;
         }
 
-        /* === EXACT MOBILE HEADER ALIGNMENT FROM LIVE INDEX.HTML === */
+        /* === EXACT MOBILE HEADER + FORM SPACING MATCH FROM PRECISIONSHEETS === */
         @media (max-width: 480px) {
             .nav-links {
                 gap: 16px;
@@ -120,10 +120,12 @@
             }
             .form-container { 
                 padding: 0 20px; 
+                max-width: 100%;          /* full-width feel on mobile */
             }
             iframe { 
                 width: 100% !important; 
                 max-width: 100% !important; 
+                display: block;
             }
         }
 
@@ -154,7 +156,7 @@
 </head>
 <body>
 
-    <!-- Navigation – now 100% identical to index.html on mobile -->
+    <!-- Navigation – pixel-identical to index.html -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
