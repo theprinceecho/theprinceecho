@@ -8,11 +8,9 @@
     <title>ThePrinceEcho • A quiet temple for those who sense the urge</title>
     <meta name="description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     
-    <!-- Canonical & Robots -->
     <link rel="canonical" href="https://theprinceecho.com">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Twitter Card -->
     <meta property="og:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta property="og:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     <meta property="og:url" content="https://theprinceecho.com">
@@ -24,7 +22,6 @@
     <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/favicon.png">
     
@@ -32,89 +29,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: #050505;
-            color: #d4af77;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(12px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 24px;
-            z-index: 100;
-        }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; overflow-x: hidden; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; height: 60px; background: rgba(5,5,5,0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
         .nav-logo { height: 32px; cursor: pointer; }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            font-size: 0.95rem;
-        }
-        .nav-links a {
-            color: #d4af77;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 4px;
-        }
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #d4af77;
-            opacity: 0.85;
-        }
-        .language-switcher {
-            position: relative;
-            cursor: pointer;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .current-lang {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 1.35rem;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #111111;
-            border: 1px solid rgba(212, 175, 119, 0.3);
-            border-radius: 8px;
-            padding: 8px 0;
-            margin-top: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            display: none;
-            flex-direction: column;
-            min-width: 140px;
-        }
+        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
+        .nav-links a { color: #d4af77; text-decoration: none; font-weight: 500; position: relative; padding-bottom: 4px; }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #d4af77; opacity: 0.85; }
+        
+        .language-switcher { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+        .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.35rem; }
+        .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
         .language-dropdown.show { display: flex; }
-        .language-option {
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.35rem;
-            color: #d4af77;
-            text-decoration: none;
-        }
-        .language-option:hover,
-        .language-option:active { background: rgba(212, 175, 119, 0.15); }
+        .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: #d4af77; text-decoration: none; }
+        .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
 
         .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; text-align: center; }
         #home, #recent-transmissions { background: #050505; }
@@ -127,65 +54,22 @@
         h2 { font-size: 1.55rem; margin-bottom: 56px; color: #d4af77; }
         .subtitle { font-size: 1.2rem; opacity: 0.92; margin-bottom: 40px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; }
 
-        .button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 280px; height: 62px; margin: 12px auto; padding: 0 32px; background: rgba(212,175,119,0.08); color: #d4af77; border-radius: 9999px; text-decoration: none; font-weight: 500; font-size: 1.12rem; border: 1px solid rgba(212,175,119,0.3); box-shadow: 0 0 45px rgba(212,175,119,0.5); transition: all 0.3s ease; line-height: 1; }
+        .button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 280px; height: 62px; margin: 12px auto; padding: 0 32px; background: rgba(212,175,119,0.08); color: #d4af77; border-radius: 9999px; text-decoration: none; font-weight: 500; font-size: 1.12rem; border: 1px solid rgba(212,175,119,0.3); box-shadow: 0 0 45px rgba(212,175,119,0.5); transition: all 0.3s ease; }
         .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
         .button img { width: 26px; height: 26px; }
 
-        /* Recent Transmissions – banner-only (desktop loop + mobile swipe) */
         #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 120px; overflow: hidden; }
-        .recent-grid {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-        }
+        .recent-grid { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
         .recent-grid::-webkit-scrollbar { display: none; }
-        .banner-card {
-            flex-shrink: 0;
-            width: 340px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            scroll-snap-align: start;
-        }
+        .banner-card { flex-shrink: 0; width: 340px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6); scroll-snap-align: start; }
         .banner-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
         @media (min-width: 769px) {
-            .recent-grid {
-                animation: loop 25s linear infinite;
-                overflow-x: hidden;
-            }
+            .recent-grid { animation: loop 25s linear infinite; overflow-x: hidden; }
             .recent-grid:hover { animation-play-state: paused; }
-            @keyframes loop {
-                from { transform: translateX(0); }
-                to   { transform: translateX(-50%); }
-            }
+            @keyframes loop { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         }
-        @media (max-width: 768px) {
-            .banner-card { width: 280px; }
-        }
-
-        .footer {
-            margin-top: 80px;
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.75;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            line-height: 1.8;
-            padding: 0 24px;
-            background: #050505;
-        }
-        .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
-        .footer img { width: 20px; height: 20px; }
-        .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
-
-        #impressum { display: none; padding: 80px 24px; background: #050505; max-width: 700px; margin: 0 auto; text-align: left; }
-        
-        /* Mobile refinements */
+        @media (max-width: 768px) { .banner-card { width: 280px; } }
         @media (max-width: 480px) {
             .logo { width: 240px; height: 240px; }
             h1 { font-size: 2.4rem; }
@@ -194,21 +78,23 @@
             .section { padding: 120px 24px 140px; }
             .nav-links { gap: 16px; }
         }
+
+        .footer { margin-top: 80px; text-align: center; font-size: 0.9rem; opacity: 0.75; display: flex; flex-direction: column; align-items: center; gap: 12px; line-height: 1.8; padding: 0 24px; background: #050505; }
+        .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .footer img { width: 20px; height: 20px; }
+        .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
+        #impressum { display: none; padding: 80px 24px; background: #050505; max-width: 700px; margin: 0 auto; text-align: left; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="nav">
-        <a href="#home">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
-        </a>
+        <a href="#home"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32"></a>
         <div class="nav-links">
             <a href="#home" class="nav-link" data-section="home" data-lang-key="nav-home">Home</a>
             <a href="#about" class="nav-link" data-section="about" data-lang-key="nav-about">About</a>
             <a href="#recent-transmissions" class="nav-link" data-section="recent" data-lang-key="nav-recent">Recent Transmissions</a>
             
-            <!-- Flag + Code Language Switcher -->
             <div class="language-switcher" id="language-switcher">
                 <span class="current-lang" id="current-lang-display">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
                 <div class="language-dropdown" id="language-dropdown">
@@ -220,105 +106,116 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
+    <!-- Home -->
     <section id="home" class="section">
-        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="theprinceecho" class="logo" width="320" height="320" decoding="async" loading="eager" fetchpriority="high">
-        <h1>ThePrinceEcho</h1>
-        <p style="font-size: 1.15rem; opacity: 0.85; max-width: 420px; margin: 0 auto 48px; line-height: 1.5;" data-lang-key="hero-subtitle">
-            A quiet temple for those who sense the urge.
-        </p>
+        <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="theprinceecho" class="logo" width="320" height="320" fetchpriority="high">
+        <h1 data-lang-key="hero-title">ThePrinceEcho</h1>
+        <p style="font-size: 1.15rem; opacity: 0.85; max-width: 420px; margin: 0 auto 48px; line-height: 1.5;" data-lang-key="hero-subtitle">A quiet temple for those who sense the urge.</p>
         
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X" width="26" height="26">
-            @theprinceecho
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X"> @theprinceecho
         </a>
-        <a href="https://theprinceecho.substack.com" target="_blank" class="button" data-lang-key="button-substack">
-            Substack Journal
-        </a>
+        <a href="https://theprinceecho.substack.com" target="_blank" class="button" data-lang-key="button-substack">Substack Journal</a>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section">
-        <h1>ThePrinceEcho</h1>
+        <h1 data-lang-key="hero-title">ThePrinceEcho</h1>
         <p class="subtitle" data-lang-key="about-subtitle">A sovereign threshold for those who sense the urge.</p>
         
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p1">
-            You have entered the temple - a sovereign space where noise falls away and clarity remains.
-        </p>
+        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p1">You have entered the temple - a sovereign space where noise falls away and clarity remains.</p>
+        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p2">A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.</p>
+        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p3">Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
         
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p2">
-            A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.
-        </p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p3">
-            Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.
-        </p>
-        
-        <h2 style="margin-top: 3rem; text-align:center;" data-lang-key="where-to-find">Where to find what</h2>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 0.8rem; line-height: 1.65;" data-lang-key="x-description">
-            <strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.
-        </p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 2.5rem; line-height: 1.65;" data-lang-key="substack-description">
-            <strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.
-        </p>
-        
-        <p style="text-align: justify; max-width: 680px; margin: 2.5rem auto 0; line-height: 1.65;" data-lang-key="about-closing">
-            If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.
-        </p>
+        <h2 data-lang-key="where-to-find">Where to find what</h2>
+        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 0.8rem; line-height: 1.65;" data-lang-key="x-description"><strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
+        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 2.5rem; line-height: 1.65;" data-lang-key="substack-description"><strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.</p>
+        <p style="text-align: justify; max-width: 680px; margin: 2.5rem auto 0; line-height: 1.65;" data-lang-key="about-closing">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
     </section>
 
-    <!-- Recent Transmissions – banner-only -->
+    <!-- Recent Transmissions -->
     <section id="recent-transmissions" class="section">
-        <h2 style="text-align:center; margin-bottom:60px; font-size:1.55rem;" data-lang-key="recent-title">Recent Transmissions</h2>
-        
+        <h2 data-lang-key="recent-title">Recent Transmissions</h2>
         <div class="recent-grid">
-            <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="Essay I">
-            </a>
-            <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="Essay II">
-            </a>
-            <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="Essay III">
-            </a>
+            <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="Essay I"></a>
+            <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="Essay II"></a>
+            <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="Essay III"></a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer + Impressum (same as before) -->
     <div class="footer">
         <div class="footer-line1">
             <span data-lang-key="footer-line1">The sovereign landing page</span>
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" width="20" height="20">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="♦" width="20" height="20">
             <span data-lang-key="footer-line2">The sovereign bridge</span>
         </div>
-        <div class="footer-line2" style="margin-top: 8px;">
-            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="color: #d4af77; text-decoration: none;" data-lang-key="footer-legal">Legal disclosure</a>
-            <span style="margin: 0 12px; opacity: 0.6">•</span>
-            <a href="contact.html" style="color: #d4af77; text-decoration: none;" data-lang-key="footer-contact">Contact</a>
+        <div>
+            <a href="#impressum" onclick="document.getElementById('impressum').style.display='block';return false;" data-lang-key="footer-legal">Legal disclosure</a>
+            <span style="margin:0 12px;opacity:0.6">•</span>
+            <a href="contact.html" data-lang-key="footer-contact">Contact</a>
         </div>
-        <div class="copyright" style="margin-top: 20px;" data-lang-key="footer-copyright">
-            Copyright © 2026 ThePrinceEcho, All rights reserved.
-        </div>
+        <div class="copyright" data-lang-key="footer-copyright">Copyright © 2026 ThePrinceEcho • All rights reserved.</div>
     </div>
 
-    <!-- Impressum -->
-    <section id="impressum" class="section" style="display:none; padding:80px 24px; background:#050505; max-width:700px; margin:0 auto; text-align:left;">
+    <section id="impressum" style="display:none;padding:80px 24px;background:#050505;max-width:700px;margin:0 auto;text-align:left;">
         <h2 data-lang-key="impressum-title">Legal disclosure</h2>
-        <br>
-        <p><strong data-lang-key="impressum-subtitle">Disclosure according to § 5 DDG (ex TMG)</strong></p>
-        <br>
+        <p data-lang-key="impressum-subtitle"><strong>Disclosure according to § 5 DDG</strong></p>
         <p data-lang-key="impressum-text1">This Landing page is currently under construction.</p>
-        <p><strong data-lang-key="impressum-contact">Contact:</strong><br>
-        E-Mail: info@theprinceecho.com</p>
     </section>
 
     <script>
-        // Full translation dictionary (your complete original object)
         const translations = {
-            en: { /* your full English translations */ },
-            de: { /* your full German translations */ }
+            en: {
+                "nav-home": "Home",
+                "nav-about": "About",
+                "nav-recent": "Recent Transmissions",
+                "hero-title": "ThePrinceEcho",
+                "hero-subtitle": "A quiet temple for those who sense the urge.",
+                "button-substack": "Substack Journal",
+                "about-subtitle": "A sovereign threshold for those who sense the urge.",
+                "about-p1": "You have entered the temple - a sovereign space where noise falls away and clarity remains.",
+                "about-p2": "A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.",
+                "about-p3": "Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.",
+                "where-to-find": "Where to find what",
+                "x-description": "<strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
+                "substack-description": "<strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.",
+                "about-closing": "If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.",
+                "recent-title": "Recent Transmissions",
+                "footer-line1": "The sovereign landing page",
+                "footer-line2": "The sovereign bridge",
+                "footer-legal": "Legal disclosure",
+                "footer-contact": "Contact",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho • All rights reserved.",
+                "impressum-title": "Legal disclosure",
+                "impressum-subtitle": "Disclosure according to § 5 DDG",
+                "impressum-text1": "This Landing page is currently under construction."
+            },
+            de: {
+                "nav-home": "Start",
+                "nav-about": "Über",
+                "nav-recent": "Letzte Sendungen",
+                "hero-title": "ThePrinceEcho",
+                "hero-subtitle": "Ein ruhiger Tempel für jene, die den Drang spüren.",
+                "button-substack": "Substack Journal",
+                "about-subtitle": "Eine souveräne Schwelle für jene, die den Drang spüren.",
+                "about-p1": "Du hast den Tempel betreten — ein souveräner Raum, in dem Lärm vergeht und Klarheit bleibt.",
+                "about-p2": "Ein ruhiger und souveräner Raum für klare Reflexionen über Makrozyklen, Souveränität, Energie-Neuordnung und die stille Konvergenz von menschlicher Intelligenz mit fortschreitender Technologie.",
+                "about-p3": "Hier findest du hochsignifikante Beobachtungen, die durch Rauschen und Ablenkung schneiden. Keine Dringlichkeit. Kein Hype. Nur präzise Einsicht.",
+                "where-to-find": "Wo du was findest",
+                "x-description": "<strong>Auf X (@ThePrinceEcho)</strong>: Der äußere Hof des Tempels — kurze, scharfe tägliche Beobachtungen und Prince Notes. Echtzeit-Funken, die entstehende Zyklen entschlüsseln und ruhige strategische Klarheit bieten.",
+                "substack-description": "<strong>Auf Substack (ThePrinceEcho)</strong>: Die innere Kammer — längere, kapitelartige Essays und tiefere Reflexionen. Für jene, die tiefer in die Architektur von Souveränität und langfristigen Mustern eintauchen möchten.",
+                "about-closing": "Falls du bereits gespürt hast, dass sich etwas Grundlegendes unter der Oberfläche verschiebt, bist du am richtigen Ort.",
+                "recent-title": "Letzte Sendungen",
+                "footer-line1": "Die souveräne Landing Page",
+                "footer-line2": "Die souveräne Brücke",
+                "footer-legal": "Rechtliche Hinweise",
+                "footer-contact": "Kontakt",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho • Alle Rechte vorbehalten.",
+                "impressum-title": "Rechtliche Hinweise",
+                "impressum-subtitle": "Angaben gemäß § 5 DDG",
+                "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau."
+            }
         };
 
         let currentLang = 'en';
@@ -333,68 +230,49 @@
             });
         }
 
-        // Robust mobile-ready language switcher
         function initLanguageSwitcher() {
             const switcher = document.getElementById('language-switcher');
             const dropdown = document.getElementById('language-dropdown');
-            const currentLangDisplay = document.getElementById('current-lang-display');
+            const currentDisplay = document.getElementById('current-lang-display');
 
-            if (!switcher || !dropdown) return;
+            if (!switcher) return;
 
-            const toggleDropdown = (e) => {
-                e.stopImmediatePropagation();
-                dropdown.classList.toggle('show');
-            };
-
-            // Support both click and touch for mobile
-            switcher.addEventListener('click', toggleDropdown);
-            switcher.addEventListener('touchend', toggleDropdown);
+            const toggle = (e) => { e.stopImmediatePropagation(); dropdown.classList.toggle('show'); };
+            switcher.addEventListener('click', toggle);
+            switcher.addEventListener('touchend', toggle);
 
             document.addEventListener('click', () => dropdown.classList.remove('show'));
             document.addEventListener('touchend', () => dropdown.classList.remove('show'));
 
-            dropdown.addEventListener('click', (e) => {
+            dropdown.addEventListener('click', handleOption);
+            dropdown.addEventListener('touchend', handleOption);
+
+            function handleOption(e) {
                 const option = e.target.closest('.language-option');
                 if (option) {
-                    currentLangDisplay.innerHTML = option.innerHTML;
+                    currentDisplay.innerHTML = option.innerHTML;
                     dropdown.classList.remove('show');
                     translatePage(option.getAttribute('data-lang'));
                 }
-            });
+            }
 
-            dropdown.addEventListener('touchend', (e) => {
-                const option = e.target.closest('.language-option');
-                if (option) {
-                    currentLangDisplay.innerHTML = option.innerHTML;
-                    dropdown.classList.remove('show');
-                    translatePage(option.getAttribute('data-lang'));
-                }
-            });
-
-            // Initial translation
             translatePage('en');
         }
 
-        // Initialize reliably on mobile
         document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
         window.addEventListener('load', initLanguageSwitcher);
 
-        // Dynamic nav underline
+        // Dynamic active nav (unchanged)
         const navLinks = document.querySelectorAll('.nav-link');
         function setActiveNav() {
             const scrollY = window.scrollY + 200;
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (scrollY < 400) {
-                document.querySelector('[data-section="home"]').classList.add('active');
-            } else if (document.getElementById('about') && scrollY < document.getElementById('about').offsetTop + 400) {
-                document.querySelector('[data-section="about"]').classList.add('active');
-            } else {
-                document.querySelector('[data-section="recent"]').classList.add('active');
-            }
+            navLinks.forEach(l => l.classList.remove('active'));
+            if (scrollY < 400) document.querySelector('[data-section="home"]').classList.add('active');
+            else if (scrollY < document.getElementById('about').offsetTop + 400) document.querySelector('[data-section="about"]').classList.add('active');
+            else document.querySelector('[data-section="recent"]').classList.add('active');
         }
         window.addEventListener('scroll', setActiveNav);
         setActiveNav();
     </script>
-
 </body>
 </html>
