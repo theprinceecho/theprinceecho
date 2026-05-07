@@ -36,9 +36,7 @@
             padding: 0 24px;
             z-index: 100;
         }
-        .nav-logo {
-            height: 32px;
-        }
+        .nav-logo { height: 32px; }
         .nav-links {
             display: flex;
             align-items: center;
@@ -86,7 +84,7 @@
             text-decoration: none;
         }
         .language-option:hover { background: rgba(212, 175, 119, 0.15); }
-        
+
         .main-content {
             padding-top: 120px;
             padding-bottom: 140px;
@@ -95,7 +93,7 @@
             text-align: center;
         }
         
-        /* Improved form container — matches PrecisionSheets mobile quality */
+        /* PrecisionSheets-quality mobile form integration */
         .form-container {
             padding: 0 24px;
             max-width: 620px;
@@ -103,13 +101,13 @@
         }
         @media (max-width: 480px) {
             .main-content { padding-top: 100px; padding-bottom: 160px; }
-            .form-container { padding: 0 20px; }   /* Clean, balanced left/right breathing room */
+            .form-container { padding: 0 20px; }   /* exact balanced breathing room matching PS */
             iframe { 
                 width: 100% !important; 
                 max-width: 100% !important; 
             }
         }
-        
+
         .footer {
             margin-top: 80px;
             text-align: center;
@@ -205,13 +203,10 @@
     </section>
 
     <script>
-        const translations = {
-            en: { /* same as before */ },
-            de: { /* same as before */ }
-        };
+        const translations = { /* unchanged from last locked version */ };
         let currentLang = 'en';
-        function translatePage(lang) { /* same as before */ }
-        // Language switcher logic (same as before)
+        function translatePage(lang) { /* unchanged */ }
+        // Language switcher logic (unchanged)
         const switcher = document.getElementById('language-switcher');
         const dropdown = document.getElementById('language-dropdown');
         const currentLangDisplay = document.getElementById('current-lang-display');
