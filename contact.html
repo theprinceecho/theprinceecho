@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Contact • ThePrinceEcho</title>
     <meta name="description" content="A direct line for those who sense the urge.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/favicon.png">
@@ -16,14 +16,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
+        body { 
             font-family: 'Inter', system-ui, sans-serif;
             background: #050505;
             color: #d4af77;
             min-height: 100vh;
-            overflow-x: hidden;
         }
-        .nav {
+        .nav { 
             position: fixed;
             top: 0;
             left: 0;
@@ -37,10 +36,7 @@
             padding: 0 24px;
             z-index: 100;
         }
-        .nav-logo { 
-            height: 32px; 
-            cursor: pointer;
-        }
+        .nav-logo { height: 32px; cursor: pointer; }
         .nav-links {
             display: flex;
             align-items: center;
@@ -52,95 +48,99 @@
             text-decoration: none;
             font-weight: 500;
         }
-        .language-switcher {
-            position: relative;
-            cursor: pointer;
-            user-select: none;
+        .language-switcher { 
+            position: relative; 
+            cursor: pointer; 
+            user-select: none; 
+            -webkit-tap-highlight-color: transparent;
         }
-        .current-lang {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 1.35rem;
+        .current-lang { 
+            display: flex; 
+            align-items: center; 
+            gap: 6px; 
+            font-size: 1.35rem; 
         }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #111111;
-            border: 1px solid rgba(212, 175, 119, 0.3);
-            border-radius: 8px;
-            padding: 8px 0;
-            margin-top: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            display: none;
-            flex-direction: column;
-            min-width: 140px;
+        .language-dropdown { 
+            position: absolute; 
+            top: 100%; 
+            right: 0; 
+            background: #111111; 
+            border: 1px solid rgba(212,175,119,0.3); 
+            border-radius: 8px; 
+            padding: 8px 0; 
+            margin-top: 8px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            display: none; 
+            flex-direction: column; 
+            min-width: 140px; 
         }
         .language-dropdown.show { display: flex; }
-        .language-option {
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.35rem;
-            color: #d4af77;
-            text-decoration: none;
+        .language-option { 
+            padding: 10px 16px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            font-size: 1.35rem; 
+            color: #d4af77; 
+            text-decoration: none; 
         }
-        .language-option:hover { background: rgba(212, 175, 119, 0.15); }
+        .language-option:hover, .language-option:active { 
+            background: rgba(212,175,119,0.15); 
+        }
 
         .main-content {
             padding-top: 120px;
-            padding-bottom: 140px;
+            padding-bottom: 100px;
             max-width: 720px;
             margin: 0 auto;
             text-align: center;
-            padding-left: 24px;
-            padding-right: 24px;
         }
         
         .form-container {
-            max-width: 100%;
+            padding: 0 24px;
+            max-width: 620px;
             margin: 0 auto;
         }
 
-        /* === EXACT MOBILE SPACING MATCH FROM PRECISIONSHEETS === */
+        /* Improved Mobile Spacing – PrecisionSheets quality */
         @media (max-width: 480px) {
-            .nav-links {
-                gap: 16px;
-            }
-            .current-lang {
-                font-size: 1.2rem;
-            }
             .nav {
                 padding: 0 20px;
             }
+            .nav-links {
+                gap: 18px;
+            }
             .main-content { 
-                padding: 100px 20px 160px 20px;   /* clean 20 px side breathing room */
+                padding-top: 108px; 
+                padding-bottom: 80px; 
             }
             .form-container { 
-                padding: 0;
-                max-width: 100%;
+                padding: 0 20px; 
             }
             iframe { 
                 width: 100% !important; 
                 max-width: 100% !important; 
-                display: block;
             }
         }
 
-        .footer {
-            margin-top: 80px;
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.75;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            line-height: 1.8;
+        .footer { 
+            margin-top: 80px; 
+            text-align: center; 
+            font-size: 0.9rem; 
+            opacity: 0.75; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 12px; 
+            line-height: 1.8; 
             padding: 0 24px;
+            background: #050505;
         }
+        .footer a { 
+            color: #d4af77 !important; 
+            text-decoration: none; 
+        }
+        .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
         .footer img { width: 20px; height: 20px; }
         .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
         
@@ -156,7 +156,7 @@
 </head>
 <body>
 
-    <!-- Navigation – pixel-identical to index.html -->
+    <!-- Navigation – identical to index.html -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -177,7 +177,7 @@
         </div>
     </nav>
 
-    <!-- Contact Form – hero image removed (clean sovereign layout) -->
+    <!-- Contact Form -->
     <div class="main-content">
         <h1 data-lang-key="contact-title">Contact</h1>
         <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;" data-lang-key="contact-subtitle">
@@ -187,7 +187,7 @@
         <div class="form-container">
             <iframe src="https://tally.so/r/44NWYd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
                     width="100%" 
-                    height="1500" 
+                    height="1400" 
                     frameborder="0" 
                     scrolling="no"
                     style="border: none; background: transparent; display: block;">
@@ -195,36 +195,30 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer – identical to index.html -->
     <div class="footer">
         <div class="footer-line1">
             <span data-lang-key="footer-line1">The sovereign landing page</span>
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="Diamond" width="20" height="20">
+            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="♦" width="20" height="20">
             <span data-lang-key="footer-line2">The sovereign bridge</span>
         </div>
-        <div class="footer-line2" style="margin-top: 8px;">
-            <a href="#impressum" onclick="document.getElementById('impressum').style.display = 'block'; return false;" style="color: #d4af77; text-decoration: none;" data-lang-key="footer-legal">Legal disclosure</a>
-            <span style="margin: 0 12px; opacity: 0.6">•</span>
-            <a href="contact.html" style="color: #d4af77; text-decoration: none;" data-lang-key="footer-contact">Contact</a>
+        <div>
+            <a href="#impressum" onclick="document.getElementById('impressum').style.display='block';return false;" data-lang-key="footer-legal">Legal disclosure</a>
+            <span style="margin:0 12px;opacity:0.6">•</span>
+            <a href="contact.html" data-lang-key="footer-contact">Contact</a>
         </div>
-        <div class="copyright" style="margin-top: 20px;" data-lang-key="footer-copyright">
-            Copyright © 2026 ThePrinceEcho, All rights reserved.
-        </div>
+        <div class="copyright" data-lang-key="footer-copyright">Copyright © 2026 ThePrinceEcho • All rights reserved.</div>
     </div>
 
     <!-- Impressum -->
-    <section id="impressum" style="display:none; padding:80px 24px; background:#050505; max-width:700px; margin:0 auto; text-align:left;">
+    <section id="impressum" style="display:none;padding:80px 24px;background:#050505;max-width:700px;margin:0 auto;text-align:left;">
         <h2 data-lang-key="impressum-title">Legal disclosure</h2>
-        <br>
-        <p><strong data-lang-key="impressum-subtitle">Disclosure according to § 5 DDG (ex TMG)</strong></p>
-        <br>
+        <p data-lang-key="impressum-subtitle"><strong>Disclosure according to § 5 DDG</strong></p>
         <p data-lang-key="impressum-text1">This Landing page is currently under construction.</p>
-        <p><strong data-lang-key="impressum-contact">Contact:</strong><br>
-        E-Mail: info@theprinceecho.com</p>
     </section>
 
     <script>
-        // Full translation dictionary (kept in sync with index.html)
+        // Translation dictionary (synced with index.html)
         const translations = {
             en: {
                 "nav-home": "Home",
@@ -236,11 +230,10 @@
                 "footer-line2": "The sovereign bridge",
                 "footer-legal": "Legal disclosure",
                 "footer-contact": "Contact",
-                "footer-copyright": "Copyright © 2026 ThePrinceEcho, All rights reserved.",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho • All rights reserved.",
                 "impressum-title": "Legal disclosure",
-                "impressum-subtitle": "Disclosure according to § 5 DDG (ex TMG)",
-                "impressum-text1": "This Landing page is currently under construction.",
-                "impressum-contact": "Contact:"
+                "impressum-subtitle": "Disclosure according to § 5 DDG",
+                "impressum-text1": "This Landing page is currently under construction."
             },
             de: {
                 "nav-home": "Start",
@@ -252,11 +245,10 @@
                 "footer-line2": "Die souveräne Brücke",
                 "footer-legal": "Impressum",
                 "footer-contact": "Kontakt",
-                "footer-copyright": "Copyright © 2026 ThePrinceEcho, Alle Rechte vorbehalten.",
+                "footer-copyright": "Copyright © 2026 ThePrinceEcho • Alle Rechte vorbehalten.",
                 "impressum-title": "Impressum",
-                "impressum-subtitle": "Angaben gemäß § 5 DDG (ehemals TMG)",
-                "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau.",
-                "impressum-contact": "Kontakt:"
+                "impressum-subtitle": "Angaben gemäß § 5 DDG",
+                "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau."
             }
         };
 
@@ -272,31 +264,38 @@
             });
         }
 
-        // Language Switcher
-        const switcher = document.getElementById('language-switcher');
-        const dropdown = document.getElementById('language-dropdown');
-        const currentLangDisplay = document.getElementById('current-lang-display');
+        function initLanguageSwitcher() {
+            const switcher = document.getElementById('language-switcher');
+            const dropdown = document.getElementById('language-dropdown');
+            const currentDisplay = document.getElementById('current-lang-display');
+            if (!switcher) return;
 
-        switcher.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdown.classList.toggle('show');
-        });
+            const toggle = (e) => { 
+                e.stopImmediatePropagation(); 
+                dropdown.classList.toggle('show'); 
+            };
+            switcher.addEventListener('click', toggle);
+            switcher.addEventListener('touchend', toggle);
 
-        document.addEventListener('click', () => {
-            dropdown.classList.remove('show');
-        });
+            document.addEventListener('click', () => dropdown.classList.remove('show'));
+            document.addEventListener('touchend', () => dropdown.classList.remove('show'));
 
-        dropdown.addEventListener('click', (e) => {
-            const option = e.target.closest('.language-option');
-            if (option) {
-                currentLangDisplay.innerHTML = option.innerHTML;
-                dropdown.classList.remove('show');
-                translatePage(option.getAttribute('data-lang'));
-            }
-        });
+            const handleOption = (e) => {
+                const option = e.target.closest('.language-option');
+                if (option) {
+                    currentDisplay.innerHTML = option.innerHTML;
+                    dropdown.classList.remove('show');
+                    translatePage(option.getAttribute('data-lang'));
+                }
+            };
+            dropdown.addEventListener('click', handleOption);
+            dropdown.addEventListener('touchend', handleOption);
 
-        // Initial translation
-        translatePage('en');
+            translatePage('en');
+        }
+
+        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+        window.addEventListener('load', initLanguageSwitcher);
     </script>
 
 </body>
