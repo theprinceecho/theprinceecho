@@ -96,13 +96,20 @@
             text-align: center;
         }
         
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 28px;
+        }
+        
         .form-container {
             padding: 0 24px;
             max-width: 620px;
             margin: 0 auto;
         }
 
-        /* Improved Mobile Spacing – PrecisionSheets quality */
+        /* PrecisionSheets-level Mobile Spacing – final refinement */
         @media (max-width: 480px) {
             .nav {
                 padding: 0 20px;
@@ -111,8 +118,16 @@
                 gap: 18px;
             }
             .main-content { 
-                padding-top: 108px; 
-                padding-bottom: 80px; 
+                padding-top: 160px; 
+                padding-bottom: 140px; 
+            }
+            h1 {
+                font-size: 2.6rem;
+                margin-bottom: 24px;
+            }
+            .main-content p {
+                margin-bottom: 52px;
+                font-size: 1.18rem;
             }
             .form-container { 
                 padding: 0 20px; 
