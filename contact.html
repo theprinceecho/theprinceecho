@@ -91,7 +91,7 @@
         .main-content {
             padding-top: 120px;
             padding-bottom: 100px;
-            max-width: 720px;
+            max-width: 1080px;
             margin: 0 auto;
             text-align: center;
         }
@@ -104,50 +104,29 @@
         }
         
         .form-container {
-            padding: 0 24px;
-            max-width: 620px;
+            padding: 0 40px;
+            max-width: 920px;
             margin: 0 auto;
         }
 
-        /* Desktop refinement – wider container to eliminate left/right cutoff on hero image + form */
-        @media (min-width: 769px) {
-            .main-content {
-                max-width: 1080px;
-            }
-            .form-container {
-                max-width: 920px;
-                padding: 0 40px;
-            }
+        /* Desktop refinement – perfect breathing room for new Tally form */
+        @media (max-width: 1080px) {
+            .main-content { max-width: 920px; }
+            .form-container { padding: 0 32px; }
         }
 
-        /* PrecisionSheets-level Mobile Spacing – preserved */
+        /* PrecisionSheets-level Mobile Spacing */
         @media (max-width: 480px) {
-            .nav {
-                padding: 0 20px;
-            }
-            .nav-links {
-                gap: 18px;
-            }
+            .nav { padding: 0 20px; }
+            .nav-links { gap: 18px; }
             .main-content { 
-                padding-top: 160px; 
-                padding-bottom: 320px; 
+                padding-top: 140px; 
+                padding-bottom: 280px; 
             }
-            h1 {
-                font-size: 2.6rem;
-                margin-bottom: 24px;
-            }
-            .main-content p {
-                margin-bottom: 52px;
-                font-size: 1.18rem;
-            }
-            .form-container { 
-                padding: 0 20px; 
-                margin-bottom: 40px;
-            }
-            iframe { 
-                width: 100% !important; 
-                max-width: 100% !important; 
-            }
+            h1 { font-size: 2.55rem; margin-bottom: 22px; }
+            .main-content p { margin-bottom: 48px; font-size: 1.17rem; }
+            .form-container { padding: 0 20px; margin-bottom: 40px; }
+            iframe { width: 100% !important; max-width: 100% !important; }
         }
 
         .footer { 
@@ -163,10 +142,7 @@
             padding: 0 24px;
             background: #050505;
         }
-        .footer a { 
-            color: #d4af77 !important; 
-            text-decoration: none; 
-        }
+        .footer a { color: #d4af77 !important; text-decoration: none; }
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
         .footer img { width: 20px; height: 20px; }
         .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
@@ -204,7 +180,7 @@
         </div>
     </nav>
 
-    <!-- Contact Form -->
+    <!-- Contact Form – New Tally Form -->
     <div class="main-content">
         <h1 data-lang-key="contact-title">Contact</h1>
         <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;" data-lang-key="contact-subtitle">
@@ -212,9 +188,9 @@
         </p>
         
         <div class="form-container">
-            <iframe src="https://tally.so/r/44NWYd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+            <iframe src="https://tally.so/embed/A7AjNe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
                     width="100%" 
-                    height="1400" 
+                    height="1200" 
                     frameborder="0" 
                     scrolling="no"
                     style="border: none; background: transparent; display: block;">
