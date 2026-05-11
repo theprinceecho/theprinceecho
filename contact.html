@@ -115,13 +115,13 @@
             .form-container { padding: 0 32px; }
         }
 
-        /* Mobile Spacing */
+        /* PrecisionSheets-level Mobile Spacing – refined tighter bottom spacing */
         @media (max-width: 480px) {
             .nav { padding: 0 20px; }
             .nav-links { gap: 18px; }
             .main-content { 
                 padding-top: 140px; 
-                padding-bottom: 320px; 
+                padding-bottom: 180px; 
             }
             h1 { font-size: 2.55rem; margin-bottom: 22px; }
             .main-content p { margin-bottom: 48px; font-size: 1.17rem; }
@@ -159,7 +159,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation – identical to index.html -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -180,7 +180,7 @@
         </div>
     </nav>
 
-    <!-- Contact Form -->
+    <!-- Contact Form – New Tally Form -->
     <div class="main-content">
         <h1 data-lang-key="contact-title">Contact</h1>
         <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;" data-lang-key="contact-subtitle">
@@ -198,7 +198,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer – identical to index.html -->
     <div class="footer">
         <div class="footer-line1">
             <span data-lang-key="footer-line1">The sovereign landing page</span>
@@ -221,6 +221,7 @@
     </section>
 
     <script>
+        // Translation dictionary (synced with index.html)
         const translations = {
             en: {
                 "nav-home": "Home",
