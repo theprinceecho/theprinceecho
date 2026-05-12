@@ -59,17 +59,44 @@
         .button img { width: 26px; height: 26px; }
 
         #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 120px; overflow: hidden; }
-        .recent-grid { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-        .recent-grid::-webkit-scrollbar { display: none; }
-        .banner-card { flex-shrink: 0; width: 340px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6); scroll-snap-align: start; }
-        .banner-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        @media (min-width: 769px) {
-            .recent-grid { animation: loop 25s linear infinite; overflow-x: hidden; }
-            .recent-grid:hover { animation-play-state: paused; }
-            @keyframes loop { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .recent-grid { 
+            display: flex; 
+            gap: 24px; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            scrollbar-width: none; 
         }
-        @media (max-width: 768px) { .banner-card { width: 280px; } }
+        .recent-grid::-webkit-scrollbar { display: none; }
+        .banner-card { 
+            flex-shrink: 0; 
+            width: 340px; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            scroll-snap-align: start; 
+        }
+        .banner-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block; 
+        }
+
+        /* Desktop marquee – seamless infinite loop */
+        @media (min-width: 769px) {
+            .recent-grid { 
+                animation: loop 28s linear infinite; 
+                overflow-x: hidden; 
+            }
+            .recent-grid:hover { animation-play-state: paused; }
+            @keyframes loop { 
+                from { transform: translateX(0); } 
+                to { transform: translateX(-50%); } 
+            }
+        }
+        @media (max-width: 768px) { 
+            .banner-card { width: 280px; } 
+        }
         @media (max-width: 480px) {
             .logo { width: 240px; height: 240px; }
             h1 { font-size: 2.4rem; }
@@ -150,12 +177,33 @@
     <section id="recent-transmissions" class="section">
         <h2 data-lang-key="recent-title">Recent Transmissions</h2>
         <div class="recent-grid">
-            <!-- Newest essay – added as first card to maintain “recent first” order -->
-            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV"></a>
-            
-            <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="Essay I"></a>
-            <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="Essay II"></a>
-            <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="Essay III"></a>
+            <!-- Newest first – duplicated for seamless infinite marquee on desktop -->
+            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="The Friction of Fracture">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="The Mirror of the Will">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="The Phoenix Algorithm">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="The Signal Steps Into the Light">
+            </a>
+
+            <!-- Duplicate set for perfect seamless loop -->
+            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="The Friction of Fracture">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="The Mirror of the Will">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="The Phoenix Algorithm">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="The Signal Steps Into the Light">
+            </a>
         </div>
     </section>
 
@@ -187,7 +235,7 @@
                 "button-substack": "Substack Journal",
                 "about-subtitle": "A sovereign threshold for those who sense the urge.",
                 "about-p1": "You have entered the temple - a sovereign space where noise falls away and clarity remains.",
-                "about-p2": "A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realalignment, and the quiet convergence of human intelligence with advancing technology.",
+                "about-p2": "A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.",
                 "about-p3": "Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.",
                 "where-to-find": "Where to find what",
                 "x-description": "<strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
