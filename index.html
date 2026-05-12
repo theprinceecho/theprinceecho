@@ -58,19 +58,29 @@
         .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
         .button img { width: 26px; height: 26px; }
 
-        #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 120px; overflow: hidden; }
+        #recent-transmissions { 
+            background: #050505; 
+            max-width: none; 
+            margin: 0; 
+            padding: 100px 24px 120px; 
+            overflow: hidden; 
+        }
         .recent-grid { 
             display: flex; 
             gap: 24px; 
+            padding: 0 12px; 
             overflow-x: auto; 
             scroll-snap-type: x mandatory; 
             scrollbar-width: none; 
         }
         .recent-grid::-webkit-scrollbar { display: none; }
+        
+        /* REFINED FOR MOBILE – Card IV now perfectly visible */
         .banner-card { 
             flex-shrink: 0; 
-            width: 340px; 
-            border-radius: 16px; 
+            width: 355px; 
+            height: 500px;           /* increased for full visibility of all banners on mobile */
+            border-radius: 18px; 
             overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
             scroll-snap-align: start; 
@@ -80,12 +90,13 @@
             height: 100%; 
             object-fit: cover; 
             display: block; 
+            object-position: top center;   /* ensures top text is always visible first */
         }
 
         /* Desktop marquee – seamless infinite loop */
         @media (min-width: 769px) {
             .recent-grid { 
-                animation: loop 28s linear infinite; 
+                animation: loop 32s linear infinite; 
                 overflow-x: hidden; 
             }
             .recent-grid:hover { animation-play-state: paused; }
@@ -95,7 +106,11 @@
             }
         }
         @media (max-width: 768px) { 
-            .banner-card { width: 280px; } 
+            .banner-card { 
+                width: 295px; 
+                height: 410px;       /* taller mobile version for Card IV */
+            } 
+            .recent-grid { padding: 0 8px; }
         }
         @media (max-width: 480px) {
             .logo { width: 240px; height: 240px; }
@@ -177,32 +192,32 @@
     <section id="recent-transmissions" class="section">
         <h2 data-lang-key="recent-title">Recent Transmissions</h2>
         <div class="recent-grid">
-            <!-- Newest first – duplicated for seamless infinite marquee on desktop -->
-            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="The Friction of Fracture">
-            </a>
+            <!-- Ordered: older → newest on far right -->
             <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="The Mirror of the Will">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="Essay I - The Mirror of the Will">
             </a>
             <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="The Phoenix Algorithm">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="Essay II - The Phoenix Algorithm">
             </a>
             <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="The Signal Steps Into the Light">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="Essay III - The Signal Steps Into the Light">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture">
             </a>
 
-            <!-- Duplicate set for perfect seamless loop -->
-            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="The Friction of Fracture">
-            </a>
+            <!-- Duplicate set for seamless infinite loop -->
             <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="The Mirror of the Will">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror.JPG" alt="Essay I - The Mirror of the Will">
             </a>
             <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="The Phoenix Algorithm">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix.JPG" alt="Essay II - The Phoenix Algorithm">
             </a>
             <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="The Signal Steps Into the Light">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal.JPG" alt="Essay III - The Signal Steps Into the Light">
+            </a>
+            <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture">
             </a>
         </div>
     </section>
