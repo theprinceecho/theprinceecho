@@ -45,7 +45,7 @@
 
         .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; text-align: center; }
         #home, #recent-transmissions { background: #050505; }
-        #about { background: #111111; max-width: none; margin: 0; padding: 100px 24px 45px; }
+        #about { background: #111111; max-width: none; margin: 0; padding: 120px 24px 100px; }
 
         .logo { width: 320px; height: 320px; border-radius: 24px; box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); margin: 0 auto 24px; display: block; object-fit: contain; animation: subtle-glow 8s ease-in-out infinite; }
         @keyframes subtle-glow { 0%,100% { box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); } 50% { box-shadow: 0 0 110px rgba(212,175,119,0.85), 0 0 180px rgba(212,175,119,0.45); } }
@@ -57,6 +57,102 @@
         .button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 280px; height: 62px; margin: 12px auto; padding: 0 32px; background: rgba(212,175,119,0.08); color: #d4af77; border-radius: 9999px; text-decoration: none; font-weight: 500; font-size: 1.12rem; border: 1px solid rgba(212,175,119,0.3); box-shadow: 0 0 45px rgba(212,175,119,0.5); transition: all 0.3s ease; }
         .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
         .button img { width: 26px; height: 26px; }
+
+        /* NEW THRESHOLD DESIGN – About section */
+        .about-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .threshold-left {
+            text-align: left;
+        }
+        .threshold-left h1 {
+            font-size: 2.8rem;
+            letter-spacing: -1.4px;
+            color: #d4af77;
+            margin-bottom: 16px;
+        }
+        .threshold-left .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            text-align: left;
+            max-width: none;
+        }
+        .threshold-left p {
+            text-align: left;
+            max-width: none;
+            line-height: 1.65;
+            margin-bottom: 28px;
+            font-size: 1.05rem;
+        }
+        .threshold-left hr {
+            border: none;
+            height: 1px;
+            background: rgba(212,175,119,0.2);
+            margin: 48px 0;
+        }
+        .where-to-find {
+            text-align: left;
+        }
+        .where-to-find h3 {
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 24px;
+        }
+        .find-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212,175,119,0.15);
+        }
+        .find-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(212,175,119,0.15);
+            border-color: rgba(212,175,119,0.4);
+        }
+        .find-card .icon {
+            width: 42px;
+            height: 42px;
+            background: #d4af77;
+            color: #050505;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        .find-card h4 {
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+            color: #d4af77;
+        }
+        .find-card p {
+            text-align: left;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .find-card a {
+            color: #d4af77;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .find-card a:hover {
+            text-decoration: underline;
+        }
 
         #recent-transmissions { 
             background: #050505; 
@@ -75,11 +171,10 @@
         }
         .recent-grid::-webkit-scrollbar { display: none; }
         
-        /* REFINED FOR MOBILE – Card IV now perfectly visible */
         .banner-card { 
             flex-shrink: 0; 
             width: 355px; 
-            height: 500px;           /* increased for full visibility of all banners on mobile */
+            height: 500px; 
             border-radius: 18px; 
             overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
@@ -90,10 +185,9 @@
             height: 100%; 
             object-fit: cover; 
             display: block; 
-            object-position: top center;   /* ensures top text is always visible first */
+            object-position: top center; 
         }
 
-        /* Desktop marquee – seamless infinite loop */
         @media (min-width: 769px) {
             .recent-grid { 
                 animation: loop 32s linear infinite; 
@@ -106,9 +200,10 @@
             }
         }
         @media (max-width: 768px) { 
+            .about-container { grid-template-columns: 1fr; gap: 60px; }
             .banner-card { 
                 width: 295px; 
-                height: 410px;       /* taller mobile version for Card IV */
+                height: 410px; 
             } 
             .recent-grid { padding: 0 8px; }
         }
@@ -176,17 +271,45 @@
         <a href="https://theprinceecho.substack.com" target="_blank" class="button" data-lang-key="button-substack">Substack Journal</a>
     </section>
 
+    <!-- NEW THRESHOLD DESIGN – About section -->
     <section id="about" class="section">
-        <h1 data-lang-key="hero-title">ThePrinceEcho</h1>
-        <p class="subtitle" data-lang-key="about-subtitle">A sovereign threshold for those who sense the urge.</p>
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p1">You have entered the temple - a sovereign space where noise falls away and clarity remains.</p>
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p2">A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.</p>
-        <p style="text-align: justify; max-width: 680px; margin: 0 auto 2rem; line-height: 1.65;" data-lang-key="about-p3">Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
-        
-        <h2 data-lang-key="where-to-find">Where to find what</h2>
-        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 0.8rem; line-height: 1.65;" data-lang-key="x-description"><strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
-        <p style="text-align: justify; max-width: 680px; margin: 1rem auto 2.5rem; line-height: 1.65;" data-lang-key="substack-description"><strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.</p>
-        <p style="text-align: justify; max-width: 680px; margin: 2.5rem auto 0; line-height: 1.65;" data-lang-key="about-closing">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
+        <div class="about-container">
+            
+            <!-- Left column: The Threshold text -->
+            <div class="threshold-left">
+                <h1 data-lang-key="threshold-title">The Threshold</h1>
+                <p class="subtitle" data-lang-key="about-subtitle">A sovereign threshold for those who sense the urge.</p>
+                
+                <p data-lang-key="about-p1">You have entered the temple – a sovereign space where noise falls away and clarity remains.</p>
+                <p data-lang-key="about-p2">A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.</p>
+                <p data-lang-key="about-p3">Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
+                
+                <hr>
+                
+                <p data-lang-key="about-closing">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
+            </div>
+
+            <!-- Right column: Where to find what -->
+            <div class="where-to-find">
+                <h3 data-lang-key="where-to-find">WHERE TO FIND WHAT</h3>
+                
+                <!-- X Card -->
+                <div class="find-card">
+                    <div class="icon">𝕏</div>
+                    <h4 data-lang-key="x-title">On X (@ThePrinceEcho)</h4>
+                    <p data-lang-key="x-description">The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
+                    <a href="https://x.com/theprinceecho" target="_blank" data-lang-key="x-link">Access the outer court →</a>
+                </div>
+                
+                <!-- Substack Card -->
+                <div class="find-card">
+                    <div class="icon">📖</div>
+                    <h4 data-lang-key="substack-title">On Substack (ThePrinceEcho)</h4>
+                    <p data-lang-key="substack-description">The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.</p>
+                    <a href="https://theprinceecho.substack.com" target="_blank" data-lang-key="substack-link">Enter the inner chamber →</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="recent-transmissions" class="section">
@@ -248,14 +371,19 @@
                 "nav-home": "Home", "nav-about": "About", "nav-recent": "Recent Transmissions",
                 "hero-title": "ThePrinceEcho", "hero-subtitle": "A quiet temple for those who sense the urge.",
                 "button-substack": "Substack Journal",
+                "threshold-title": "The Threshold",
                 "about-subtitle": "A sovereign threshold for those who sense the urge.",
-                "about-p1": "You have entered the temple - a sovereign space where noise falls away and clarity remains.",
+                "about-p1": "You have entered the temple – a sovereign space where noise falls away and clarity remains.",
                 "about-p2": "A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.",
                 "about-p3": "Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.",
-                "where-to-find": "Where to find what",
-                "x-description": "<strong>On X (@ThePrinceEcho)</strong>: The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
-                "substack-description": "<strong>On Substack (ThePrinceEcho)</strong>: The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.",
                 "about-closing": "If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.",
+                "where-to-find": "WHERE TO FIND WHAT",
+                "x-title": "On X (@ThePrinceEcho)",
+                "x-description": "The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
+                "x-link": "Access the outer court →",
+                "substack-title": "On Substack (ThePrinceEcho)",
+                "substack-description": "The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.",
+                "substack-link": "Enter the inner chamber →",
                 "recent-title": "Recent Transmissions",
                 "footer-line1": "The sovereign landing page", "footer-line2": "The sovereign bridge",
                 "footer-legal": "Legal disclosure", "footer-contact": "Contact",
@@ -267,14 +395,19 @@
                 "nav-home": "Start", "nav-about": "Über", "nav-recent": "Letzte Sendungen",
                 "hero-title": "ThePrinceEcho", "hero-subtitle": "Ein ruhiger Tempel für jene, die den Drang spüren.",
                 "button-substack": "Substack Journal",
+                "threshold-title": "Die Schwelle",
                 "about-subtitle": "Eine souveräne Schwelle für jene, die den Drang spüren.",
                 "about-p1": "Du hast den Tempel betreten — ein souveräner Raum, in dem Lärm vergeht und Klarheit bleibt.",
                 "about-p2": "Ein ruhiger und souveräner Raum für klare Reflexionen über Makrozyklen, Souveränität, Energie-Neuordnung und die stille Konvergenz von menschlicher Intelligenz mit fortschreitender Technologie.",
                 "about-p3": "Hier findest du hochsignifikante Beobachtungen, die durch Rauschen und Ablenkung schneiden. Keine Dringlichkeit. Kein Hype. Nur präzise Einsicht.",
-                "where-to-find": "Wo du was findest",
-                "x-description": "<strong>Auf X (@ThePrinceEcho)</strong>: Der äußere Hof des Tempels — kurze, scharfe tägliche Beobachtungen und Prince Notes. Echtzeit-Funken, die entstehende Zyklen entschlüsseln und ruhige strategische Klarheit bieten.",
-                "substack-description": "<strong>Auf Substack (ThePrinceEcho)</strong>: Die innere Kammer — längere, kapitelartige Essays und tiefere Reflexionen. Für jene, die tiefer in die Architektur von Souveränität und langfristigen Mustern eintauchen möchten.",
                 "about-closing": "Falls du bereits gespürt hast, dass sich etwas Grundlegendes unter der Oberfläche verschiebt, bist du am richtigen Ort.",
+                "where-to-find": "WO DU WAS FINDEST",
+                "x-title": "Auf X (@ThePrinceEcho)",
+                "x-description": "Der äußere Hof des Tempels — kurze, scharfe tägliche Beobachtungen und Prince Notes. Echtzeit-Funken, die entstehende Zyklen entschlüsseln und ruhige strategische Klarheit bieten.",
+                "x-link": "Zum äußeren Hof →",
+                "substack-title": "Auf Substack (ThePrinceEcho)",
+                "substack-description": "Die innere Kammer — längere, kapitelartige Essays und tiefere Reflexionen. Für jene, die tiefer in die Architektur von Souveränität und langfristigen Mustern eintauchen möchten.",
+                "substack-link": "Zur inneren Kammer →",
                 "recent-title": "Letzte Sendungen",
                 "footer-line1": "Die souveräne Landing Page", "footer-line2": "Die souveräne Brücke",
                 "footer-legal": "Rechtliche Hinweise", "footer-contact": "Kontakt",
