@@ -7,22 +7,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Contact • ThePrinceEcho</title>
     <meta name="description" content="A direct line for those who sense the urge.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/favicon.png">
-    
+   
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        
+       
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Inter', system-ui, sans-serif;
             background: #050505;
             color: #d4af77;
             min-height: 100vh;
         }
-        .nav { 
+        .nav {
             position: fixed;
             top: 0;
             left: 0;
@@ -44,50 +43,49 @@
             font-size: 0.95rem;
         }
         .nav-links a {
-            color: #d4af77;
+            color: #ffffff;                    /* changed to white as requested */
             text-decoration: none;
             font-weight: 500;
         }
-        .language-switcher { 
-            position: relative; 
-            cursor: pointer; 
-            user-select: none; 
+        .language-switcher {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
-        .current-lang { 
-            display: flex; 
-            align-items: center; 
-            gap: 6px; 
-            font-size: 1.35rem; 
+        .current-lang {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.35rem;
         }
-        .language-dropdown { 
-            position: absolute; 
-            top: 100%; 
-            right: 0; 
-            background: #111111; 
-            border: 1px solid rgba(212,175,119,0.3); 
-            border-radius: 8px; 
-            padding: 8px 0; 
-            margin-top: 8px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
-            display: none; 
-            flex-direction: column; 
-            min-width: 140px; 
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #111111;
+            border: 1px solid rgba(212,175,119,0.3);
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none;
+            flex-direction: column;
+            min-width: 140px;
         }
         .language-dropdown.show { display: flex; }
-        .language-option { 
-            padding: 10px 16px; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            font-size: 1.35rem; 
-            color: #d4af77; 
-            text-decoration: none; 
+        .language-option {
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.35rem;
+            color: #d4af77;
+            text-decoration: none;
         }
-        .language-option:hover, .language-option:active { 
-            background: rgba(212,175,119,0.15); 
+        .language-option:hover, .language-option:active {
+            background: rgba(212,175,119,0.15);
         }
-
         .main-content {
             padding-top: 120px;
             padding-bottom: 100px;
@@ -95,32 +93,30 @@
             margin: 0 auto;
             text-align: center;
         }
-        
+       
         h1 {
             font-size: 3rem;
             font-weight: 600;
             letter-spacing: -0.02em;
             margin-bottom: 28px;
         }
-        
+       
         .form-container {
             padding: 0 40px;
             max-width: 920px;
             margin: 0 auto;
         }
-
         /* Desktop refinement */
         @media (max-width: 1080px) {
             .main-content { max-width: 920px; }
             .form-container { padding: 0 32px; }
         }
-
         /* PrecisionSheets-level Mobile Spacing – tightened bottom for sovereign rhythm */
         @media (max-width: 480px) {
             .nav { padding: 0 20px; }
             .nav-links { gap: 18px; }
-            .main-content { 
-                padding-top: 140px; 
+            .main-content {
+                padding-top: 140px;
                 padding-bottom: 160px; /* tightened for perfect calm vertical rhythm */
             }
             h1 { font-size: 2.55rem; margin-bottom: 22px; }
@@ -128,17 +124,16 @@
             .form-container { padding: 0 20px; margin-bottom: 32px; }
             iframe { width: 100% !important; max-width: 100% !important; }
         }
-
-        .footer { 
-            margin-top: 80px; 
-            text-align: center; 
-            font-size: 0.9rem; 
-            opacity: 0.75; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            gap: 12px; 
-            line-height: 1.8; 
+        .footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.8;
             padding: 0 24px;
             background: #050505;
         }
@@ -146,7 +141,7 @@
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
         .footer img { width: 20px; height: 20px; }
         .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
-        
+       
         #impressum {
             display: none;
             padding: 80px 24px;
@@ -158,7 +153,6 @@
     </style>
 </head>
 <body>
-
     <!-- Navigation – identical to index.html -->
     <nav class="nav">
         <a href="index.html">
@@ -168,7 +162,7 @@
             <a href="index.html" data-lang-key="nav-home">Home</a>
             <a href="index.html#about" data-lang-key="nav-about">About</a>
             <a href="index.html#recent-transmissions" data-lang-key="nav-recent">Recent Transmissions</a>
-            
+           
             <div class="language-switcher" id="language-switcher">
                 <span class="current-lang" id="current-lang-display">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
                 <div class="language-dropdown" id="language-dropdown">
@@ -179,25 +173,23 @@
             </div>
         </div>
     </nav>
-
     <!-- Contact Form – New Tally Form -->
     <div class="main-content">
         <h1 data-lang-key="contact-title">Contact</h1>
-        <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5;" data-lang-key="contact-subtitle">
+        <p style="font-size: 1.2rem; opacity: 0.92; max-width: 420px; margin: 0 auto 60px; line-height: 1.5; color: #ffffff;" data-lang-key="contact-subtitle">
             A direct line for those who sense the urge.
         </p>
-        
+       
         <div class="form-container">
-            <iframe src="https://tally.so/embed/A7AjNe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-                    width="100%" 
-                    height="1200" 
-                    frameborder="0" 
+            <iframe src="https://tally.so/embed/A7AjNe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                    width="100%"
+                    height="1200"
+                    frameborder="0"
                     scrolling="no"
                     style="border: none; background: transparent; display: block;">
             </iframe>
         </div>
     </div>
-
     <!-- Footer – identical to index.html -->
     <div class="footer">
         <div class="footer-line1">
@@ -212,14 +204,12 @@
         </div>
         <div class="copyright" data-lang-key="footer-copyright">Copyright © 2026 ThePrinceEcho • All rights reserved.</div>
     </div>
-
     <!-- Impressum -->
     <section id="impressum" style="display:none;padding:80px 24px;background:#050505;max-width:700px;margin:0 auto;text-align:left;">
         <h2 data-lang-key="impressum-title">Legal disclosure</h2>
         <p data-lang-key="impressum-subtitle"><strong>Disclosure according to § 5 DDG</strong></p>
         <p data-lang-key="impressum-text1">This Landing page is currently under construction.</p>
     </section>
-
     <script>
         // Translation dictionary (synced with index.html)
         const translations = {
@@ -254,9 +244,7 @@
                 "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau."
             }
         };
-
         let currentLang = 'en';
-
         function translatePage(lang) {
             currentLang = lang;
             document.querySelectorAll('[data-lang-key]').forEach(el => {
@@ -266,23 +254,19 @@
                 }
             });
         }
-
         function initLanguageSwitcher() {
             const switcher = document.getElementById('language-switcher');
             const dropdown = document.getElementById('language-dropdown');
             const currentDisplay = document.getElementById('current-lang-display');
             if (!switcher) return;
-
-            const toggle = (e) => { 
-                e.stopImmediatePropagation(); 
-                dropdown.classList.toggle('show'); 
+            const toggle = (e) => {
+                e.stopImmediatePropagation();
+                dropdown.classList.toggle('show');
             };
             switcher.addEventListener('click', toggle);
             switcher.addEventListener('touchend', toggle);
-
             document.addEventListener('click', () => dropdown.classList.remove('show'));
             document.addEventListener('touchend', () => dropdown.classList.remove('show'));
-
             const handleOption = (e) => {
                 const option = e.target.closest('.language-option');
                 if (option) {
@@ -293,13 +277,10 @@
             };
             dropdown.addEventListener('click', handleOption);
             dropdown.addEventListener('touchend', handleOption);
-
             translatePage('en');
         }
-
         document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
         window.addEventListener('load', initLanguageSwitcher);
     </script>
-
 </body>
 </html>
