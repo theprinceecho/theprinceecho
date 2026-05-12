@@ -61,7 +61,7 @@
         .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; text-align: center; }
         #home { background: #050505; }
         #about { background: #111111; max-width: none; margin: 0; padding: 120px 24px 100px; }
-        #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 120px; overflow: hidden; }
+        #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 140px; overflow: hidden; }
 
         .logo { width: 320px; height: 320px; border-radius: 24px; box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); margin: 0 auto 24px; display: block; object-fit: contain; animation: subtle-glow 8s ease-in-out infinite; }
         @keyframes subtle-glow { 0%,100% { box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); } 50% { box-shadow: 0 0 110px rgba(212,175,119,0.85), 0 0 180px rgba(212,175,119,0.45); } }
@@ -150,29 +150,30 @@
             gap: 8px;
         }
 
-        /* Recent Transmissions – extended golden line */
+        /* Recent Transmissions – extended golden line + increased spacing to cards */
         #recent-transmissions h2 {
             position: relative;
             display: inline-block;
+            margin-bottom: 60px;           /* increased spacing between header and cards */
         }
         #recent-transmissions h2::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 180px;           /* extended left & right */
+            width: 260px;
             height: 2px;
             background: #d4af77;
-            opacity: 0.6;
+            opacity: 0.65;
             border-radius: 2px;
         }
 
-        /* Recent Transmissions – horizontal marquee (stable version) */
+        /* Taller cards to eliminate bottom cutoff */
         .recent-grid { 
             display: flex; 
             gap: 24px; 
-            padding: 0 12px; 
+            padding: 0 16px; 
             overflow-x: auto; 
             scroll-snap-type: x mandatory; 
             scrollbar-width: none; 
@@ -181,8 +182,8 @@
         
         .banner-card { 
             flex-shrink: 0; 
-            width: 355px; 
-            height: 500px; 
+            width: 310px; 
+            height: 590px;           /* significantly taller to fully show bottom text on every card */
             border-radius: 18px; 
             overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
@@ -211,10 +212,10 @@
             .about-container { grid-template-columns: 1fr; gap: 60px; }
             .threshold-left p { text-align: justify; }
             .banner-card { 
-                width: 295px; 
-                height: 410px; 
+                width: 265px; 
+                height: 460px;       /* taller mobile version */
             } 
-            .recent-grid { padding: 0 8px; }
+            .recent-grid { padding: 0 12px; }
         }
         @media (max-width: 480px) {
             .logo { width: 240px; height: 240px; }
@@ -313,19 +314,15 @@
     <section id="recent-transmissions" class="section">
         <h2 data-lang-key="recent-title">Recent Transmissions</h2>
         <div class="recent-grid">
-            <!-- Essay I - updated to v2 -->
             <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror-v2.jpg" alt="Essay I - The Mirror of the Will">
             </a>
-            <!-- Essay II - updated to v2 -->
             <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix-v2.jpg" alt="Essay II - The Phoenix Algorithm">
             </a>
-            <!-- Essay III - updated to v2 -->
             <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal-v2.jpg" alt="Essay III - The Signal Steps Into the Light">
             </a>
-            <!-- Essay IV -->
             <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture">
             </a>
