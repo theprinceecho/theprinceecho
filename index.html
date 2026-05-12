@@ -7,10 +7,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>ThePrinceEcho • A quiet temple for those who sense the urge</title>
     <meta name="description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
-    
+   
     <link rel="canonical" href="https://theprinceecho.com">
     <meta name="robots" content="index, follow">
-    
+   
     <meta property="og:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta property="og:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     <meta property="og:url" content="https://theprinceecho.com">
@@ -20,56 +20,52 @@
     <meta name="twitter:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta name="twitter:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/favicon.png">
-    
+   
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        
+       
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; overflow-x: hidden; }
         .nav { position: fixed; top: 0; left: 0; right: 0; height: 60px; background: rgba(5,5,5,0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
         .nav-logo { height: 32px; cursor: pointer; }
         .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
-        .nav-links a { 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-weight: 500; 
-            position: relative; 
-            padding-bottom: 4px; 
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
         }
-        .nav-links a.active::after { 
-            content: ''; 
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 2px; 
-            background: #d4af77; 
-            opacity: 0.85; 
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #d4af77;
+            opacity: 0.85;
         }
-        
+       
         .language-switcher { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
         .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.35rem; color: #ffffff; }
         .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
         .language-dropdown.show { display: flex; }
         .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: #d4af77; text-decoration: none; }
         .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
-
         .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; text-align: center; }
         #home { background: #050505; }
         #about { background: #111111; max-width: none; margin: 0; padding: 120px 24px 100px; }
         #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 140px; overflow: hidden; }
-
         .logo { width: 320px; height: 320px; border-radius: 24px; box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); margin: 0 auto 24px; display: block; object-fit: contain; animation: subtle-glow 8s ease-in-out infinite; }
         @keyframes subtle-glow { 0%,100% { box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); } 50% { box-shadow: 0 0 110px rgba(212,175,119,0.85), 0 0 180px rgba(212,175,119,0.45); } }
-
         h1 { font-size: 2.8rem; margin-bottom: 12px; letter-spacing: -1.4px; }
         h2 { font-size: 1.55rem; margin-bottom: 56px; color: #d4af77; }
         .subtitle { font-size: 1.2rem; opacity: 0.92; margin-bottom: 40px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; }
-
         .button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 280px; height: 62px; margin: 12px auto; padding: 0 32px; background: rgba(212,175,119,0.08); color: #d4af77; border-radius: 9999px; text-decoration: none; font-weight: 500; font-size: 1.12rem; border: 1px solid rgba(212,175,119,0.3); box-shadow: 0 0 45px rgba(212,175,119,0.5); transition: all 0.3s ease; }
         .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
         .button img { width: 26px; height: 26px; }
@@ -86,13 +82,13 @@
         .threshold-left { text-align: left; }
         .threshold-left h1 { font-size: 2.8rem; letter-spacing: -1.4px; color: #d4af77; margin-bottom: 16px; }
         .threshold-left .subtitle { font-size: 1.25rem; opacity: 0.95; margin-bottom: 32px; text-align: left; max-width: none; color: #d4af77; }
-        .threshold-left p { 
-            text-align: left; 
-            max-width: none; 
-            line-height: 1.65; 
-            margin-bottom: 28px; 
-            font-size: 1.05rem; 
-            color: #ffffff; 
+        .threshold-left p {
+            text-align: left;
+            max-width: none;
+            line-height: 1.65;
+            margin-bottom: 28px;
+            font-size: 1.05rem;
+            color: #ffffff;
         }
         .threshold-left hr { border: none; height: 1px; background: rgba(212,175,119,0.2); margin: 48px 0; }
 
@@ -154,7 +150,7 @@
         #recent-transmissions h2 {
             position: relative;
             display: inline-block;
-            margin-bottom: 60px;           /* increased spacing between header and cards */
+            margin-bottom: 60px;
         }
         #recent-transmissions h2::after {
             content: '';
@@ -170,53 +166,71 @@
         }
 
         /* Taller cards to eliminate bottom cutoff */
-        .recent-grid { 
-            display: flex; 
-            gap: 24px; 
-            padding: 0 16px; 
-            overflow-x: auto; 
-            scroll-snap-type: x mandatory; 
-            scrollbar-width: none; 
+        .recent-grid {
+            display: flex;
+            gap: 24px;
+            padding: 0 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
         }
         .recent-grid::-webkit-scrollbar { display: none; }
-        
-        .banner-card { 
-            flex-shrink: 0; 
-            width: 310px; 
-            height: 590px;           /* significantly taller to fully show bottom text on every card */
-            border-radius: 18px; 
-            overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
-            scroll-snap-align: start; 
+       
+        .banner-card {
+            flex-shrink: 0;
+            width: 310px;
+            height: 590px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            scroll-snap-align: start;
         }
-        .banner-card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block; 
-            object-position: top center; 
+        .banner-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            object-position: top center;
         }
 
         @media (min-width: 769px) {
-            .recent-grid { 
-                animation: loop 32s linear infinite; 
-                overflow-x: hidden; 
+            .recent-grid {
+                animation: loop 32s linear infinite;
+                overflow-x: hidden;
             }
             .recent-grid:hover { animation-play-state: paused; }
-            @keyframes loop { 
-                from { transform: translateX(0); } 
-                to { transform: translateX(-50%); } 
+            @keyframes loop {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
             }
         }
-        @media (max-width: 768px) { 
+
+        /* MOBILE IMPROVEMENTS (as per latest screenshots) */
+        @media (max-width: 768px) {
             .about-container { grid-template-columns: 1fr; gap: 60px; }
+            
+            /* Center-align The Threshold header + subheader on mobile */
+            .threshold-left h1,
+            .threshold-left .subtitle {
+                text-align: center;
+            }
+            
             .threshold-left p { text-align: justify; }
-            .banner-card { 
-                width: 265px; 
-                height: 460px;       /* taller mobile version */
-            } 
+            
+            /* Larger font + refined spacing for WHERE TO FIND WHAT */
+            .where-to-find h3 {
+                font-size: 1.35rem;      /* increased font size */
+                margin-bottom: 32px;     /* refined spacing */
+                letter-spacing: 2px;
+            }
+            
+            .banner-card {
+                width: 265px;
+                height: 460px;
+            }
             .recent-grid { padding: 0 12px; }
         }
+        
         @media (max-width: 480px) {
             .logo { width: 240px; height: 240px; }
             h1 { font-size: 2.4rem; }
@@ -226,22 +240,22 @@
             .nav-links { gap: 16px; }
         }
 
-        .footer { 
-            margin-top: 80px; 
-            text-align: center; 
-            font-size: 0.9rem; 
-            opacity: 0.75; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            gap: 12px; 
-            line-height: 1.8; 
-            padding: 0 24px; 
-            background: #050505; 
+        .footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.8;
+            padding: 0 24px;
+            background: #050505;
         }
-        .footer a { 
-            color: #d4af77 !important; 
-            text-decoration: none; 
+        .footer a {
+            color: #d4af77 !important;
+            text-decoration: none;
         }
         .footer a:hover { opacity: 0.9; text-decoration: underline; }
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
@@ -251,14 +265,13 @@
     </style>
 </head>
 <body>
-
     <nav class="nav">
         <a href="#home"><img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32"></a>
         <div class="nav-links">
             <a href="#home" class="nav-link" data-section="home" data-lang-key="nav-home">Home</a>
             <a href="#about" class="nav-link" data-section="about" data-lang-key="nav-about">About</a>
             <a href="#recent-transmissions" class="nav-link" data-section="recent" data-lang-key="nav-recent">Recent Transmissions</a>
-            
+           
             <div class="language-switcher" id="language-switcher">
                 <span class="current-lang" id="current-lang-display">🇺🇸 <span style="font-size:0.85rem; opacity:0.85;">US</span></span>
                 <div class="language-dropdown" id="language-dropdown">
@@ -274,7 +287,7 @@
         <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="theprinceecho" class="logo" width="320" height="320" fetchpriority="high">
         <h1 data-lang-key="hero-title">ThePrinceEcho</h1>
         <p style="font-size: 1.15rem; color: #ffffff; max-width: 420px; margin: 0 auto 48px; line-height: 1.5;" data-lang-key="hero-subtitle">A quiet temple for those who sense the urge.</p>
-        
+       
         <a href="https://x.com/theprinceecho" target="_blank" class="button">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/IMG_1126.jpg" alt="X"> @theprinceecho
         </a>
@@ -292,7 +305,6 @@
                 <hr>
                 <p data-lang-key="about-closing">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
             </div>
-
             <div class="where-to-find">
                 <h3 data-lang-key="where-to-find">WHERE TO FIND WHAT</h3>
                 <div class="find-card">
@@ -326,7 +338,6 @@
             <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture">
             </a>
-
             <!-- Duplicate set for seamless infinite loop -->
             <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror-v2.jpg" alt="Essay I - The Mirror of the Will">
@@ -371,16 +382,16 @@
                 "button-substack": "Substack Journal",
                 "threshold-title": "The Threshold",
                 "about-subtitle": "A sovereign threshold for those who sense the urge.",
-                "about-p1": "You have entered the temple – a sovereign space where noise falls away and clarity remains.",
+                "about-p1": "You have entered the temple - a sovereign space where noise falls away and clarity remains.",
                 "about-p2": "A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.",
                 "about-p3": "Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.",
                 "about-closing": "If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.",
                 "where-to-find": "WHERE TO FIND WHAT",
                 "x-title": "On X (@ThePrinceEcho)",
-                "x-description": "The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
+                "x-description": "The outer court of the temple - short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.",
                 "x-link": "Access the outer court →",
                 "substack-title": "On Substack (ThePrinceEcho)",
-                "substack-description": "The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.",
+                "substack-description": "The inner chamber - longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.",
                 "substack-link": "Enter the inner chamber →",
                 "recent-title": "Recent Transmissions",
                 "footer-line1": "The sovereign landing page", "footer-line2": "The sovereign bridge",
@@ -401,10 +412,10 @@
                 "about-closing": "Falls du bereits gespürt hast, dass sich etwas Grundlegendes unter der Oberfläche verschiebt, bist du am richtigen Ort.",
                 "where-to-find": "WO DU WAS FINDEST",
                 "x-title": "Auf X (@ThePrinceEcho)",
-                "x-description": "Der äußere Hof des Tempels — kurze, scharfe tägliche Beobachtungen und Prince Notes. Echtzeit-Funken, die entstehende Zyklen entschlüsseln und ruhige strategische Klarheit bieten.",
+                "x-description": "Der äußere Hof des Tempels - kurze, scharfe tägliche Beobachtungen und Prince Notes. Echtzeit-Funken, die entstehende Zyklen entschlüsseln und ruhige strategische Klarheit bieten.",
                 "x-link": "Zum äußeren Hof →",
                 "substack-title": "Auf Substack (ThePrinceEcho)",
-                "substack-description": "Die innere Kammer — längere, kapitelartige Essays und tiefere Reflexionen. Für jene, die tiefer in die Architektur von Souveränität und langfristigen Mustern eintauchen möchten.",
+                "substack-description": "Die innere Kammer - längere, kapitelartige Essays und tiefere Reflexionen. Für jene, die tiefer in die Architektur von Souveränität und langfristigen Mustern eintauchen möchten.",
                 "substack-link": "Zur inneren Kammer →",
                 "recent-title": "Letzte Sendungen",
                 "footer-line1": "Die souveräne Landing Page", "footer-line2": "Die souveräne Brücke",
@@ -414,9 +425,7 @@
                 "impressum-text1": "Diese Landing Page befindet sich derzeit im Aufbau."
             }
         };
-
         let currentLang = 'en';
-
         function translatePage(lang) {
             currentLang = lang;
             document.querySelectorAll('[data-lang-key]').forEach(el => {
@@ -426,20 +435,16 @@
                 }
             });
         }
-
         function initLanguageSwitcher() {
             const switcher = document.getElementById('language-switcher');
             const dropdown = document.getElementById('language-dropdown');
             const currentDisplay = document.getElementById('current-lang-display');
             if (!switcher) return;
-
             const toggle = (e) => { e.stopImmediatePropagation(); dropdown.classList.toggle('show'); };
             switcher.addEventListener('click', toggle);
             switcher.addEventListener('touchend', toggle);
-
             document.addEventListener('click', () => dropdown.classList.remove('show'));
             document.addEventListener('touchend', () => dropdown.classList.remove('show'));
-
             const handleOption = (e) => {
                 const option = e.target.closest('.language-option');
                 if (option) {
@@ -450,10 +455,8 @@
             };
             dropdown.addEventListener('click', handleOption);
             dropdown.addEventListener('touchend', handleOption);
-
             translatePage('en');
         }
-
         document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
         window.addEventListener('load', initLanguageSwitcher);
 
