@@ -5,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>ThePrinceEcho • A quiet temple for those who sense the urge</title>
+    
     <meta name="description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
-   
-    <link rel="canonical" href="https://theprinceecho.com">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://theprinceecho.com/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://theprinceecho.com/sitemap.xml">
+    
     <meta name="robots" content="index, follow">
-   
+    
+    <!-- Open Graph -->
     <meta property="og:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta property="og:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
-    <meta property="og:url" content="https://theprinceecho.com">
+    <meta property="og:url" content="https://theprinceecho.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
+    
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta name="twitter:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
-   
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/favicon.png">
@@ -29,7 +39,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; overflow-x: hidden; }
+        body { font-family: 'Inter', system_ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; overflow-x: hidden; }
         .nav { position: fixed; top: 0; left: 0; right: 0; height: 60px; background: rgba(5,5,5,0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
         .nav-logo { height: 32px; cursor: pointer; }
         .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
@@ -82,186 +92,60 @@
         .threshold-left { text-align: left; }
         .threshold-left h1 { font-size: 2.8rem; letter-spacing: -1.4px; color: #d4af77; margin-bottom: 16px; }
         .threshold-left .subtitle { font-size: 1.25rem; opacity: 0.95; margin-bottom: 32px; text-align: left; max-width: none; color: #d4af77; }
-        .threshold-left p {
-            text-align: left;
-            max-width: none;
-            line-height: 1.65;
-            margin-bottom: 28px;
-            font-size: 1.05rem;
-            color: #ffffff;
-        }
-        .threshold-left hr { border: none; height: 1px; background: rgba(212,175,119,0.2); margin: 48px 0; }
+        .threshold-left p { text-align: left; max-width: none; line-height: 1.65; margin-bottom: 28px; font-size: 1.05rem; color: #e0e0e0; }
+        .threshold-left hr { border: none; height: 1px; background: rgba(212,175,119,0.25); margin: 48px 0; }
 
-        .where-to-find h3 {
-            font-size: 1.1rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            opacity: 0.75;
-            margin-bottom: 24px;
-            color: #d4af77;
-        }
-        .find-card {
-            background: #1a1a1a;
-            border-radius: 16px;
-            padding: 28px 32px;
-            margin-bottom: 24px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212,175,119,0.15);
-        }
-        .find-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(212,175,119,0.15);
-            border-color: rgba(212,175,119,0.4);
-        }
-        .find-card .icon {
-            width: 42px;
-            height: 42px;
-            background: #d4af77;
-            color: #050505;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-        .find-card h4 {
-            font-size: 1.35rem;
-            margin-bottom: 8px;
-            color: #d4af77;
-        }
-        .find-card p {
-            text-align: left;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            opacity: 0.9;
-            color: #ffffff;
-        }
-        .find-card a {
-            color: #d4af77;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .where-to-find h3 { font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.75; margin-bottom: 24px; color: #d4af77; }
+        
+        .find-card { background: #050505; border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; transition: all 0.3s ease; border: 1px solid rgba(212,175,119,0.2); }
+        .find-card:hover { transform: translateY(-4px); border-color: rgba(212,175,119,0.5); }
+        .find-card .icon { width: 42px; height: 42px; background: #d4af77; color: #050505; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 20px; }
+        .find-card h4 { font-size: 1.35rem; margin-bottom: 8px; color: #d4af77; }
+        .find-card p { text-align: left; line-height: 1.6; margin-bottom: 20px; opacity: 0.9; color: #e0e0e0; }
+        .find-card a { color: #d4af77; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
 
-        /* Recent Transmissions – extended golden line + increased spacing to cards */
-        #recent-transmissions h2 {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 60px;
-        }
-        #recent-transmissions h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 260px;
-            height: 2px;
-            background: #d4af77;
-            opacity: 0.65;
-            border-radius: 2px;
-        }
-
-        /* Taller cards to eliminate bottom cutoff */
-        .recent-grid {
-            display: flex;
-            gap: 24px;
-            padding: 0 16px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-        }
-        .recent-grid::-webkit-scrollbar { display: none; }
-       
-        .banner-card {
-            flex-shrink: 0;
-            width: 310px;
-            height: 590px;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            scroll-snap-align: start;
-        }
-        .banner-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            object-position: top center;
-        }
-
-        @media (min-width: 769px) {
-            .recent-grid {
-                animation: loop 32s linear infinite;
-                overflow-x: hidden;
-            }
-            .recent-grid:hover { animation-play-state: paused; }
-            @keyframes loop {
-                from { transform: translateX(0); }
-                to { transform: translateX(-50%); }
-            }
-        }
-
-        /* MOBILE IMPROVEMENTS (as per latest screenshots) */
         @media (max-width: 768px) {
             .about-container { grid-template-columns: 1fr; gap: 60px; }
-            
-            /* Center-align The Threshold header + subheader on mobile */
-            .threshold-left h1,
-            .threshold-left .subtitle {
-                text-align: center;
-            }
-            
+            .threshold-left h1, .threshold-left .subtitle { text-align: center; }
             .threshold-left p { text-align: justify; }
-            
-            /* Larger font + refined spacing for WHERE TO FIND WHAT */
-            .where-to-find h3 {
-                font-size: 1.35rem;      /* increased font size */
-                margin-bottom: 32px;     /* refined spacing */
-                letter-spacing: 2px;
+
+            .nav {
+                padding: 0 16px;
+                height: 56px;
             }
-            
-            .banner-card {
-                width: 265px;
-                height: 460px;
+            .nav-logo {
+                height: 28px;
             }
-            .recent-grid { padding: 0 12px; }
-        }
-        
-        @media (max-width: 480px) {
-            .logo { width: 240px; height: 240px; }
-            h1 { font-size: 2.4rem; }
-            h2 { font-size: 1.45rem; }
-            .button { width: 100%; max-width: 260px; }
-            .section { padding: 120px 24px 140px; }
-            .nav-links { gap: 16px; }
+            .nav-links {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+            .nav-links a {
+                padding-bottom: 4px;
+            }
+            .current-lang {
+                font-size: 0.9rem;
+            }
         }
 
         .footer {
-            margin-top: 80px;
+            margin-top: 0;
+            padding-top: 60px;
+            padding-bottom: 70px;
             text-align: center;
             font-size: 0.9rem;
-            opacity: 0.75;
+            color: #ffffff;
+            opacity: 0.85;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             line-height: 1.8;
-            padding: 0 24px;
-            background: #050505;
+            background: #111111;
         }
-        .footer a {
-            color: #d4af77 !important;
-            text-decoration: none;
-        }
-        .footer a:hover { opacity: 0.9; text-decoration: underline; }
+        .footer a { color: #ffffff !important; text-decoration: none; }
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
-        .footer img { width: 20px; height: 20px; }
-        .copyright { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
-        #impressum { display: none; padding: 80px 24px; background: #050505; max-width: 700px; margin: 0 auto; text-align: left; }
+        .copyright { font-size: 0.85rem; opacity: 0.7; margin-top: 8px; }
     </style>
 </head>
 <body>
