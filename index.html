@@ -257,7 +257,6 @@
             text-decoration: none;
             color: inherit;
         }
-        
         .banner-card:hover {
             transform: translateY(-6px);
             border-color: rgba(212,175,119,0.4);
@@ -326,7 +325,7 @@
     </style>
 </head>
 <body>
-    <!-- Header aligned exactly like contact.html -->
+    <!-- Header with fully functional language dropdown -->
     <nav class="nav">
         <a href="#home">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -445,9 +444,34 @@
         function initLanguageSwitcher() {
             const switcher = document.getElementById('language-switcher');
             const dropdown = document.getElementById('language-dropdown');
-            if (!switcher) return;
-            switcher.addEventListener('click', () => dropdown.classList.toggle('show'));
-            document.addEventListener('click', () => dropdown.classList.remove('show'));
+            const currentDisplay = document.getElementById('current-lang-display');
+            
+            if (!switcher || !dropdown || !currentDisplay) return;
+
+            // Toggle dropdown on click
+            switcher.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', () => {
+                dropdown.classList.remove('show');
+            });
+
+            // Handle language selection
+            dropdown.addEventListener('click', (e) => {
+                const option = e.target.closest('.language-option');
+                if (option) {
+                    e.stopPropagation();
+                    // Update the displayed language
+                    currentDisplay.innerHTML = option.innerHTML;
+                    dropdown.classList.remove('show');
+                    
+                    // Optional: Add translation logic here if needed
+                    // For now, just visual update
+                }
+            });
         }
 
         function initActiveNav() {
