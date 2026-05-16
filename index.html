@@ -40,9 +40,31 @@
        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', system_ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; overflow-x: hidden; }
-        .nav { position: fixed; top: 0; left: 0; right: 0; height: 60px; background: rgba(5,5,5,0.95); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 100; }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(5,5,5,0.95);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 100;
+        }
+        
         .nav-logo { height: 32px; width: 32px; cursor: pointer; }
-        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 0.95rem;
+        }
+        
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
@@ -50,6 +72,7 @@
             position: relative;
             padding-bottom: 4px;
         }
+        
         .nav-links a.active::after {
             content: '';
             position: absolute;
@@ -61,26 +84,105 @@
             opacity: 0.85;
         }
        
-        .language-switcher { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
-        .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #ffffff; }
-        .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
+        .language-switcher {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .current-lang {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #111111;
+            border: 1px solid rgba(212,175,119,0.3);
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none;
+            flex-direction: column;
+            min-width: 140px;
+        }
+        
         .language-dropdown.show { display: flex; }
-        .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.05rem; color: #d4af77; text-decoration: none; }
-        .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
+        
+        .language-option {
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            color: #d4af77;
+            text-decoration: none;
+        }
+        
+        .language-option:hover, .language-option:active {
+            background: rgba(212,175,119,0.15);
+        }
+        
         .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; text-align: center; }
         #home { background: #050505; }
         #about { background: #111111; max-width: none; margin: 0; padding: 120px 24px 100px; }
         #recent-transmissions { background: #050505; max-width: none; margin: 0; padding: 100px 24px 140px; overflow: hidden; }
-        .logo { width: 320px; height: 320px; border-radius: 24px; box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); margin: 0 auto 24px; display: block; object-fit: contain; animation: subtle-glow 8s ease-in-out infinite; }
-        @keyframes subtle-glow { 0%,100% { box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); } 50% { box-shadow: 0 0 110px rgba(212,175,119,0.85), 0 0 180px rgba(212,175,119,0.45); } }
+        
+        .logo {
+            width: 320px;
+            height: 320px;
+            border-radius: 24px;
+            box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35);
+            margin: 0 auto 24px;
+            display: block;
+            object-fit: contain;
+            animation: subtle-glow 8s ease-in-out infinite;
+        }
+        
+        @keyframes subtle-glow {
+            0%,100% { box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); }
+            50% { box-shadow: 0 0 110px rgba(212,175,119,0.85), 0 0 180px rgba(212,175,119,0.45); }
+        }
+        
         h1 { font-size: 2.8rem; margin-bottom: 12px; letter-spacing: -1.4px; }
         h2 { font-size: 1.55rem; margin-bottom: 56px; color: #d4af77; }
         .subtitle { font-size: 1.2rem; opacity: 0.92; margin-bottom: 40px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; }
-        .button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 280px; height: 62px; margin: 12px auto; padding: 0 32px; background: rgba(212,175,119,0.08); color: #d4af77; border-radius: 9999px; text-decoration: none; font-weight: 500; font-size: 1.12rem; border: 1px solid rgba(212,175,119,0.3); box-shadow: 0 0 45px rgba(212,175,119,0.5); transition: all 0.3s ease; }
-        .button:hover { background: rgba(212,175,119,0.15); box-shadow: 0 0 65px rgba(212,175,119,0.8); transform: translateY(-2px); }
+        
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 280px;
+            height: 62px;
+            margin: 12px auto;
+            padding: 0 32px;
+            background: rgba(212,175,119,0.08);
+            color: #d4af77;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.12rem;
+            border: 1px solid rgba(212,175,119,0.3);
+            box-shadow: 0 0 45px rgba(212,175,119,0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background: rgba(212,175,119,0.15);
+            box-shadow: 0 0 65px rgba(212,175,119,0.8);
+            transform: translateY(-2px);
+        }
+        
         .button img { width: 26px; height: 26px; }
 
-        /* The Threshold – About section */
         .about-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -89,6 +191,7 @@
             gap: 80px;
             align-items: start;
         }
+        
         .threshold-left { text-align: left; }
         .threshold-left h1 { font-size: 2.8rem; letter-spacing: -1.4px; color: #d4af77; margin-bottom: 16px; }
         .threshold-left .subtitle { font-size: 1.25rem; opacity: 0.95; margin-bottom: 32px; text-align: left; max-width: none; color: #d4af77; }
@@ -97,14 +200,37 @@
 
         .where-to-find h3 { font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.75; margin-bottom: 24px; color: #d4af77; }
         
-        .find-card { background: #050505; border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; transition: all 0.3s ease; border: 1px solid rgba(212,175,119,0.2); }
-        .find-card:hover { transform: translateY(-4px); border-color: rgba(212,175,119,0.5); }
-        .find-card .icon { width: 42px; height: 42px; background: #d4af77; color: #050505; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 20px; }
+        .find-card {
+            background: #050505;
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212,175,119,0.2);
+        }
+        
+        .find-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212,175,119,0.5);
+        }
+        
+        .find-card .icon {
+            width: 42px;
+            height: 42px;
+            background: #d4af77;
+            color: #050505;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        
         .find-card h4 { font-size: 1.35rem; margin-bottom: 8px; color: #d4af77; }
         .find-card p { text-align: left; line-height: 1.6; margin-bottom: 20px; opacity: 0.9; color: #e0e0e0; }
         .find-card a { color: #d4af77; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
 
-        /* Recent Transmissions - Horizontal Endless Sequence */
         .recent-grid {
             display: flex;
             gap: 24px;
@@ -116,13 +242,12 @@
             scrollbar-color: rgba(212,175,119,0.3) transparent;
             justify-content: center;
         }
-        .recent-grid::-webkit-scrollbar {
-            height: 6px;
-        }
-        .recent-grid::-webkit-scrollbar-thumb {
-            background: rgba(212,175,119,0.3);
+        
+        .recent-grid::-webkit-scrollbar { height: 6px; }
+        .recent-grid::-webkit-scrollbar-thumb { background: rgba(212,175,119,0.3);
             border-radius: 3px;
         }
+        
         .banner-card {
             flex: 0 0 320px;
             border-radius: 16px;
@@ -132,20 +257,22 @@
             text-decoration: none;
             color: inherit;
         }
+        
         .banner-card:hover {
             transform: translateY(-6px);
             border-color: rgba(212,175,119,0.4);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
+        
         .banner-card img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.4s ease;
         }
-        .banner-card:hover img {
-            transform: scale(1.05);
-        }
+        
+        .banner-card:hover img { transform: scale(1.05); }
+        
         .essay-info {
             padding: 20px 18px;
             background: #252525;
@@ -153,6 +280,7 @@
             align-items: center;
             min-height: 80px;
         }
+        
         .essay-info h3 {
             font-size: 1.1rem;
             color: #d4af77;
@@ -160,30 +288,15 @@
             margin: 0;
         }
 
-        /* Mobile: left align cards, start with Essay I */
         @media (max-width: 768px) {
             .about-container { grid-template-columns: 1fr; gap: 60px; }
             .threshold-left h1, .threshold-left .subtitle { text-align: center; }
             .threshold-left p { text-align: justify; }
 
-            .nav {
-                padding: 0 16px;
-                height: 56px;
-            }
-            .nav-logo {
-                height: 28px;
-                width: 28px;
-            }
-            .nav-links {
-                gap: 16px;
-                font-size: 0.9rem;
-            }
-            .nav-links a {
-                padding-bottom: 4px;
-            }
-            .current-lang {
-                font-size: 0.9rem;
-            }
+            .nav { padding: 0 16px; height: 56px; }
+            .nav-logo { height: 28px; width: 28px; }
+            .nav-links { gap: 16px; font-size: 0.9rem; }
+            .current-lang { font-size: 0.9rem; }
             
             .recent-grid {
                 justify-content: flex-start;
@@ -207,6 +320,7 @@
             line-height: 1.8;
             background: #111111;
         }
+        
         .footer a { color: #ffffff !important; text-decoration: none; }
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
         .copyright { font-size: 0.85rem; opacity: 0.7; margin-top: 8px; }
@@ -238,7 +352,6 @@
         <h1>ThePrinceEcho</h1>
         <p class="subtitle">A quiet temple for those who sense the urge.</p>
         
-        <!-- Buttons - Equal size, stacked vertically -->
         <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 40px;">
             <a href="https://x.com/theprinceecho" target="_blank" class="button" style="width: 240px; justify-content: center;">Follow on 𝕏</a>
             <a href="https://theprinceecho.substack.com" target="_blank" class="button" style="width: 240px; justify-content: center;">Read on Substack</a>
@@ -284,7 +397,6 @@
         <p style="max-width: 520px; margin: 0 auto 48px; opacity: 0.85;">High-signal observations that cut through noise and distraction.</p>
         
         <div class="recent-grid">
-            <!-- Essay I -->
             <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror-v2.jpg" alt="Essay I - The Mirror of the Will">
                 <div class="essay-info">
@@ -292,7 +404,6 @@
                 </div>
             </a>
             
-            <!-- Essay II -->
             <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix-v2.jpg" alt="Essay II - The Phoenix Algorithm">
                 <div class="essay-info">
@@ -300,7 +411,6 @@
                 </div>
             </a>
             
-            <!-- Essay III -->
             <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal-v2.jpg" alt="Essay III - The Signal Steps into the Light">
                 <div class="essay-info">
@@ -308,7 +418,6 @@
                 </div>
             </a>
             
-            <!-- Essay IV -->
             <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
                 <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture">
                 <div class="essay-info">
