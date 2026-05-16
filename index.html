@@ -121,7 +121,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.05rem;
+            font-size: 1.35rem;
             color: #d4af77;
             text-decoration: none;
         }
@@ -325,7 +325,7 @@
     </style>
 </head>
 <body>
-    <!-- Header with fully functional language dropdown -->
+    <!-- Header with contact-style dropdown font size -->
     <nav class="nav">
         <a href="#home">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -338,9 +338,9 @@
             <div class="language-switcher" id="language-switcher">
                 <span class="current-lang" id="current-lang-display">🇬🇧 EN</span>
                 <div class="language-dropdown" id="language-dropdown">
-                    <a href="#" class="language-option" data-lang="en">🇬🇧 EN</a>
-                    <a href="#" class="language-option" data-lang="de">🇩🇪 DE</a>
-                    <a href="#" class="language-option" data-lang="es">🇪🇸 ES</a>
+                    <a href="#" class="language-option" data-lang="en">🇬🇧 <span style="font-size:0.85rem;">EN</span></a>
+                    <a href="#" class="language-option" data-lang="de">🇩🇪 <span style="font-size:0.85rem;">DE</span></a>
+                    <a href="#" class="language-option" data-lang="es">🇪🇸 <span style="font-size:0.85rem;">ES</span></a>
                 </div>
             </div>
         </div>
@@ -378,7 +378,7 @@
                 <div class="find-card">
                     <div class="icon">🕍</div>
                     <h4>On X (@ThePrinceEcho)</h4>
-                    <p>The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
+                    <p>The outer court of the temple — short, sharp daily observations and Prime Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
                     <a href="https://x.com/theprinceecho">Follow on X →</a>
                 </div>
                 <div class="find-card">
@@ -448,28 +448,21 @@
             
             if (!switcher || !dropdown || !currentDisplay) return;
 
-            // Toggle dropdown on click
             switcher.addEventListener('click', (e) => {
                 e.stopPropagation();
                 dropdown.classList.toggle('show');
             });
 
-            // Close dropdown when clicking outside
             document.addEventListener('click', () => {
                 dropdown.classList.remove('show');
             });
 
-            // Handle language selection
             dropdown.addEventListener('click', (e) => {
                 const option = e.target.closest('.language-option');
                 if (option) {
                     e.stopPropagation();
-                    // Update the displayed language
                     currentDisplay.innerHTML = option.innerHTML;
                     dropdown.classList.remove('show');
-                    
-                    // Optional: Add translation logic here if needed
-                    // For now, just visual update
                 }
             });
         }
