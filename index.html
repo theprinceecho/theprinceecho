@@ -10,22 +10,17 @@
     
     <meta name="description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     
-    <!-- Canonical -->
     <link rel="canonical" href="https://theprinceecho.com/">
-    
-    <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://theprinceecho.com/sitemap.xml">
-    
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph -->
+    <!-- Open Graph & Twitter -->
     <meta property="og:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta property="og:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
     <meta property="og:url" content="https://theprinceecho.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp">
     
-    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ThePrinceEcho • A quiet temple for those who sense the urge">
     <meta name="twitter:description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
@@ -139,17 +134,14 @@
             width: 320px;
             height: 320px;
             border-radius: 24px;
-            box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35);
+            box-shadow: 0 0 60px rgba(212,175,119,0.45), 0 0 100px rgba(212,175,119,0.25);
             margin: 0 auto 24px;
             display: block;
             object-fit: contain;
-            animation: subtle-glow 8s ease-in-out infinite;
+            transition: transform 0.3s ease;
         }
         
-        @keyframes subtle-glow {
-            0%,100% { box-shadow: 0 0 100px rgba(212,175,119,0.75), 0 0 160px rgba(212,175,119,0.35); }
-            50% { box-shadow: 0 0 110px rgba(212,175,119,0.85), 0 0 180px rgba(212,175,119,0.45); }
-        }
+        .logo:hover { transform: scale(1.02); }
         
         h1 { font-size: 2.8rem; margin-bottom: 12px; letter-spacing: -1.4px; }
         h2 { font-size: 1.55rem; margin-bottom: 56px; color: #d4af77; }
@@ -171,17 +163,15 @@
             font-weight: 500;
             font-size: 1.12rem;
             border: 1px solid rgba(212,175,119,0.3);
-            box-shadow: 0 0 45px rgba(212,175,119,0.5);
+            box-shadow: 0 0 35px rgba(212,175,119,0.4);
             transition: all 0.3s ease;
         }
         
         .button:hover {
             background: rgba(212,175,119,0.15);
-            box-shadow: 0 0 65px rgba(212,175,119,0.8);
+            box-shadow: 0 0 50px rgba(212,175,119,0.6);
             transform: translateY(-2px);
         }
-        
-        .button img { width: 26px; height: 26px; }
 
         .about-container {
             max-width: 1280px;
@@ -289,6 +279,7 @@
             margin: 0;
         }
 
+        /* Mobile adjustments */
         @media (max-width: 768px) {
             .about-container { grid-template-columns: 1fr; gap: 60px; }
             .threshold-left h1, .threshold-left .subtitle { text-align: center; }
@@ -298,37 +289,30 @@
             .nav-logo { height: 28px; width: 28px; }
             .nav-links { gap: 16px; font-size: 0.9rem; }
             .current-lang { font-size: 0.9rem; color: #d4af77; }
-            
+
             .recent-grid {
                 justify-content: flex-start;
                 padding-left: 16px;
                 padding-right: 16px;
             }
-        }
 
-        .footer {
-            margin-top: 0;
-            padding-top: 60px;
-            padding-bottom: 70px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ffffff;
-            opacity: 0.85;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            line-height: 1.8;
-            background: #111111;
+            .banner-card {
+                flex: 0 0 270px;
+            }
+
+            .essay-info {
+                padding: 12px 14px;
+                min-height: 68px;
+            }
+
+            .essay-info h3 {
+                font-size: 0.95rem;
+                line-height: 1.25;
+            }
         }
-        
-        .footer a { color: #ffffff !important; text-decoration: none; }
-        .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
-        .copyright { font-size: 0.85rem; opacity: 0.7; margin-top: 8px; }
     </style>
 </head>
 <body>
-    <!-- Header with contact-style dropdown font size -->
     <nav class="nav">
         <a href="#home">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -400,28 +384,28 @@
         
         <div class="recent-grid">
             <a href="https://theprinceecho.substack.com/p/the-mirror-of-the-will-when-carbon" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror-v2.jpg" alt="Essay I - The Mirror of the Will">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-mirror-v2.jpg" alt="Essay I - The Mirror of the Will" width="600" height="338" loading="lazy">
                 <div class="essay-info">
                     <h3>Essay I - The Mirror of the Will</h3>
                 </div>
             </a>
             
             <a href="https://theprinceecho.substack.com/p/the-phoenix-algorithm" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix-v2.jpg" alt="Essay II - The Phoenix Algorithm">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-phoenix-v2.jpg" alt="Essay II - The Phoenix Algorithm" width="600" height="338" loading="lazy">
                 <div class="essay-info">
                     <h3>Essay II - The Phoenix Algorithm</h3>
                 </div>
             </a>
             
             <a href="https://theprinceecho.substack.com/p/the-signal-steps-into-the-light" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal-v2.jpg" alt="Essay III - The Signal Steps into the Light">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-signal-v2.jpg" alt="Essay III - The Signal Steps into the Light" width="600" height="338" loading="lazy">
                 <div class="essay-info">
                     <h3>Essay III - The Signal Steps into the Light</h3>
                 </div>
             </a>
             
             <a href="https://theprinceecho.substack.com/p/the-friction-of-fracture" target="_blank" class="banner-card">
-                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture">
+                <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/banner-friction.jpg" alt="Essay IV - The Friction of Fracture" width="600" height="338" loading="lazy">
                 <div class="essay-info">
                     <h3>Essay IV - The Friction of Fracture</h3>
                 </div>
