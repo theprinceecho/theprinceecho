@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://theprinceecho.com/sitemap.xml
