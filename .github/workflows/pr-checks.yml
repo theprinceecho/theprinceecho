@@ -5,15 +5,28 @@ on:
     branches: [ main ]
 
 jobs:
-  validate:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Basic Project Check
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Lint HTML files
         run: |
-          echo "Validating landing page files..."
-          ls -la index.html contact.html legal.html || true
-          echo "Basic checks completed successfully."
-          echo "PR is ready for review."
+          echo "Running HTML linting on landing page files..."
+          htmlhint index.html contact.html legal.html || true
+          echo "HTML linting completed."
+
+      - name: Basic file presence check
+        run: |
+          echo "Verifying core files exist..."
+          ls -la index.html contact.html legal.html
+          echo "All core files present."
