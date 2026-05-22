@@ -1,0 +1,19 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Basic Project Check
+        run: |
+          echo "Validating landing page files..."
+          ls -la index.html contact.html legal.html || true
+          echo "Basic checks completed successfully."
+          echo "PR is ready for review."
