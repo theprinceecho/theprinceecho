@@ -1,0 +1,17 @@
+{
+  "doctype-first": true,
+  "head-script-disabled": true,
+  "style-disabled": false,
+  "inline-style-disabled": false,
+  "alt-require": true,
+  "attr-lowercase": true,
+  "attr-value-double-quotes": true,
+  "tagname-lowercase": true,
+  "id-unique": true,
+  "src-not-empty": true,
+  "title-require": true,
+  "space-tab-mixed-disabled": true,
+  "attr-no-duplication": true,
+  "href-abs-or-rel": "rel",
+  "img-alt-require": true
+}

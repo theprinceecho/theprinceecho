@@ -21,8 +21,8 @@ jobs:
 
       - name: Lint HTML files
         run: |
-          echo "Running HTML linting on landing page files..."
-          htmlhint index.html contact.html legal.html || true
+          echo "Running HTMLHint with custom rules..."
+          htmlhint index.html contact.html legal.html --config .htmlhintrc || true
           echo "HTML linting completed."
 
       - name: Basic file presence check
