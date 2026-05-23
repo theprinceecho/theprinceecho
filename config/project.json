@@ -1,0 +1,20 @@
+{
+  "name": "ThePrinceEcho",
+  "description": "A sovereign landing page for those who sense the urge.",
+  "version": "1.0.0",
+  "repository": "theprinceecho/theprinceecho",
+  "paths": {
+    "html": ["index.html", "contact.html", "legal.html"],
+    "config": "config/"
+  },
+  "automation": {
+    "htmlLinting": true,
+    "lighthouseCI": true,
+    "pullRequestChecks": true
+  },
+  "styling": {
+    "theme": "navy-gold",
+    "typography": "Inter"
+  },
+  "notes": "This file serves as the central project configuration. Expand as needed."
+}
