@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  lint:
+  lint-and-audit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,17 +16,26 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install HTMLHint
-        run: npm install -g htmlhint
+      - name: Install dependencies
+        run: |
+          npm install -g htmlhint serve
 
       - name: Lint HTML files
         run: |
-          echo "Running HTMLHint with custom rules..."
+          echo "Running HTMLHint..."
           htmlhint index.html contact.html legal.html --config .htmlhintrc || true
-          echo "HTML linting completed."
 
-      - name: Basic file presence check
+      - name: Serve site
+        run: npx serve . -l 8080 &
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          configPath: './lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Basic file check
         run: |
-          echo "Verifying core files exist..."
+          echo "Verifying core files..."
           ls -la index.html contact.html legal.html
-          echo "All core files present."
