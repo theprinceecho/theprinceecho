@@ -4,6 +4,20 @@ A sovereign landing page for those who sense the urge.
 
 ![ThePrinceEcho GitHub Setup](assets/github-setup-flowchart.jpg)
 
+## Current Status
+
+| Area                        | Status     | Notes                                           |
+|----------------------------|------------|-------------------------------------------------|
+| **Repository Foundation**  | 🟢 ✅      | Clean structure, well organized                 |
+| **README.md**              | 🟢 ✅      | Expanded with overview + flowchart              |
+| **Notes.md**               | 🟢 ✅      | Good documentation of automation                |
+| **CI Workflow**            | 🟢 ✅      | `pr-checks.yml` running on PRs                  |
+| **HTML Linting**           | 🟢 ✅      | HTMLHint + custom `.htmlhintrc`                 |
+| **Lighthouse CI**          | 🟢 ✅      | Performance, Accessibility & SEO checks         |
+| **Project Config**         | 🟢 ✅      | `config/project.json` centralized               |
+| **Quality Gates**          | 🟢         | Solid PR validation in place                    |
+| **Overall Maturity**       | 🟢         | Professional and maintainable foundation        |
+
 ## Overview
 
 This repository contains the official landing page for [ThePrinceEcho](https://theprinceecho.com) — a quiet, high-signal space for reflections on macro cycles, sovereignty, and the convergence of human intelligence with advancing technology.
