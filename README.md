@@ -1,17 +1,58 @@
-# ThePrinceEcho — The Bridge
+# ThePrinceEcho
 
-Sovereign landing page for those who sense the urge.
+A sovereign landing page for those who sense the urge.
 
-**X is the main bridge** — the primary platform for reach, visibility and organic follower growth.
+## Overview
 
-Calm, precise, high-signal observations.  
-No noise. No urgency. No performance.
+This repository contains the official landing page for [ThePrinceEcho](https://theprinceecho.com) — a quiet, high-signal space for reflections on macro cycles, sovereignty, and the convergence of human intelligence with advancing technology.
 
-The Prince does not chase.  
+The site is intentionally minimal, elegant, and focused on clarity.
 
-He simply stands as the bridge.
+## Tech Stack
 
----
+- Static HTML, CSS & JavaScript
+- Hosted on GitHub Pages / custom domain
+- GitHub Actions for CI
 
-**Live landing page:**  
-https://theprinceecho.github.io/theprinceecho/
+## Project Structure
+
+```
+.
+├── index.html
+├── contact.html
+├── legal.html
+├── Notes.md
+├── .github/workflows/
+├── .htmlhintrc
+└── lighthouserc.json
+```
+
+## Local Development
+
+Simply open `index.html` in a browser. No build step required.
+
+For a local server:
+```bash
+npx serve .
+```
+
+## Pull Requests & Automation
+
+All changes go through Pull Requests. The following checks run automatically:
+
+- HTML linting (HTMLHint with custom rules)
+- Lighthouse audits (Performance, Accessibility, SEO)
+
+See [Notes.md](./Notes.md) for the current automation setup and contribution guidelines.
+
+## Philosophy
+
+This project follows a sovereign, high-signal approach:
+- Clean and minimal code
+- Thoughtful typography and spacing
+- Performance and accessibility as first-class citizens
+- Long-term maintainability over complexity
+
+## License
+
+All rights reserved.

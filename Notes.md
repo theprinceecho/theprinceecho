@@ -1,34 +1,47 @@
 # Notes
 
-## GitHub Automation
+## Project Philosophy
 
-### Pull Request Validation
+This landing page is built with intention — calm, precise, and sovereign. Every change should preserve clarity, elegance, and long-term maintainability.
 
-A basic GitHub Actions workflow has been added to automatically run checks on pull requests.
+## Current Automation
 
-**Location:** `.github/workflows/pr-checks.yml`
+### Pull Request Workflow
 
-**Trigger:** Every pull request targeting the `main` branch.
+Every pull request to `main` automatically runs:
 
-**Current Behavior:**
-- Checks out the repository
-- Performs a basic validation of core landing page files (`index.html`, `contact.html`, `legal.html`)
-- Confirms the PR structure is ready for review
+- **HTML Linting** via HTMLHint (with custom rules in `.htmlhintrc`)
+- **Lighthouse CI** (Performance, Accessibility, SEO, Best Practices)
+- Basic file validation
 
-This serves as a clean, minimal foundation for future automation.
+### Files
 
-### Future Expansion Ideas
-- Add HTML linting / validation
-- Broken link checking
-- Preview deployments for visual review
-- Performance or accessibility checks
+| File                    | Purpose                              |
+|-------------------------|--------------------------------------|
+| `.github/workflows/pr-checks.yml` | Main CI workflow                    |
+| `.htmlhintrc`           | Custom HTMLHint rules               |
+| `lighthouserc.json`     | Lighthouse CI configuration         |
+| `Notes.md`              | Project notes and guidelines        |
+| `README.md`             | Project overview                    |
 
-## Pull Request Workflow
+## How to Contribute
 
 1. Create a feature branch from `main`
-2. Make focused, clean changes
-3. Open a Pull Request targeting `main`
-4. Automated checks will run automatically
-5. Once checks pass and the PR is reviewed, it can be merged
+2. Make focused, high-quality changes
+3. Open a Pull Request
+4. Ensure CI checks pass
+5. Request review if needed
 
-Please keep changes minimal and follow the existing elegant, sovereign style of the landing page.
+Please keep changes aligned with the existing design language and tone.
+
+## Future Improvements (Ideas)
+
+- Add a Pull Request template
+- Expand Lighthouse assertion thresholds
+- Add broken link checking
+- Improve documentation further
+- Consider image optimization pipeline
+
+## Contact
+
+For questions about the project or automation, reach out via the contact form or X (@ThePrinceEcho).
