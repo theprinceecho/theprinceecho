@@ -16,14 +16,33 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; }
         .nav {
-            position: fixed; top: 0; left: 0; right: 0; height: 60px;
-            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(12px);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 24px; z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(5,5,5,0.95);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 100;
         }
-        .nav-logo { height: 32px; cursor: pointer; }
-        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
-        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; }
+        .nav-logo { height: 32px; width: 32px; cursor: pointer; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
+        }
         .language-switcher { position: relative; cursor: pointer; user-select: none; }
         .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #d4af77; }
         .language-dropdown {
@@ -55,6 +74,7 @@
     </style>
 </head>
 <body>
+    <!-- Header - Fully aligned with index.html -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -94,7 +114,7 @@
 
         <div class="legal-card">
             <h2>External Links</h2>
-            <p>This website contains links to external third-party websites over whose content we have no influence. We cannot assume liability for external content.</p>
+            <p>This website contains links to external third-party websites over whose content we have no influence.</p>
         </div>
 
         <div class="legal-card">
