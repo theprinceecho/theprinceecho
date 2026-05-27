@@ -37,10 +37,13 @@
         .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
 
         .section { padding: 120px 24px 100px; max-width: 720px; margin: 0 auto; }
-        h1 { font-size: 2.4rem; margin-bottom: 32px; color: #d4af77; }
-        h2 { font-size: 1.35rem; margin: 40px 0 16px; color: #d4af77; }
-        p { line-height: 1.7; margin-bottom: 18px; color: #e0e0e0; }
-
+        h1 { font-size: 2.6rem; margin-bottom: 40px; color: #d4af77; letter-spacing: -0.5px; }
+        h2 { font-size: 1.25rem; margin: 48px 0 16px; color: #d4af77; }
+        p { line-height: 1.75; margin-bottom: 20px; color: #e0e0e0; font-size: 1.02rem; }
+        .legal-card {
+            background: #111111; border: 1px solid rgba(212,175,119,0.15);
+            border-radius: 12px; padding: 28px 32px; margin-bottom: 24px;
+        }
         .footer {
             margin-top: 0; padding-top: 60px; padding-bottom: 70px; text-align: center;
             font-size: 0.9rem; color: #ffffff; opacity: 0.85;
@@ -73,16 +76,31 @@
 
     <div class="section">
         <h1>Legal Disclosure</h1>
-        <h2>Provider Information</h2>
-        <p><strong>Disclosure according to § 5 DDG</strong><br>This site is currently under construction.</p>
-        <h2>Contact</h2>
-        <p>Please contact us via Email (info@theprinceecho.com) or use our contact form.<br>We usually reply within 24 hours.</p>
-        <h2>Liability</h2>
-        <p>The content of this website was created with the greatest possible care.</p>
-        <h2>External Links</h2>
-        <p>This website contains links to external third-party websites.</p>
-        <h2>Copyright</h2>
-        <p>The content and works created by the site operators are subject to copyright.</p>
+
+        <div class="legal-card">
+            <h2>Provider Information</h2>
+            <p><strong>Disclosure according to § 5 DDG</strong><br>This site is currently under construction.</p>
+        </div>
+
+        <div class="legal-card">
+            <h2>Contact</h2>
+            <p>Please contact us via Email (info@theprinceecho.com) or use our contact form.<br>We usually reply within 24 hours.</p>
+        </div>
+
+        <div class="legal-card">
+            <h2>Liability</h2>
+            <p>The content of this website was created with the greatest possible care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content.</p>
+        </div>
+
+        <div class="legal-card">
+            <h2>External Links</h2>
+            <p>This website contains links to external third-party websites over whose content we have no influence. We cannot assume liability for external content.</p>
+        </div>
+
+        <div class="legal-card">
+            <h2>Copyright</h2>
+            <p>The content and works created by the site operators on these pages are subject to copyright.</p>
+        </div>
     </div>
 
     <div class="footer">
