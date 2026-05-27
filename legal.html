@@ -14,43 +14,20 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; }
+        body { font-family: 'Inter', system_ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; }
         .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: rgba(5,5,5,0.95);
-            backdrop-filter: blur(12px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 24px;
-            z-index: 100;
+            position: fixed; top: 0; left: 0; right: 0; height: 60px;
+            background: rgba(5,5,5,0.95); backdrop-filter: blur(12px);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; z-index: 100;
         }
         .nav-logo { height: 32px; width: 32px; cursor: pointer; }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            font-size: 0.95rem;
-        }
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 4px;
-        }
+        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; position: relative; padding-bottom: 4px; }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #d4af77; opacity: 0.85; }
         .language-switcher { position: relative; cursor: pointer; user-select: none; }
         .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #d4af77; }
-        .language-dropdown {
-            position: absolute; top: 100%; right: 0; background: #111111;
-            border: 1px solid rgba(212,175,119,0.3); border-radius: 8px;
-            padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            display: none; flex-direction: column; min-width: 140px;
-        }
+        .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
         .language-dropdown.show { display: flex; }
         .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: #d4af77; text-decoration: none; }
         .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
@@ -59,28 +36,19 @@
         h1 { font-size: 2.6rem; margin-bottom: 40px; color: #d4af77; letter-spacing: -0.5px; }
         h2 { font-size: 1.25rem; margin: 48px 0 16px; color: #d4af77; }
         p { line-height: 1.75; margin-bottom: 20px; color: #e0e0e0; font-size: 1.02rem; }
-        .legal-card {
-            background: #111111; border: 1px solid rgba(212,175,119,0.15);
-            border-radius: 12px; padding: 28px 32px; margin-bottom: 24px;
-        }
-        .footer {
-            margin-top: 0; padding-top: 60px; padding-bottom: 70px; text-align: center;
-            font-size: 0.9rem; color: #ffffff; opacity: 0.85;
-            display: flex; flex-direction: column; align-items: center; gap: 16px; line-height: 1.8;
-            background: #111111;
-        }
+        .legal-card { background: #111111; border: 1px solid rgba(212,175,119,0.15); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; }
+        .footer { margin-top: 0; padding-top: 60px; padding-bottom: 70px; text-align: center; font-size: 0.9rem; color: #ffffff; opacity: 0.85; display: flex; flex-direction: column; align-items: center; gap: 16px; line-height: 1.8; background: #111111; }
         .footer a { color: #ffffff !important; text-decoration: none; }
         .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
     </style>
 </head>
 <body>
-    <!-- Header - Fully aligned with index.html -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
         </a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="index.html#about">About</a>
             <a href="index.html#recent-transmissions">Recent Transmissions</a>
             <div class="language-switcher" id="language-switcher">
@@ -96,27 +64,22 @@
 
     <div class="section">
         <h1>Legal Disclosure</h1>
-
         <div class="legal-card">
             <h2>Provider Information</h2>
             <p><strong>Disclosure according to § 5 DDG</strong><br>This site is currently under construction.</p>
         </div>
-
         <div class="legal-card">
             <h2>Contact</h2>
             <p>Please contact us via Email (info@theprinceecho.com) or use our contact form.<br>We usually reply within 24 hours.</p>
         </div>
-
         <div class="legal-card">
             <h2>Liability</h2>
-            <p>The content of this website was created with the greatest possible care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content.</p>
+            <p>The content of this website was created with the greatest possible care.</p>
         </div>
-
         <div class="legal-card">
             <h2>External Links</h2>
-            <p>This website contains links to external third-party websites over whose content we have no influence.</p>
+            <p>This website contains links to external third-party websites.</p>
         </div>
-
         <div class="legal-card">
             <h2>Copyright</h2>
             <p>The content and works created by the site operators on these pages are subject to copyright.</p>
