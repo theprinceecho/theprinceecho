@@ -16,125 +16,34 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', system_ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; }
         .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: rgba(5,5,5,0.95);
-            backdrop-filter: blur(12px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 24px;
-            z-index: 100;
+            position: fixed; top: 0; left: 0; right: 0; height: 60px;
+            background: rgba(5,5,5,0.95); backdrop-filter: blur(12px);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; z-index: 100;
         }
         .nav-logo { height: 32px; width: 32px; cursor: pointer; }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            font-size: 0.95rem;
-        }
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 4px;
-        }
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #d4af77;
-            opacity: 0.85;
-        }
-        .language-switcher {
-            position: relative;
-            cursor: pointer;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .current-lang {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 1.05rem;
-            color: #d4af77;
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #111111;
-            border: 1px solid rgba(212,175,119,0.3);
-            border-radius: 8px;
-            padding: 8px 0;
-            margin-top: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            display: none;
-            flex-direction: column;
-            min-width: 140px;
-        }
+        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; position: relative; padding-bottom: 4px; }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #d4af77; opacity: 0.85; }
+        .language-switcher { position: relative; cursor: pointer; user-select: none; }
+        .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #d4af77; }
+        .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
         .language-dropdown.show { display: flex; }
-        .language-option {
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.35rem;
-            color: #d4af77;
-            text-decoration: none;
-        }
-        .language-option:hover, .language-option:active {
-            background: rgba(212,175,119,0.15);
-        }
+        .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: #d4af77; text-decoration: none; }
+        .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
 
         .section { padding: 120px 24px 100px; max-width: 720px; margin: 0 auto; }
         h1 { font-size: 2.6rem; margin-bottom: 40px; color: #d4af77; letter-spacing: -0.5px; }
         h2 { font-size: 1.25rem; margin: 48px 0 16px; color: #d4af77; }
         p { line-height: 1.75; margin-bottom: 20px; color: #e0e0e0; font-size: 1.02rem; }
-        .legal-card {
-            background: #111111;
-            border: 1px solid rgba(212,175,119,0.15);
-            border-radius: 12px;
-            padding: 28px 32px;
-            margin-bottom: 24px;
-        }
-        .footer {
-            margin-top: 0;
-            padding-top: 60px;
-            padding-bottom: 70px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ffffff;
-            opacity: 0.85;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            line-height: 1.8;
-            background: #111111;
-        }
-        .footer a {
-            color: #ffffff !important;
-            text-decoration: none;
-        }
-        .footer-line1 {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .legal-card { background: #111111; border: 1px solid rgba(212,175,119,0.15); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; }
+        .footer { margin-top: 0; padding-top: 60px; padding-bottom: 70px; text-align: center; font-size: 0.9rem; color: #ffffff; opacity: 0.85; display: flex; flex-direction: column; align-items: center; gap: 16px; line-height: 1.8; background: #111111; }
+        .footer a { color: #ffffff !important; text-decoration: none; }
+        .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
     </style>
 </head>
 <body>
-    <!-- Exact header from index.html -->
+    <!-- header-v3 cache-bust -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
