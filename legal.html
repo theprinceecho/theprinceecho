@@ -14,63 +14,37 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: #050505;
-            color: #d4af77;
-            min-height: 100vh;
-        }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; }
         .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(12px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 24px;
-            z-index: 100;
+            position: fixed; top: 0; left: 0; right: 0; height: 60px;
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(12px);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; z-index: 100;
         }
         .nav-logo { height: 32px; cursor: pointer; }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            font-size: 0.95rem;
-        }
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .language-switcher { position: relative; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; }
+        .language-switcher { position: relative; cursor: pointer; user-select: none; }
         .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #d4af77; }
-        .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
+        .language-dropdown {
+            position: absolute; top: 100%; right: 0; background: #111111;
+            border: 1px solid rgba(212,175,119,0.3); border-radius: 8px;
+            padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none; flex-direction: column; min-width: 140px;
+        }
         .language-dropdown.show { display: flex; }
         .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: #d4af77; text-decoration: none; }
         .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
 
-        .section { padding: 100px 24px 140px; max-width: 720px; margin: 0 auto; }
+        .section { padding: 120px 24px 100px; max-width: 720px; margin: 0 auto; }
         h1 { font-size: 2.4rem; margin-bottom: 32px; color: #d4af77; }
         h2 { font-size: 1.35rem; margin: 40px 0 16px; color: #d4af77; }
         p { line-height: 1.7; margin-bottom: 18px; color: #e0e0e0; }
 
         .footer {
-            margin-top: 0;
-            padding-top: 60px;
-            padding-bottom: 70px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ffffff;
-            opacity: 0.85;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            line-height: 1.8;
+            margin-top: 0; padding-top: 60px; padding-bottom: 70px; text-align: center;
+            font-size: 0.9rem; color: #ffffff; opacity: 0.85;
+            display: flex; flex-direction: column; align-items: center; gap: 16px; line-height: 1.8;
             background: #111111;
         }
         .footer a { color: #ffffff !important; text-decoration: none; }
@@ -78,7 +52,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation - Standardized -->
     <nav class="nav">
         <a href="index.html">
             <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
@@ -87,13 +60,12 @@
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
             <a href="index.html#recent-transmissions">Recent Transmissions</a>
-           
             <div class="language-switcher" id="language-switcher">
                 <span class="current-lang" id="current-lang-display">🇬🇧 EN</span>
                 <div class="language-dropdown" id="language-dropdown">
-                    <a href="#" class="language-option" data-lang="en">🇬🇧 <span style="font-size:0.85rem;">EN</span></a>
-                    <a href="#" class="language-option" data-lang="de">🇩🇪 <span style="font-size:0.85rem;">DE</span></a>
-                    <a href="#" class="language-option" data-lang="es">🇪🇸 <span style="font-size:0.85rem;">ES</span></a>
+                    <a href="#" class="language-option" data-lang="en">🇬🇧 EN</a>
+                    <a href="#" class="language-option" data-lang="de">🇩🇪 DE</a>
+                    <a href="#" class="language-option" data-lang="es">🇪🇸 ES</a>
                 </div>
             </div>
         </div>
@@ -101,26 +73,18 @@
 
     <div class="section">
         <h1>Legal Disclosure</h1>
-        
         <h2>Provider Information</h2>
-        <p><strong>Disclosure according to § 5 DDG</strong><br>
-        This site is currently under construction.</p>
-        
+        <p><strong>Disclosure according to § 5 DDG</strong><br>This site is currently under construction.</p>
         <h2>Contact</h2>
-        <p>Please contact us via Email (info@theprinceecho.com) or use our contact form.<br>
-        We usually reply within 24 hours.</p>
-        
+        <p>Please contact us via Email (info@theprinceecho.com) or use our contact form.<br>We usually reply within 24 hours.</p>
         <h2>Liability</h2>
-        <p>The content of this website is created with the greatest possible care. However, no guarantee can be given for the accuracy, completeness, and timeliness of the content.</p>
-        
+        <p>The content of this website was created with the greatest possible care.</p>
         <h2>External Links</h2>
-        <p>This website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot assume any liability for this external content.</p>
-        
+        <p>This website contains links to external third-party websites.</p>
         <h2>Copyright</h2>
-        <p>The content and works created by the site operators on these pages are subject to copyright.</p>
+        <p>The content and works created by the site operators are subject to copyright.</p>
     </div>
 
-    <!-- Footer - Standardized -->
     <div class="footer">
         <div class="footer-line1">
             <span>The sovereign landing page</span>
@@ -134,16 +98,5 @@
         </div>
         <div class="copyright">Copyright © 2026 ThePrinceEcho • All rights reserved</div>
     </div>
-
-    <script>
-        function initLanguageSwitcher() {
-            const switcher = document.getElementById('language-switcher');
-            const dropdown = document.getElementById('language-dropdown');
-            if (!switcher) return;
-            switcher.addEventListener('click', () => dropdown.classList.toggle('show'));
-            document.addEventListener('click', () => dropdown.classList.remove('show'));
-        }
-        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
-    </script>
 </body>
 </html>
