@@ -1,3 +1,33 @@
+# Notes
+
+## Project Philosophy
+
+This landing page is built with intention — calm, precise, and sovereign. Every change should preserve clarity, elegance, and long-term maintainability.
+
+## Current Status
+
+| Area                        | Status     | Notes                                           |
+|----------------------------|------------|-------------------------------------------------|
+| **Repository Foundation**  | 🟢 ✅      | Clean structure, well organized                 |
+| **README.md**              | 🟢 ✅      | Clean profile description                       |
+| **Notes.md**               | 🟢 ✅      | Technical documentation                         |
+| **CI Workflow**            | 🟢 ✅      | `pr-checks.yml` running on PRs                  |
+| **HTML Linting**           | 🟢 ✅      | HTMLHint + custom `.htmlhintrc`                 |
+| **Lighthouse CI**          | 🟢 ✅      | Performance, Accessibility & SEO checks         |
+| **Project Config**         | 🟢 ✅      | `config/project.json` centralized               |
+| **Quality Gates**          | 🟢         | Solid PR validation in place                    |
+| **Overall Maturity**       | 🟢         | Professional and maintainable foundation        |
+
+## GitHub Automation
+
+### Pull Request Workflow
+
+Every pull request to `main` automatically runs:
+
+- **HTML Linting** via HTMLHint (with custom rules in `.htmlhintrc`)
+- **Lighthouse CI** (Performance, Accessibility, SEO, Best Practices)
+- Basic file validation
+
 ### Key Files
 
 | File                              | Purpose                              |
