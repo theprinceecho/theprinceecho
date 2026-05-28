@@ -1,74 +1,23 @@
 # ThePrinceEcho
 
-A sovereign landing page for those who sense the urge.
+A quiet threshold for those who sense the urge.
 
-![ThePrinceEcho GitHub Setup](assets/github-setup-flowchart.jpg)
+This repository contains the source for [theprinceecho.com](https://theprinceecho.com) — a calm, high-signal landing page dedicated to reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.
 
-## Current Status
+The project follows a sovereign, minimal, and intentional approach: clean code, thoughtful typography, and long-term maintainability over complexity.
 
-| Area                        | Status     | Notes                                           |
-|----------------------------|------------|-------------------------------------------------|
-| **Repository Foundation**  | 🟢 ✅      | Clean structure, well organized                 |
-| **README.md**              | 🟢 ✅      | Expanded with overview + flowchart              |
-| **Notes.md**               | 🟢 ✅      | Good documentation of automation                |
-| **CI Workflow**            | 🟢 ✅      | `pr-checks.yml` running on PRs                  |
-| **HTML Linting**           | 🟢 ✅      | HTMLHint + custom `.htmlhintrc`                 |
-| **Lighthouse CI**          | 🟢 ✅      | Performance, Accessibility & SEO checks         |
-| **Project Config**         | 🟢 ✅      | `config/project.json` centralized               |
-| **Quality Gates**          | 🟢         | Solid PR validation in place                    |
-| **Overall Maturity**       | 🟢         | Professional and maintainable foundation        |
+## Explore
 
-## Overview
+- **Landing Page**: [theprinceecho.com](https://theprinceecho.com)
+- **Essays**: [Substack](https://theprinceecho.substack.com)
+- **Daily Notes**: [@ThePrinceEcho on X](https://x.com/theprinceecho)
 
-This repository contains the official landing page for [ThePrinceEcho](https://theprinceecho.com) — a quiet, high-signal space for reflections on macro cycles, sovereignty, and the convergence of human intelligence with advancing technology.
+## About this Repository
 
-The site is intentionally minimal, elegant, and focused on clarity.
+This is the official home of the landing page. It is intentionally kept simple and focused.
 
-## Tech Stack
+For technical documentation, automation details, and contribution guidelines, see [Notes.md](./Notes.md).
 
-- Static HTML, CSS & JavaScript
-- GitHub Actions for CI
+---
 
-## GitHub Automation
-
-The project uses a robust CI setup focused on quality and maintainability:
-
-- **HTML Linting** with custom rules
-- **Lighthouse CI** for performance, accessibility, and SEO
-- Automated checks on every Pull Request
-
-See the flowchart above for the full architecture.
-
-## Project Structure
-
-```
-.
-├── index.html
-├── contact.html
-├── legal.html
-├── README.md
-├── Notes.md
-├── config/project.json
-├── .htmlhintrc
-├── lighthouserc.json
-└── .github/workflows/pr-checks.yml
-```
-
-## Local Development
-
-Open `index.html` in a browser. For a local server:
-```bash
-npx serve .
-```
-
-## Pull Requests
-
-All contributions go through Pull Requests. Automated checks (HTML linting + Lighthouse) run on every PR to maintain quality.
-
-## Philosophy
-
-This project follows a sovereign, high-signal approach with focus on clarity, performance, and long-term maintainability.
-
-## License
-
-All rights reserved.
+*All rights reserved.*
