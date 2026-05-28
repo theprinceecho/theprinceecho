@@ -1,28 +1,36 @@
-# Notes
+### Key Files
 
-## Project Philosophy
+| File                              | Purpose                              |
+|-----------------------------------|--------------------------------------|
+| `.github/workflows/pr-checks.yml` | Main CI workflow                     |
+| `.htmlhintrc`                     | Custom HTMLHint rules                |
+| `lighthouserc.json`               | Lighthouse CI configuration          |
+| `config/project.json`             | Centralized project configuration    |
+| `Notes.md`                        | Technical documentation              |
 
-This landing page is built with intention — calm, precise, and sovereign. Every change should preserve clarity, elegance, and long-term maintainability.
+## Project Structure
 
-## Current Automation
+```
+.
+├── index.html
+├── contact.html
+├── legal.html
+├── README.md
+├── Notes.md
+├── config/
+│   └── project.json
+├── .htmlhintrc
+├── lighthouserc.json
+└── .github/workflows/pr-checks.yml
+```
 
-### Pull Request Workflow
+## Local Development
 
-Every pull request to `main` automatically runs:
+Open `index.html` in a browser. For a local server:
 
-- **HTML Linting** via HTMLHint (with custom rules in `.htmlhintrc`)
-- **Lighthouse CI** (Performance, Accessibility, SEO, Best Practices)
-- Basic file validation
-
-### Files
-
-| File                    | Purpose                              |
-|-------------------------|--------------------------------------|
-| `.github/workflows/pr-checks.yml` | Main CI workflow                    |
-| `.htmlhintrc`           | Custom HTMLHint rules               |
-| `lighthouserc.json`     | Lighthouse CI configuration         |
-| `Notes.md`              | Project notes and guidelines        |
-| `README.md`             | Project overview                    |
+```bash
+npx serve .
+```
 
 ## How to Contribute
 
