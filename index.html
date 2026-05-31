@@ -212,6 +212,11 @@
     }
 
     /* Recent Transmissions */
+    .transmissions__header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
     .transmissions__list {
       display: flex;
       flex-direction: column;
@@ -351,9 +356,9 @@
         <!-- X Card -->
         <div class="card">
           <div class="card__icon">𝕏</div>
-          <h3 class="card__title">On 𝕏 (@ThePrinceEcho)</h3>
+          <h3 class="card__title">On X (@ThePrinceEcho)</h3>
           <p class="card__text">The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
-          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on 𝕏 →</a>
+          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on X →</a>
         </div>
 
         <!-- Substack Card -->
@@ -423,18 +428,20 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple active nav highlighting
-    const sections = document.querySelectorAll('section[id]');
+    // Dynamic active navigation
+    const sections = ['home', 'about', 'recent-transmissions'];
     const navLinks = document.querySelectorAll('.nav__link');
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
+    function updateActiveLink() {
+      let current = 'home';
+
+      sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const sectionTop = section.getBoundingClientRect().top;
+          if (sectionTop <= 150) {
+            current = sectionId;
+          }
         }
       });
 
@@ -444,7 +451,13 @@
           link.classList.add('active');
         }
       });
-    });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
