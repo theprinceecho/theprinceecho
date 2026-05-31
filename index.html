@@ -19,10 +19,16 @@
     }
 
     body {
-      background-color: var(--color-bg);
+      background-color: #121212;
       color: var(--color-text);
       font-family: Inter, system_ui, sans-serif;
       line-height: 1.6;
+
+      /* Subtle TPE repeating background texture */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' fill='none'%3E%3Ctext x='12' y='48' font-size='32' fill='%23c5a46e' fill-opacity='0.07' font-family='Inter, system-ui, sans-serif' font-weight='600'%3ETPE%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 140px 140px;
+      background-attachment: fixed;
     }
 
     /* Navigation */
