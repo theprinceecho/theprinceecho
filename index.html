@@ -46,7 +46,7 @@
     .nav__container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,7 +69,7 @@
 
     .nav__links {
       display: flex;
-      gap: 2.25rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
@@ -240,10 +240,10 @@
     }
 
     .card__icon {
-      width: 28px;
-      height: 28px;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
       color: var(--color-accent);
+      line-height: 1;
     }
 
     .card__title {
@@ -481,9 +481,7 @@
 
         <!-- X Card -->
         <div class="card">
-          <svg class="card__icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25l-7.451 8.502L4.5 2.25H1.5l7.5 8.5L1.5 21.75h3l6.75-7.5 6.75 7.5h3l-7.5-8.5 7.5-8.5h-3z"/>
-          </svg>
+          <div class="card__icon">×</div>
           <h3 class="card__title">On X (@ThePrinceEcho)</h3>
           <p class="card__text">
             The outer court of the temple — short, sharp daily observations and Prince Notes. 
@@ -496,9 +494,7 @@
 
         <!-- Substack Card -->
         <div class="card">
-          <svg class="card__icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-2v2h-2v-2H9v-2h2V9h2v2h2v2z"/>
-          </svg>
+          <div class="card__icon">📜</div>
           <h3 class="card__title">On Substack (ThePrinceEcho)</h3>
           <p class="card__text">
             The inner chamber — longer, chapter-like essays and deeper reflections. 
