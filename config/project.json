@@ -1,8 +1,9 @@
 {
   "name": "ThePrinceEcho",
   "description": "A sovereign landing page for those who sense the urge.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": "theprinceecho/theprinceecho",
+  "defaultBranch": "main",
   "paths": {
     "html": ["index.html", "contact.html", "legal.html"],
     "config": "config/"
@@ -13,8 +14,16 @@
     "pullRequestChecks": true
   },
   "styling": {
-    "theme": "navy-gold",
-    "typography": "Inter"
+    "theme": "cream-on-dark",
+    "typography": "Inter",
+    "cssCustomProperties": true,
+    "currentRefinementBranch": "refine/landing-page-v2"
   },
-  "notes": "This file serves as the central project configuration. Expand as needed."
+  "visualDirection": {
+    "base": "dark",
+    "accent": "cream",
+    "status": "in_progress",
+    "notes": "Established clean CSS Custom Properties foundation. Header refined. Language switcher removed."
+  },
+  "notes": "Central project configuration. Updated to reflect active visual refinement (v2) with cream accents on dark base."
 }
