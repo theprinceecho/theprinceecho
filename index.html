@@ -1,66 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ThePrinceEcho • A quiet temple for those who sense the urge</title>
-    <meta name="description" content="A sovereign threshold for those who sense the urge. Calm, high-signal reflections on macro cycles, sovereignty, and the quiet convergence of human intelligence with advancing technology.">
-
-    <link rel="canonical" href="https://theprinceecho.com">
+<!-- Navigation / Header -->
+<nav class="nav">
+  <div class="nav__container">
     
-    <!-- CSS Variables + Base Styles -->
-    <style>
-        :root {
-            /* Core Colors */
-            --color-bg: #0a0a0a;
-            --color-surface: #121212;
-            --color-cream: #f5f0e8;
-            --color-cream-light: #e8e0d3;
-            --color-gold: #d4af77;
-            --color-gold-muted: #b8975f;
-            
-            /* Text */
-            --color-text-primary: #f5f0e8;
-            --color-text-secondary: #c8c0b0;
-            --color-text-muted: #888888;
-            
-            /* Spacing */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2.5rem;
-            --space-xl: 4rem;
-            --space-xxl: 6rem;
-        }
+    <!-- Logo -->
+    <a href="#home" class="nav__logo" aria-label="ThePrinceEcho Home">
+      <img src="TPE_Logo_final.webp" alt="ThePrinceEcho" width="32" height="32">
+    </a>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- Navigation Links -->
+    <div class="nav__links">
+      <a href="#home" class="nav__link active">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#recent-transmissions" class="nav__link">Recent Transmissions</a>
+    </div>
 
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--color-bg);
-            color: var(--color-text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+  </div>
+</nav>
 
-        /* Header & Footer will be inserted here */
-    </style>
-</head>
-<body>
-    <!-- HEADER WILL GO HERE -->
-    
-    <main>
-        <!-- Home Section -->
-        <!-- About Section -->
-        <!-- Recent Transmissions Section -->
-    </main>
-    
-    <!-- FOOTER WILL GO HERE -->
-</body>
-</html>
+<!-- Hero / Home Section -->
+<section id="home" class="hero">
+  <div class="hero__content">
+
+    <!-- Emblem -->
+    <div class="hero__emblem">
+      <img 
+        src="TPE_Logo_final.webp" 
+        alt="ThePrinceEcho Emblem" 
+        class="hero__logo"
+        width="420" 
+        height="420"
+        loading="eager"
+      >
+    </div>
+
+    <!-- Title -->
+    <h1 class="hero__title">ThePrinceEcho</h1>
+
+    <!-- Tagline -->
+    <p class="hero__tagline">
+      A quiet temple for those who sense the urge.
+    </p>
+
+    <!-- CTAs -->
+    <div class="hero__actions">
+      <a href="https://x.com/theprinceecho" class="btn btn--primary" target="_blank" rel="noopener">
+        Follow on X
+      </a>
+      <a href="https://theprinceecho.substack.com" class="btn btn--secondary" target="_blank" rel="noopener">
+        Read on Substack
+      </a>
+    </div>
+
+  </div>
+</section>
