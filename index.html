@@ -31,7 +31,7 @@
       background-attachment: fixed;
     }
 
-    /* Navigation */
+    /* Navigation - Edge to Edge */
     .nav {
       position: fixed;
       top: 0;
@@ -44,9 +44,9 @@
     }
 
     .nav__container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -64,7 +64,7 @@
 
     .nav__logo img {
       display: block;
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
     .nav__links {
@@ -132,6 +132,7 @@
       max-width: 420px;
       height: auto;
       filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+      border-radius: 12px;
     }
 
     .hero__title {
@@ -239,8 +240,10 @@
     }
 
     .card__icon {
-      font-size: 1.5rem;
+      width: 28px;
+      height: 28px;
       margin-bottom: 1rem;
+      color: var(--color-accent);
     }
 
     .card__title {
@@ -367,7 +370,7 @@
     }
 
     .footer__brand img {
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
     .footer__links {
@@ -398,7 +401,7 @@
 </head>
 <body>
 
-  <!-- Navigation / Header -->
+  <!-- Navigation / Header (Edge to Edge) -->
   <nav class="nav">
     <div class="nav__container">
       <a href="#home" class="nav__logo" aria-label="ThePrinceEcho Home">
@@ -478,7 +481,9 @@
 
         <!-- X Card -->
         <div class="card">
-          <div class="card__icon">×</div>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25l-7.451 8.502L4.5 2.25H1.5l7.5 8.5L1.5 21.75h3l6.75-7.5 6.75 7.5h3l-7.5-8.5 7.5-8.5h-3z"/>
+          </svg>
           <h3 class="card__title">On X (@ThePrinceEcho)</h3>
           <p class="card__text">
             The outer court of the temple — short, sharp daily observations and Prince Notes. 
@@ -491,7 +496,9 @@
 
         <!-- Substack Card -->
         <div class="card">
-          <div class="card__icon">📜</div>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-2v2h-2v-2H9v-2h2V9h2v2h2v2z"/>
+          </svg>
           <h3 class="card__title">On Substack (ThePrinceEcho)</h3>
           <p class="card__text">
             The inner chamber — longer, chapter-like essays and deeper reflections. 
