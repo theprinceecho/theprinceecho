@@ -10,82 +10,51 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 |----------------------------|------------------|-------|
 | Repository Foundation      | Complete        | Clean structure, well organized |
 | README.md                  | Complete        | Clean profile description |
-| Notes.md                   | **Updated**     | Reflects active work on refine/landing-page-v2 |
-| CI Workflow                | Complete        | `pr-checks.yml` strengthened (blocking lint + wait-on) |
-| HTML Linting               | Complete        | HTMLHint + custom `.htmlhintrc` |
-| Lighthouse CI              | Complete        | Performance, Accessibility & SEO checks |
-| Project Config             | Complete        | `config/project.json` updated |
-| Quality Gates              | Improved        | Linting is now blocking |
-| Visual Direction (v2)      | **In Progress** | New skeleton on refine/landing-page-v2. Cream-on-dark with subtle gradient Hero |
-| Overall Maturity           | High            | Maintainable and intentional codebase |
+| Notes.md                   | **Updated**     | Reflects current state of v2 refinement |
+| CI Workflow                | Complete        | Strengthened with blocking lint + wait-on |
+| HTML Linting               | Complete        | Now blocking on PRs |
+| Lighthouse CI              | Complete        | Active on every PR |
+| Project Config             | Complete        | Updated with v2 direction |
+| Visual Direction (v2)      | **Active**      | Significant progress on refine/landing-page-v2 |
+| Overall Maturity           | High            | Good foundation and documentation discipline |
 
-## GitHub Automation
-- **Pull Request Workflow** (`pr-checks.yml`):
-  - Runs on PRs targeting `main`
-  - HTML Linting is now **blocking**
-  - Added `wait-on` for reliable Lighthouse runs
-  - Lighthouse CI (Performance, Accessibility, SEO, Best Practices)
+## Active Development – refine/landing-page-v2
 
-## Key Files
+**Current State (as of May 31, 2026):**
 
-| File                              | Purpose |
-|-----------------------------------|--------|
-| `.github/workflows/pr-checks.yml` | Main CI workflow (strengthened) |
-| `.htmlhintrc`                     | Custom HTMLHint rules |
-| `lighthouserc.json`               | Lighthouse CI configuration |
-| `config/project.json`             | Centralized project configuration & design tokens |
-| `Notes.md`                        | Technical documentation (this file) |
-| `index.html`, `contact.html`, `legal.html` | Core pages (being rebuilt on v2 branch) |
-
-## Active Development – Landing Page v2 (`refine/landing-page-v2`)
-
-**Current Focus**: Rebuilding the landing page on a clean skeleton with CSS Custom Properties.
-
-### Recent Progress
-- Established clean **CSS Custom Properties** foundation (cream accents on dark base)
-- Started new **Hero / Home section** with subtle radial gradient background
-- Navigation aligned with new Hero style
-- Emblem kept as `<img>` (no SVG for now)
-- Work is being done exclusively on the `refine/landing-page-v2` branch
+### Completed on v2 Branch:
+- Refined **Header (Navigation)** with active states and clean styling
+- **Hero / Home section** rebuilt:
+  - Buttons removed for cleaner, more minimal presentation
+  - Accent color softened to cream golden (`#c5a46e`)
+  - Background lightened to charcoal (`#121212`)
+  - Subtle radial gradient retained for depth
+- **About / The Threshold** section added using original, carefully iterated text
+- **Footer** built with consistent styling and useful links
 
 ### Design Direction
-- **Color System**: Cream accents on dark base
-- **Hero Approach**: Clean + subtle gradient for depth (not flat, not heavy)
-- **Philosophy**: Calm, high-signal, elegant, and intentionally minimal
+- Cream/golden accents on charcoal background
+- Calm, sovereign, high-signal aesthetic
+- Emphasis on visual coherence and reusable components (Header + Footer)
+- Text is preserved exactly as originally written
 
-## Local Development
-- Open `index.html` directly in a browser, or
-- Run `npx serve .` for a local server
+## Key Decisions
+- All visual/HTML work is done on `refine/landing-page-v2`
+- Documentation and configuration updates go to `main`
+- Original text is respected and not rewritten
+- Focus on structure and visual foundation before expanding further
 
-## How to Contribute
-1. Work on the `refine/landing-page-v2` branch for visual/HTML changes
-2. Make focused, high-quality changes
-3. Open a Pull Request to `main` when ready
-4. Ensure CI checks pass
+## Next Priorities
+- Continue building sections on v2 branch
+- Image optimization integration (WebP)
+- Create `contact.html` and `legal.html` using shared Header + Footer
+- Mobile optimization pass
 
-> Keep changes aligned with the existing calm, precise, and sovereign design language.
-
-## Future Improvements (Roadmap)
-
-- [x] Strengthen CI Quality Gates (completed)
-- [ ] Image Optimization (WebP conversion in progress)
-- [ ] Complete Hero section on v2 branch
-- [ ] Build About section
-- [ ] Build Recent Transmissions section
-- [ ] Full mobile optimization pass
-- [ ] Consider modular CSS structure
-
-## Cloudflare Configuration (Production)
-- Redirect Rules: HTTP → HTTPS + www → non-www (correct order)
-- SSL/TLS: Full (strict)
-- Always Use HTTPS: Enabled
-- Security Level: Medium
-- Caching: Standard
-- Always Online: Enabled
-
-Configuration is considered stable and production-ready.
+## GitHub Automation
+- CI is active and strengthened
+- Linting is blocking
+- Lighthouse runs on every PR to `main`
 
 ---
 
-**Contact**  
-Use the contact form or X (@ThePrinceEcho) for questions about the project or automation.
+**Last Updated:** May 31, 2026
