@@ -226,15 +226,18 @@
     }
 
     .card {
-      background-color: #1f1f1f;
-      border: 1px solid rgba(197, 164, 110, 0.12);
+      background: rgba(31, 31, 31, 0.75);
+      border: 1px solid rgba(197, 164, 110, 0.18);
       border-radius: 12px;
       padding: 2rem;
-      transition: border-color 0.2s ease;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
       border-color: var(--color-accent);
+      transform: translateY(-2px);
     }
 
     .card__icon {
