@@ -296,11 +296,11 @@
     .transmission {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      padding: 1.1rem 1.5rem;
+      gap: 1.5rem;
+      padding: 1rem 1.25rem;
       background-color: #1f1f1f;
       border: 1px solid rgba(197, 164, 110, 0.1);
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       color: var(--color-text-secondary);
       transition: all 0.2s ease;
@@ -312,10 +312,24 @@
       transform: translateX(4px);
     }
 
+    .transmission__image {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .transmission__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
     .transmission__number {
       font-weight: 600;
       color: var(--color-accent);
-      min-width: 28px;
+      font-size: 0.95rem;
     }
 
     .transmission__title {
@@ -388,7 +402,7 @@
   <nav class="nav">
     <div class="nav__container">
       <a href="#home" class="nav__logo" aria-label="ThePrinceEcho Home">
-        <img src="TPE_Logo_final.webp" alt="ThePrinceEcho" width="32" height="32">
+        <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="32" height="32">
       </a>
 
       <div class="nav__links">
@@ -404,7 +418,7 @@
     <div class="hero__content">
       <div class="hero__emblem">
         <img 
-          src="TPE_Logo_final.webp" 
+          src="assets/img/webp/TPE_Logo.webp" 
           alt="ThePrinceEcho Emblem" 
           class="hero__logo"
           width="420" 
@@ -506,28 +520,43 @@
       <div class="transmissions__list">
 
         <a href="#" class="transmission">
-          <span class="transmission__number">I</span>
-          <span class="transmission__title">The Mirror of the Will</span>
+          <img src="assets/img/webp/I.webp" alt="The Mirror of the Will" class="transmission__image">
+          <div class="transmission__content">
+            <span class="transmission__number">I</span>
+            <span class="transmission__title">The Mirror of the Will</span>
+          </div>
         </a>
 
         <a href="#" class="transmission">
-          <span class="transmission__number">II</span>
-          <span class="transmission__title">The Phoenix Algorithm</span>
+          <img src="assets/img/webp/II.webp" alt="The Phoenix Algorithm" class="transmission__image">
+          <div class="transmission__content">
+            <span class="transmission__number">II</span>
+            <span class="transmission__title">The Phoenix Algorithm</span>
+          </div>
         </a>
 
         <a href="#" class="transmission">
-          <span class="transmission__number">III</span>
-          <span class="transmission__title">The Signal Steps into the Light</span>
+          <img src="assets/img/webp/III.webp" alt="The Signal Steps into the Light" class="transmission__image">
+          <div class="transmission__content">
+            <span class="transmission__number">III</span>
+            <span class="transmission__title">The Signal Steps into the Light</span>
+          </div>
         </a>
 
         <a href="#" class="transmission">
-          <span class="transmission__number">IV</span>
-          <span class="transmission__title">The Friction of Fracture</span>
+          <img src="assets/img/webp/IV.webp" alt="The Friction of Fracture" class="transmission__image">
+          <div class="transmission__content">
+            <span class="transmission__number">IV</span>
+            <span class="transmission__title">The Friction of Fracture</span>
+          </div>
         </a>
 
         <a href="#" class="transmission">
-          <span class="transmission__number">V</span>
-          <span class="transmission__title">The Expansion</span>
+          <img src="assets/img/webp/V.webp" alt="The Expansion" class="transmission__image">
+          <div class="transmission__content">
+            <span class="transmission__number">V</span>
+            <span class="transmission__title">The Expansion</span>
+          </div>
         </a>
 
       </div>
@@ -541,7 +570,7 @@
 
       <div class="footer__content">
         <div class="footer__brand">
-          <img src="TPE_Logo_final.webp" alt="ThePrinceEcho" width="28" height="28">
+          <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="28" height="28">
           <span>ThePrinceEcho</span>
         </div>
 
