@@ -202,6 +202,62 @@
       border-top: 1px solid rgba(197, 164, 110, 0.15);
     }
 
+    /* Recent Transmissions */
+    .transmissions {
+      padding: 6rem 1.5rem;
+      background-color: #121212;
+    }
+
+    .transmissions__container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .transmissions__header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-subtitle {
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    .transmissions__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .transmission {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.1rem 1.5rem;
+      background-color: #1a1a1a;
+      border: 1px solid rgba(197, 164, 110, 0.1);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--color-text-secondary);
+      transition: all 0.2s ease;
+    }
+
+    .transmission:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: translateX(4px);
+    }
+
+    .transmission__number {
+      font-weight: 600;
+      color: var(--color-accent);
+      min-width: 28px;
+    }
+
+    .transmission__title {
+      font-size: 1.05rem;
+    }
+
     /* Footer */
     .footer {
       background-color: #121212;
@@ -328,6 +384,48 @@
         <div class="about__closing">
           If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.
         </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recent Transmissions -->
+  <section id="recent-transmissions" class="transmissions">
+    <div class="transmissions__container">
+
+      <div class="transmissions__header">
+        <h2 class="section-title">Recent Transmissions</h2>
+        <p class="section-subtitle">High-signal observations that cut through noise and distraction.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="transmissions__list">
+
+        <a href="#" class="transmission">
+          <span class="transmission__number">I</span>
+          <span class="transmission__title">The Mirror of the Will</span>
+        </a>
+
+        <a href="#" class="transmission">
+          <span class="transmission__number">II</span>
+          <span class="transmission__title">The Phoenix Algorithm</span>
+        </a>
+
+        <a href="#" class="transmission">
+          <span class="transmission__number">III</span>
+          <span class="transmission__title">The Signal Steps into the Light</span>
+        </a>
+
+        <a href="#" class="transmission">
+          <span class="transmission__number">IV</span>
+          <span class="transmission__title">The Friction of Fracture</span>
+        </a>
+
+        <a href="#" class="transmission">
+          <span class="transmission__number">V</span>
+          <span class="transmission__title">The Expansion</span>
+        </a>
 
       </div>
 
