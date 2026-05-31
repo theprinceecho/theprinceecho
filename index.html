@@ -181,6 +181,65 @@
       transform: translateY(-1px);
       filter: brightness(1.05);
     }
+
+    /* Footer */
+    .footer {
+      background-color: #0a0a0a;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      padding: 3rem 1.5rem 2rem;
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .footer__container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .footer__brand img {
+      border-radius: 4px;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer__links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer__bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      font-size: 0.85rem;
+      color: #888;
+    }
   </style>
 </head>
 <body>
@@ -230,6 +289,35 @@
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="TPE_Logo_final.webp" alt="ThePrinceEcho" width="28" height="28">
+          <span>ThePrinceEcho</span>
+        </div>
+
+        <div class="footer__links">
+          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">X</a>
+          <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="contact.html">Contact</a>
+          <a href="legal.html">Legal</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> ThePrinceEcho. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
