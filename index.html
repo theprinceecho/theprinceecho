@@ -202,6 +202,63 @@
       border-top: 1px solid rgba(197, 164, 110, 0.15);
     }
 
+    /* Where to Find What */
+    .where-to-find {
+      padding: 4rem 1.5rem 6rem;
+      background-color: #121212;
+    }
+
+    .where-to-find__container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: 1px solid rgba(197, 164, 110, 0.12);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--color-accent);
+    }
+
+    .card__icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card__title {
+      font-size: 1.25rem;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card__text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .card__link {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card__link:hover {
+      text-decoration: underline;
+    }
+
     /* Recent Transmissions */
     .transmissions {
       padding: 6rem 1.5rem;
@@ -383,6 +440,45 @@
 
         <div class="about__closing">
           If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Where to Find What -->
+  <section class="where-to-find">
+    <div class="where-to-find__container">
+
+      <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">WHERE TO FIND WHAT</h2>
+
+      <div class="cards">
+
+        <!-- X Card -->
+        <div class="card">
+          <div class="card__icon">×</div>
+          <h3 class="card__title">On X (@ThePrinceEcho)</h3>
+          <p class="card__text">
+            The outer court of the temple — short, sharp daily observations and Prince Notes. 
+            Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.
+          </p>
+          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">
+            Follow on X →
+          </a>
+        </div>
+
+        <!-- Substack Card -->
+        <div class="card">
+          <div class="card__icon">📜</div>
+          <h3 class="card__title">On Substack (ThePrinceEcho)</h3>
+          <p class="card__text">
+            The inner chamber — longer, chapter-like essays and deeper reflections. 
+            For those who wish to descend further into the architecture of sovereignty and long-term patterns.
+          </p>
+          <a href="https://theprinceecho.substack.com" class="card__link" target="_blank" rel="noopener">
+            Read on Substack →
+          </a>
         </div>
 
       </div>
