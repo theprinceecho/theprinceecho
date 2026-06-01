@@ -38,6 +38,35 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 - Emphasis on visual coherence and reusable components (Header + Footer)
 - Text is preserved exactly as originally written
 
+## Landing Page Refinement – Progress Summary (June 2026)
+
+**Major Achievements in this phase:**
+
+- **Asset Management**
+  - Created clean folder structure: `assets/img/webp/` + `assets/img/original/`
+  - Converted logo and all 5 Recent Transmission banners to optimized WebP
+  - Integrated WebP assets into the page
+
+- **Visual & UX Refinements**
+  - Added rounded corners to logos (header + hero)
+  - Increased height of Recent Transmissions cards for better image visibility
+  - Increased card brightness (`#242424`) for improved readability and contrast
+  - Refined spacing, padding, and overall visual breathing room
+  - Maintained consistent cream/golden accent on dark charcoal foundation
+
+- **Technical Work**
+  - Multiple iterations on **dynamic active navigation** in the header (scroll-based + Intersection Observer approaches)
+  - Preserved original carefully crafted text across all sections
+  - Continued focus on calm, sovereign, high-signal aesthetic
+
+**Current Open Items / Blockers:**
+- Dynamic navigation active state highlighting is **not yet stable/reliable**
+- Edge-to-edge header behavior has been deferred for later review
+
+**Workflow Decision (Confirmed):**
+- All HTML, CSS, and JavaScript changes → `refine/landing-page-v2` branch only
+- Documentation, status updates, and project notes → `main` branch
+
 ## Key Decisions
 - All visual/HTML work is done on `refine/landing-page-v2`
 - Documentation and configuration updates go to `main`
@@ -45,8 +74,9 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 - Focus on structure and visual foundation before expanding further
 
 ## Next Priorities
-- Continue building sections on v2 branch
-- Image optimization integration (WebP)
+- Stabilize dynamic active navigation in header
+- Continue visual polish on refine branch
+- Image optimization integration (already started)
 - Create `contact.html` and `legal.html` using shared Header + Footer
 - Mobile optimization pass
 
@@ -57,4 +87,4 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 
 ---
 
-**Last Updated:** May 31, 2026
+**Last Updated:** June 1, 2026
