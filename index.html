@@ -211,7 +211,7 @@
       text-decoration: underline;
     }
 
-    /* Recent Transmissions - Increased height + brighter cards */
+    /* Recent Transmissions */
     .transmissions__header {
       text-align: center;
       margin-bottom: 3rem;
@@ -228,13 +228,13 @@
       align-items: center;
       gap: 1.5rem;
       padding: 1.25rem 1.5rem;
-      background-color: #242424;           /* Brighter card background */
+      background-color: #242424;
       border: 1px solid rgba(197, 164, 110, 0.2);
       border-radius: 12px;
       text-decoration: none;
       color: var(--color-text-secondary);
       transition: all 0.2s ease;
-      min-height: 92px;                    /* Increased height for better image visibility */
+      min-height: 92px;
     }
 
     .transmission:hover {
@@ -317,7 +317,7 @@
         <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="32" height="32">
       </a>
       <div class="nav__links">
-        <a href="#home" class="nav__link active">Home</a>
+        <a href="#home" class="nav__link">Home</a>
         <a href="#about" class="nav__link">About</a>
         <a href="#recent-transmissions" class="nav__link">Recent Transmissions</a>
       </div>
@@ -427,33 +427,47 @@
   </footer>
 
   <script>
-    // Dynamic active navigation on scroll
-    const sections = ['home', 'about', 'recent-transmissions'];
+    // Robust Dynamic Active Navigation using Intersection Observer
     const navLinks = document.querySelectorAll('.nav__link');
+    const sections = document.querySelectorAll('section[id]');
 
-    function updateActiveLink() {
-      let current = 'home';
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -50% 0px',
+      threshold: 0
+    };
 
-      sections.forEach(sectionId => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const sectionTop = section.getBoundingClientRect().top;
-          if (sectionTop <= 150) {
-            current = sectionId;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const currentId = entry.target.getAttribute('id');
+
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentId}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Set initial active state on load
+    window.addEventListener('load', () => {
+      const firstSection = document.querySelector('section[id]');
+      if (firstSection) {
+        const firstId = firstSection.getAttribute('id');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${firstId}`) {
+            link.classList.add('active');
           }
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateActiveLink);
-    window.addEventListener('load', updateActiveLink);
+        });
+      }
+    });
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
