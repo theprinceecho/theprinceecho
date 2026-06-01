@@ -6,8 +6,8 @@
   <title>ThePrinceEcho</title>
   <style>
     :root {
-      /* Colors */
-      --color-bg: #181818;
+      /* Colors — Charcoal palette aligned with final TPE emblem */
+      --color-bg: #121212;
       --color-accent: #c5a46e;
       --color-text: #c5b8a0;
       --color-text-secondary: #c5b8a0;
@@ -44,7 +44,7 @@
     }
 
     body {
-      background-color: #1a1a1a;
+      background-color: var(--color-bg);
       color: var(--color-text);
       font-family: Inter, system_ui, sans-serif;
       font-size: var(--font-size-base);
@@ -73,7 +73,7 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: rgba(24, 24, 24, 0.92);
+      background: rgba(18, 18, 18, 0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(197, 164, 110, 0.1);
     }
@@ -133,7 +133,7 @@
       align-items: center;
       justify-content: center;
       padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
-      background: radial-gradient(circle at center, #222222 0%, #181818 65%, #181818 100%);
+      background: radial-gradient(circle at center, #1a1a1a 0%, #121212 65%, #121212 100%);
     }
 
     .hero__content {
@@ -147,6 +147,13 @@
       height: auto;
       border-radius: 12px;
       margin-bottom: var(--space-2xl);
+    }
+
+    /* Mobile logo size reduction */
+    @media (max-width: 768px) {
+      .hero__logo {
+        max-width: 280px;
+      }
     }
 
     .hero__title {
@@ -169,7 +176,7 @@
     /* Sections — Generous Breathing Room */
     .about, .where-to-find, .transmissions {
       padding: var(--space-4xl) var(--space-xl);
-      background-color: #181818;
+      background-color: #121212;
     }
 
     .about__container, .where-to-find__container, .transmissions__container {
@@ -220,7 +227,7 @@
     }
 
     .card {
-      background: rgba(36, 36, 36, 0.65);
+      background: rgba(28, 28, 28, 0.7);
       border: 1px solid rgba(197, 164, 110, 0.25);
       border-radius: 16px;
       padding: var(--space-2xl);
@@ -287,13 +294,13 @@
       align-items: center;
       gap: var(--space-xl);
       padding: var(--space-xl);
-      background-color: #242424;
+      background-color: #1f1f1f;
       border: 1px solid rgba(197, 164, 110, 0.2);
       border-radius: 12px;
       text-decoration: none;
       color: var(--color-text-secondary);
       transition: all 0.2s ease;
-      min-height: 130px;
+      min-height: 150px;
     }
 
     .transmission:hover {
@@ -303,12 +310,25 @@
     }
 
     .transmission__image {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 10px;
       flex-shrink: 0;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .transmission__content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .transmission__label {
+      font-size: var(--font-size-xs);
+      color: var(--color-accent);
+      opacity: 0.85;
+      letter-spacing: 0.5px;
     }
 
     .transmission__title {
@@ -318,7 +338,7 @@
 
     /* Footer */
     .footer {
-      background-color: #181818;
+      background-color: #121212;
       border-top: 1px solid rgba(197, 164, 110, 0.1);
       padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
       color: var(--color-text-secondary);
@@ -336,6 +356,12 @@
       align-items: center;
       gap: var(--space-2xl);
       margin-bottom: var(--space-xl);
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .footer__brand img {
@@ -404,7 +430,7 @@
       <div class="nav__links">
         <a href="#home" class="nav__link">Home</a>
         <a href="#about" class="nav__link">About</a>
-        <a href="#recent-transmissions" class="nav__link">Recent Transmissions</a>
+        <a href="#recent-transmissions" class="nav__link">Transmissions</a>
       </div>
     </div>
   </nav>
@@ -439,6 +465,8 @@
   <section class="where-to-find">
     <div class="where-to-find__container">
       <h2 class="section-title">WHERE TO FIND WHAT</h2>
+      <p class="section-subtitle">The outer court and the inner chamber.</p>
+      <div class="section-divider"></div>
       <div class="cards">
         <div class="card">
           <div class="card__icon">𝕏</div>
@@ -468,23 +496,38 @@
       <div class="transmissions__list">
         <a href="#" class="transmission">
           <img src="assets/img/webp/I.webp" alt="The Mirror of the Will" class="transmission__image">
-          <span class="transmission__title">The Mirror of the Will</span>
+          <div class="transmission__content">
+            <span class="transmission__label">Essay I</span>
+            <span class="transmission__title">The Mirror of the Will</span>
+          </div>
         </a>
         <a href="#" class="transmission">
           <img src="assets/img/webp/II.webp" alt="The Phoenix Algorithm" class="transmission__image">
-          <span class="transmission__title">The Phoenix Algorithm</span>
+          <div class="transmission__content">
+            <span class="transmission__label">Essay II</span>
+            <span class="transmission__title">The Phoenix Algorithm</span>
+          </div>
         </a>
         <a href="#" class="transmission">
           <img src="assets/img/webp/III.webp" alt="The Signal Steps into the Light" class="transmission__image">
-          <span class="transmission__title">The Signal Steps into the Light</span>
+          <div class="transmission__content">
+            <span class="transmission__label">Essay III</span>
+            <span class="transmission__title">The Signal Steps into the Light</span>
+          </div>
         </a>
         <a href="#" class="transmission">
           <img src="assets/img/webp/IV.webp" alt="The Friction of Fracture" class="transmission__image">
-          <span class="transmission__title">The Friction of Fracture</span>
+          <div class="transmission__content">
+            <span class="transmission__label">Essay IV</span>
+            <span class="transmission__title">The Friction of Fracture</span>
+          </div>
         </a>
         <a href="#" class="transmission">
           <img src="assets/img/webp/V.webp" alt="The Expansion" class="transmission__image">
-          <span class="transmission__title">The Expansion</span>
+          <div class="transmission__content">
+            <span class="transmission__label">Essay V</span>
+            <span class="transmission__title">The Expansion</span>
+          </div>
         </a>
       </div>
     </div>
