@@ -6,25 +6,29 @@ This landing page is built with intention — calm, precise, and sovereign. Ever
 
 ## Landing Page Refinement (June 2026)
 
-**Current Focus:** Visual system, spacing, depth, and component refinement on `refine/landing-page-v2`.
+**Current Focus:** Visual system, spacing, depth, component refinement, and final logo integration on `refine/landing-page-v2`.
 
-### Achievements in this iteration
-- Introduced comprehensive **Spacing + Typography Design System** (CSS custom properties + fluid `clamp()` scales).
-- Significantly improved **generous spacing and breathing room** across sections, with particular attention to mobile rhythm.
-- Enhanced **glassmorphism and depth** on cards (layered shadows, better hover states).
-- Increased presence of **Recent Transmissions cards** — larger images (120px) and taller cards.
-- Removed legacy heavy glow/shadow on main hero logo.
-- Explored multiple approaches for the **TPE background watermark** (opacity, sizing, mobile handling, subtle background lift). Currently paused — still not sufficiently visible on mobile.
+### Key Achievements
+
+- Introduced comprehensive **Spacing + Typography Design System**.
+- Significantly improved **generous spacing and breathing room**, especially on mobile.
+- Enhanced **glassmorphism and visual depth** on cards.
+- **Mobile optimizations**:
+  - Reduced main hero logo size.
+  - Improved nav alignment and spacing.
+- Restructured **Recent Transmissions cards**:
+  - Increased image size (140px) and card height.
+  - Added stacked Roman numeral labels ("Essay I", "Essay II", etc.) for better scannability.
+- Fixed **footer brand alignment** (logo + text now properly aligned).
+- Aligned section headers for better visual coherence (added subtitle + divider to "Where to Find What").
+- Shifted overall **color palette** to deeper charcoal (`#121212`) to better match the final lion + wolf emblem.
+- Explored TPE watermark visibility (currently paused).
 
 ### Current Status Quo
-- Design system and spacing foundation is solid and elegant.
-- Visual depth and component refinement progressing well.
-- **Open item:** TPE watermark visibility on mobile remains challenging. Further exploration paused for now.
+- Strong design system and spacing foundation in place.
+- Transmission section now much more scannable and substantial.
+- Visual harmony with the final logo has been significantly improved.
 - Overall direction remains calm, sovereign, and high-signal.
-
-### Next Steps (when resumed)
-- Revisit watermark with new technical approaches if desired.
-- Continue mobile optimization and polish pass.
 
 ## GitHub Automation
 
