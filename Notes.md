@@ -4,19 +4,27 @@
 
 This landing page is built with intention — calm, precise, and sovereign. Every change should preserve clarity, elegance, and long-term maintainability.
 
-## Current Status
+## Landing Page Refinement (June 2026)
 
-| Area                        | Status     | Notes                                           |
-|----------------------------|------------|-------------------------------------------------|
-| **Repository Foundation**  | 🟢 ✅      | Clean structure, well organized                 |
-| **README.md**              | 🟢 ✅      | Clean profile description                       |
-| **Notes.md**               | 🟢 ✅      | Technical documentation                         |
-| **CI Workflow**            | 🟢 ✅      | `pr-checks.yml` running on PRs                  |
-| **HTML Linting**           | 🟢 ✅      | HTMLHint + custom `.htmlhintrc`                 |
-| **Lighthouse CI**          | 🟢 ✅      | Performance, Accessibility & SEO checks         |
-| **Project Config**         | 🟢 ✅      | `config/project.json` centralized               |
-| **Quality Gates**          | 🟢         | Solid PR validation in place                    |
-| **Overall Maturity**       | 🟢         | Professional and maintainable foundation        |
+**Current Focus:** Visual system, spacing, depth, and component refinement on `refine/landing-page-v2`.
+
+### Achievements in this iteration
+- Introduced comprehensive **Spacing + Typography Design System** (CSS custom properties + fluid `clamp()` scales).
+- Significantly improved **generous spacing and breathing room** across sections, with particular attention to mobile rhythm.
+- Enhanced **glassmorphism and depth** on cards (layered shadows, better hover states).
+- Increased presence of **Recent Transmissions cards** — larger images (120px) and taller cards.
+- Removed legacy heavy glow/shadow on main hero logo.
+- Explored multiple approaches for the **TPE background watermark** (opacity, sizing, mobile handling, subtle background lift). Currently paused — still not sufficiently visible on mobile.
+
+### Current Status Quo
+- Design system and spacing foundation is solid and elegant.
+- Visual depth and component refinement progressing well.
+- **Open item:** TPE watermark visibility on mobile remains challenging. Further exploration paused for now.
+- Overall direction remains calm, sovereign, and high-signal.
+
+### Next Steps (when resumed)
+- Revisit watermark with new technical approaches if desired.
+- Continue mobile optimization and polish pass.
 
 ## GitHub Automation
 
