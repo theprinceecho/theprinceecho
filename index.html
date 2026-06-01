@@ -30,7 +30,7 @@
       background-attachment: fixed;
     }
 
-    /* Navigation - Edge to Edge */
+    /* Navigation */
     .nav {
       position: fixed;
       top: 0;
@@ -211,7 +211,7 @@
       text-decoration: underline;
     }
 
-    /* Recent Transmissions */
+    /* Recent Transmissions - Increased height + brighter cards */
     .transmissions__header {
       text-align: center;
       margin-bottom: 3rem;
@@ -227,13 +227,14 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      padding: 1rem 1.25rem;
-      background-color: #1f1f1f;
-      border: 1px solid rgba(197, 164, 110, 0.1);
-      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      background-color: #242424;           /* Brighter card background */
+      border: 1px solid rgba(197, 164, 110, 0.2);
+      border-radius: 12px;
       text-decoration: none;
       color: var(--color-text-secondary);
       transition: all 0.2s ease;
+      min-height: 92px;                    /* Increased height for better image visibility */
     }
 
     .transmission:hover {
@@ -243,15 +244,16 @@
     }
 
     .transmission__image {
-      width: 72px;
-      height: 72px;
+      width: 78px;
+      height: 78px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 8px;
       flex-shrink: 0;
     }
 
     .transmission__title {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
+      font-weight: 500;
     }
 
     /* Footer */
@@ -353,15 +355,12 @@
     <div class="where-to-find__container">
       <h2 class="section-title">WHERE TO FIND WHAT</h2>
       <div class="cards">
-        <!-- X Card -->
         <div class="card">
           <div class="card__icon">𝕏</div>
           <h3 class="card__title">On X (@ThePrinceEcho)</h3>
           <p class="card__text">The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
           <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on X →</a>
         </div>
-
-        <!-- Substack Card -->
         <div class="card">
           <div class="card__icon">📜</div>
           <h3 class="card__title">On Substack (ThePrinceEcho)</h3>
@@ -428,7 +427,7 @@
   </footer>
 
   <script>
-    // Dynamic active navigation
+    // Dynamic active navigation on scroll
     const sections = ['home', 'about', 'recent-transmissions'];
     const navLinks = document.querySelectorAll('.nav__link');
 
@@ -456,7 +455,7 @@
     window.addEventListener('scroll', updateActiveLink);
     window.addEventListener('load', updateActiveLink);
 
-    // Year in footer
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
