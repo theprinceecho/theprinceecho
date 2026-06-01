@@ -87,4 +87,20 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 
 ---
 
+## Workflow & Branching Strategy
+
+**Clear separation of concerns:**
+
+- **Documentation & Project History** (`Notes.md`)  
+  → Always updated on the `main` branch.
+
+- **Code & Assets** (`index.html`, `contact.html`, CSS, JavaScript, images)  
+  → All work happens on `refine/landing-page-v2`.
+
+- **Asset Structure** (`assets/img/webp/` + `assets/img/original/`)  
+  → Lives on the refinement branch as it is part of the landing page implementation.  
+  These folders will move to `main` only when the refinement branch is merged.
+
+This approach ensures that `main` remains a clean, stable source of truth for documentation while active visual and structural development stays isolated on the working branch.
+
 **Last Updated:** June 1, 2026
