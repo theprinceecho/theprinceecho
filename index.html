@@ -8,7 +8,7 @@
     :root {
       /* Colors — Charcoal palette aligned with final TPE emblem */
       --color-bg: #0f0f0f;
-      --color-accent: #c5a46e;
+      --color-accent: #d0c4a8;
       --color-text: #c5b8a0;
       --color-text-secondary: #c5b8a0;
 
@@ -73,8 +73,8 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: rgba(18, 18, 18, 0.92);
-      backdrop-filter: blur(14px);
+      background: rgba(18, 18, 18, 0.68);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(197, 164, 110, 0.1);
     }
 
@@ -114,16 +114,18 @@
 
     .nav__link.active {
       color: var(--color-accent);
+      font-weight: 600;
     }
 
     .nav__link.active::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -2px;
       left: 0;
       width: 100%;
-      height: 1px;
+      height: 2px;
       background-color: var(--color-accent);
+      box-shadow: 0 0 8px rgba(197, 164, 110, 0.45);
     }
 
     /* Hero */
@@ -251,6 +253,15 @@
       font-size: var(--font-size-xl);
       margin-bottom: var(--space-lg);
       color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card__icon img {
+      width: 24px;
+      height: 24px;
+      display: block;
     }
 
     .card__title {
@@ -277,7 +288,7 @@
       text-decoration: underline;
     }
 
-    /* Recent Transmissions — Significantly larger images + more presence */
+    /* Recent Transmissions — Larger images for stronger visual presence */
     .transmissions__header {
       text-align: center;
       margin-bottom: var(--space-3xl);
@@ -292,7 +303,7 @@
     .transmission {
       display: flex;
       align-items: center;
-      gap: var(--space-xl);
+      gap: var(--space-lg);
       padding: var(--space-xl);
       background-color: #161616;
       border: 1px solid rgba(197, 164, 110, 0.2);
@@ -300,7 +311,7 @@
       text-decoration: none;
       color: var(--color-text-secondary);
       transition: all 0.2s ease;
-      min-height: 160px;
+      min-height: 180px;
     }
 
     .transmission:hover {
@@ -310,8 +321,8 @@
     }
 
     .transmission__image {
-      width: 160px;
-      height: 160px;
+      width: 220px;
+      height: 220px;
       object-fit: cover;
       border-radius: 10px;
       flex-shrink: 0;
@@ -409,12 +420,13 @@
       }
 
       .transmission {
-        min-height: 110px;
+        min-height: 140px;
+        gap: var(--space-md);
       }
 
       .transmission__image {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
       }
 
       /* Mobile nav — edge to edge */
@@ -479,13 +491,15 @@
       <div class="section-divider"></div>
       <div class="cards">
         <div class="card">
-          <div class="card__icon">𝕏</div>
-          <h3 class="card__title">On X (@ThePrinceEcho)</h3>
+          <div class="card__icon">𝙏</div>
+          <h3 class="card__title">On 𝙏 (@ThePrinceEcho)</h3>
           <p class="card__text">The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
-          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on X →</a>
+          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on 𝙏 →</a>
         </div>
         <div class="card">
-          <div class="card__icon">📜</div>
+          <div class="card__icon">
+            <img src="assets/img/webp/Substack.webp" alt="Substack" width="24" height="24">
+          </div>
           <h3 class="card__title">On Substack (ThePrinceEcho)</h3>
           <p class="card__text">The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.</p>
           <a href="https://theprinceecho.substack.com" class="card__link" target="_blank" rel="noopener">Read on Substack →</a>
@@ -552,7 +566,7 @@
           <span>ThePrinceEcho</span>
         </div>
         <div class="footer__links">
-          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">X</a>
+          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝙏</a>
           <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
           <a href="contact.html">Contact</a>
           <a href="legal.html">Legal</a>
