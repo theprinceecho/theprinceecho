@@ -1,104 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Legal Disclosure • ThePrinceEcho</title>
-    <meta name="description" content="Legal information for ThePrinceEcho.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/favicon.png">
-   
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-       
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system_ui, sans-serif; background: #050505; color: #d4af77; min-height: 100vh; }
-        .nav {
-            position: fixed; top: 0; left: 0; right: 0; height: 60px;
-            background: rgba(5,5,5,0.95); backdrop-filter: blur(12px);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 24px; z-index: 100;
-        }
-        .nav-logo { height: 32px; width: 32px; cursor: pointer; }
-        .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.95rem; }
-        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; position: relative; padding-bottom: 4px; }
-        .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #d4af77; opacity: 0.85; }
-        .language-switcher { position: relative; cursor: pointer; user-select: none; }
-        .current-lang { display: flex; align-items: center; gap: 6px; font-size: 1.05rem; color: #d4af77; }
-        .language-dropdown { position: absolute; top: 100%; right: 0; background: #111111; border: 1px solid rgba(212,175,119,0.3); border-radius: 8px; padding: 8px 0; margin-top: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); display: none; flex-direction: column; min-width: 140px; }
-        .language-dropdown.show { display: flex; }
-        .language-option { padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: 1.35rem; color: #d4af77; text-decoration: none; }
-        .language-option:hover, .language-option:active { background: rgba(212,175,119,0.15); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Disclosure • ThePrinceEcho</title>
+  <style>
+    :root {
+      /* Colors — Charcoal palette aligned with final TPE emblem */
+      --color-bg: #0f0f0f;
+      --color-accent: #d0c4a8;
+      --color-text: #c5b8a0;
+      --color-text-secondary: #c5b8a0;
 
-        .section { padding: 120px 24px 100px; max-width: 720px; margin: 0 auto; }
-        h1 { font-size: 2.6rem; margin-bottom: 40px; color: #d4af77; letter-spacing: -0.5px; }
-        h2 { font-size: 1.25rem; margin: 48px 0 16px; color: #d4af77; }
-        p { line-height: 1.75; margin-bottom: 20px; color: #e0e0e0; font-size: 1.02rem; }
-        .legal-card { background: #111111; border: 1px solid rgba(212,175,119,0.15); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; }
-        .footer { margin-top: 0; padding-top: 60px; padding-bottom: 70px; text-align: center; font-size: 0.9rem; color: #ffffff; opacity: 0.85; display: flex; flex-direction: column; align-items: center; gap: 16px; line-height: 1.8; background: #111111; }
-        .footer a { color: #ffffff !important; text-decoration: none; }
-        .footer-line1 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
-    </style>
+      /* Spacing Scale — generous but purposeful */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4.5rem;
+      --space-4xl: 6rem;
+
+      /* Typography Scale — fluid and calm */
+      --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --font-size-sm: clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
+      --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+      --font-size-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+      --font-size-xl: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
+      --font-size-2xl: clamp(2rem, 1.75rem + 1vw, 2.5rem);
+      --font-size-3xl: clamp(2.5rem, 2.1rem + 1.6vw, 3.2rem);
+
+      /* Line heights */
+      --line-height-tight: 1.15;
+      --line-height-normal: 1.7;
+      --line-height-relaxed: 1.85;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: Inter, system_ui, sans-serif;
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-normal);
+    }
+
+    /* Navigation — identical to index.html */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(18, 18, 18, 0.68);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(197, 164, 110, 0.1);
+    }
+
+    .nav__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo img {
+      display: block;
+      border-radius: 6px;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    .nav__link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav__link:hover {
+      color: var(--color-accent);
+    }
+
+    /* Legal Content */
+    .legal {
+      padding: var(--space-4xl) var(--space-xl);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .legal__header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .legal__title {
+      font-size: var(--font-size-3xl);
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.025em;
+    }
+
+    .legal__subtitle {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-lg);
+    }
+
+    .legal__section {
+      background: rgba(22, 22, 22, 0.75);
+      border: 1px solid rgba(197, 164, 110, 0.25);
+      border-radius: 16px;
+      padding: var(--space-2xl);
+      margin-bottom: var(--space-xl);
+      backdrop-filter: blur(16px);
+    }
+
+    .legal__section h2 {
+      font-size: var(--font-size-lg);
+      color: var(--color-accent);
+      margin-bottom: var(--space-md);
+    }
+
+    .legal__section p {
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-relaxed);
+      margin-bottom: var(--space-md);
+    }
+
+    .legal__section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Footer — identical to index.html */
+    .footer {
+      background-color: #0f0f0f;
+      border-top: 1px solid rgba(197, 164, 110, 0.1);
+      padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+    }
+
+    .footer__container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer__brand img {
+      border-radius: 6px;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer__links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer__bottom {
+      text-align: center;
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(197, 164, 110, 0.1);
+      font-size: var(--font-size-xs);
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-    <!-- header-v3 cache-bust -->
-    <nav class="nav">
-        <a href="index.html">
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/TPE_Logo_final.webp" alt="ThePrinceEcho" class="nav-logo" width="32" height="32">
-        </a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#recent-transmissions">Recent Transmissions</a>
-            <div class="language-switcher" id="language-switcher">
-                <span class="current-lang" id="current-lang-display">🇬🇧 EN</span>
-                <div class="language-dropdown" id="language-dropdown">
-                    <a href="#" class="language-option" data-lang="en">🇬🇧 EN</a>
-                    <a href="#" class="language-option" data-lang="de">🇩🇪 DE</a>
-                    <a href="#" class="language-option" data-lang="es">🇪🇸 ES</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <div class="section">
-        <h1>Legal Disclosure</h1>
-        <div class="legal-card">
-            <h2>Provider Information</h2>
-            <p><strong>Disclosure according to § 5 DDG</strong><br>This site is currently under construction.</p>
-        </div>
-        <div class="legal-card">
-            <h2>Contact</h2>
-            <p>Please contact us via Email (info@theprinceecho.com) or use our contact form.<br>We usually reply within 24 hours.</p>
-        </div>
-        <div class="legal-card">
-            <h2>Liability</h2>
-            <p>The content of this website was created with the greatest possible care.</p>
-        </div>
-        <div class="legal-card">
-            <h2>External Links</h2>
-            <p>This website contains links to external third-party websites.</p>
-        </div>
-        <div class="legal-card">
-            <h2>Copyright</h2>
-            <p>The content and works created by the site operators on these pages are subject to copyright.</p>
-        </div>
+  <!-- Navigation — identical to final index.html -->
+  <nav class="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="32" height="32">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="index.html#recent-transmissions" class="nav__link">Transmissions</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Legal Content -->
+  <main class="legal">
+    <div class="legal__header">
+      <h1 class="legal__title">Legal Disclosure</h1>
+      <p class="legal__subtitle">Information according to § 5 DDG (German Telemedia Act)</p>
     </div>
 
-    <div class="footer">
-        <div class="footer-line1">
-            <span>The sovereign landing page</span>
-            <img src="https://raw.githubusercontent.com/theprinceecho/theprinceecho/main/diamond_glow.JPG" alt="♦" width="18" height="18">
-            <span>The sovereign bridge</span>
-        </div>
-        <div>
-            <a href="legal.html">Legal disclosure</a>
-            <span style="margin:0 12px;opacity:0.6">•</span>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="copyright">Copyright © 2026 ThePrinceEcho • All rights reserved</div>
+    <div class="legal__section">
+      <h2>Provider</h2>
+      <p><strong>ThePrinceEcho</strong><br>
+      c/o SCHUTZADRESSE.COM #535<br>
+      Waidmannsluster Damm 1<br>
+      13507 Berlin, Germany</p>
+      <p>This website is operated as a private, non-commercial project.</p>
     </div>
+
+    <div class="legal__section">
+      <h2>Contact</h2>
+      <p>For inquiries, please use the contact form or email:<br>
+      <a href="mailto:info@theprinceecho.com" style="color: var(--color-accent);">info@theprinceecho.com</a></p>
+    </div>
+
+    <div class="legal__section">
+      <h2>Liability for Content</h2>
+      <p>The content of this website has been created with the greatest possible care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, we are responsible for our own content on these pages according to general law (§ 7 para. 1 DDG). According to §§ 8 to 10 DDG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+    </div>
+
+    <div class="legal__section">
+      <h2>Liability for Links</h2>
+      <p>Our website contains links to external websites of third parties over whose content we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal contents were not recognizable at the time of linking.</p>
+    </div>
+
+    <div class="legal__section">
+      <h2>Copyright</h2>
+      <p>The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, editing, distribution, and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.</p>
+    </div>
+
+    <div class="legal__section">
+      <h2>Data Protection</h2>
+      <p>The use of our website is generally possible without providing personal data. Insofar as personal data (for example name, address, or email addresses) is collected on our pages, this is always done on a voluntary basis as far as possible. These data will not be passed on to third parties without your express consent.</p>
+    </div>
+  </main>
+
+  <!-- Footer — identical to final index.html -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="28" height="28">
+          <span>ThePrinceEcho</span>
+        </div>
+        <div class="footer__links">
+          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝙏</a>
+          <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="contact.html">Contact</a>
+          <a href="legal.html">Legal</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> ThePrinceEcho. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
