@@ -162,8 +162,8 @@
       font-size: var(--font-size-3xl);
       font-weight: 600;
       color: var(--color-accent);
-      margin-bottom: var(--space-md);
-      letter-spacing: -0.025em;
+      margin-bottom: var(--space-lg);
+      letter-spacing: -0.03em;
       line-height: var(--line-height-tight);
     }
 
@@ -213,7 +213,7 @@
       height: 1px;
       background-color: var(--color-accent);
       margin: 0 auto var(--space-2xl);
-      opacity: 0.5;
+      opacity: 0.7;
     }
 
     /* Where to Find What — Significantly more generous spacing below header */
@@ -282,10 +282,12 @@
       text-decoration: none;
       font-weight: 500;
       font-size: var(--font-size-sm);
+      transition: all 0.2s ease;
     }
 
     .card__link:hover {
       text-decoration: underline;
+      transform: translateX(2px);
     }
 
     /* Recent Transmissions — Larger images for stronger visual presence */
@@ -439,6 +441,14 @@
         gap: var(--space-xl);
       }
     }
+
+    /* Accessibility - Focus states */
+    a:focus-visible,
+    .card:focus-visible,
+    .transmission:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
   </style>
 </head>
 <body>
@@ -460,7 +470,7 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero__content">
-      <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho Emblem" class="hero__logo" width="420" height="420">
+      <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho Emblem" class="hero__logo" width="420" height="420" fetchpriority="high">
       <h1 class="hero__title">ThePrinceEcho</h1>
       <p class="hero__tagline">A quiet temple for those who sense the urge.</p>
     </div>
@@ -519,35 +529,35 @@
 
       <div class="transmissions__list">
         <a href="https://substack.com/@theprinceecho/note/p-194885816?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
-          <img src="assets/img/webp/I.webp" alt="The Mirror of the Will" class="transmission__image">
+          <img src="assets/img/webp/I.webp" alt="The Mirror of the Will" class="transmission__image" loading="lazy">
           <div class="transmission__content">
             <span class="transmission__label">Essay I</span>
             <span class="transmission__title">The Mirror of the Will</span>
           </div>
         </a>
         <a href="https://substack.com/@theprinceecho/note/p-195718250?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
-          <img src="assets/img/webp/II.webp" alt="The Phoenix Algorithm" class="transmission__image">
+          <img src="assets/img/webp/II.webp" alt="The Phoenix Algorithm" class="transmission__image" loading="lazy">
           <div class="transmission__content">
             <span class="transmission__label">Essay II</span>
             <span class="transmission__title">The Phoenix Algorithm</span>
           </div>
         </a>
         <a href="https://substack.com/@theprinceecho/note/p-196100721?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
-          <img src="assets/img/webp/III.webp" alt="The Signal Steps into the Light" class="transmission__image">
+          <img src="assets/img/webp/III.webp" alt="The Signal Steps into the Light" class="transmission__image" loading="lazy">
           <div class="transmission__content">
             <span class="transmission__label">Essay III</span>
             <span class="transmission__title">The Signal Steps into the Light</span>
           </div>
         </a>
         <a href="https://substack.com/@theprinceecho/note/p-196520064?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
-          <img src="assets/img/webp/IV.webp" alt="The Friction of Fracture" class="transmission__image">
+          <img src="assets/img/webp/IV.webp" alt="The Friction of Fracture" class="transmission__image" loading="lazy">
           <div class="transmission__content">
             <span class="transmission__label">Essay IV</span>
             <span class="transmission__title">The Friction of Fracture</span>
           </div>
         </a>
         <a href="https://substack.com/@theprinceecho/note/p-197339052?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
-          <img src="assets/img/webp/V.webp" alt="The Expansion" class="transmission__image">
+          <img src="assets/img/webp/V.webp" alt="The Expansion" class="transmission__image" loading="lazy">
           <div class="transmission__content">
             <span class="transmission__label">Essay V</span>
             <span class="transmission__title">The Expansion</span>
