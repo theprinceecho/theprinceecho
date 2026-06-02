@@ -10,97 +10,48 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 |----------------------------|------------------|-------|
 | Repository Foundation      | Complete        | Clean structure, well organized |
 | README.md                  | Complete        | Clean profile description |
-| Notes.md                   | **Updated**     | Reflects current state of v2 refinement |
+| Notes.md                   | **Updated**     | Reflects final state of v2 refinement (June 2, 2026) |
 | CI Workflow                | Complete        | Strengthened with blocking lint + wait-on |
 | HTML Linting               | Complete        | Now blocking on PRs |
 | Lighthouse CI              | Complete        | Active on every PR |
 | Project Config             | Complete        | Updated with v2 direction |
-| Visual Direction (v2)      | **Active**      | Significant progress on refine/landing-page-v2 |
+| Visual Direction (v2)      | **Complete**    | Final refinements integrated on refine/landing-page-v2 |
 | Overall Maturity           | High            | Good foundation and documentation discipline |
 
 ## Active Development – refine/landing-page-v2
 
-**Current State (as of May 31, 2026):**
+**Final State (as of June 2, 2026):**
 
 ### Completed on v2 Branch:
-- Refined **Header (Navigation)** with active states and clean styling
-- **Hero / Home section** rebuilt:
-  - Buttons removed for cleaner, more minimal presentation
-  - Accent color softened to cream golden (`#c5a46e`)
-  - Background lightened to charcoal (`#121212`)
-  - Subtle radial gradient retained for depth
-- **About / The Threshold** section added using original, carefully iterated text
-- **Footer** built with consistent styling and useful links
+- Refined **Header (Navigation)** with active states, clean styling, and improved glassmorphism (0.68 opacity + 16px blur)
+- **Hero / Home section** refined with improved typography, letter-spacing, and breathing room
+- Accent color updated to softer cream (`#d0c4a8`)
+- **Where to Find What** section with consistent branded icons (X Unicode + Substack WebP)
+- **Footer** with consistent X branding
 
 ### Design Direction
-- Cream/golden accents on charcoal background
+- Softer cream accent (`#d0c4a8`) on charcoal background
 - Calm, sovereign, high-signal aesthetic
-- Emphasis on visual coherence and reusable components (Header + Footer)
-- Text is preserved exactly as originally written
+- Emphasis on visual coherence and reusable components
 
-## Landing Page Refinement – Progress Summary (June 2026)
+## Landing Page Refinement – Final Summary (June 2026)
 
-**Major Achievements in this phase:**
+**Major Achievements:**
 
-- **Asset Management**
-  - Created clean folder structure: `assets/img/webp/` + `assets/img/original/`
-  - Converted logo and all 5 Recent Transmission banners to optimized WebP
-  - Integrated WebP assets into the page
+- Icon & Branding Consistency: Standardized X using Unicode `𝕏` across heading, card icon, card link, and footer. Integrated official `Substack.webp` icon.
+- Visual & UX: Increased transmission image size (220px desktop / 140px mobile). Enhanced card link hovers. Improved section divider visibility (opacity 0.7). Refined header glassmorphism.
+- Technical: Stabilized active navigation with stronger indicator. Added performance attributes (fetchpriority + lazy loading). Added accessibility focus-visible styles.
 
-- **Visual & UX Refinements**
-  - Added rounded corners to logos (header + hero)
-  - Increased height of Recent Transmissions cards for better image visibility
-  - Increased card brightness (`#242424`) for improved readability and contrast
-  - Refined spacing, padding, and overall visual breathing room
-  - Maintained consistent cream/golden accent on dark charcoal foundation
+**Workflow Decision:** All code changes on `refine/landing-page-v2`. Documentation on `main`.
 
-- **Technical Work**
-  - Multiple iterations on **dynamic active navigation** in the header (scroll-based + Intersection Observer approaches)
-  - Preserved original carefully crafted text across all sections
-  - Continued focus on calm, sovereign, high-signal aesthetic
-
-**Current Open Items / Blockers:**
-- Dynamic navigation active state highlighting is **not yet stable/reliable**
-- Edge-to-edge header behavior has been deferred for later review
-
-**Workflow Decision (Confirmed):**
-- All HTML, CSS, and JavaScript changes → `refine/landing-page-v2` branch only
-- Documentation, status updates, and project notes → `main` branch
-
-## Key Decisions
-- All visual/HTML work is done on `refine/landing-page-v2`
-- Documentation and configuration updates go to `main`
-- Original text is respected and not rewritten
-- Focus on structure and visual foundation before expanding further
-
-## Next Priorities
-- Stabilize dynamic active navigation in header
-- Continue visual polish on refine branch
-- Image optimization integration (already started)
-- Create `contact.html` and `legal.html` using shared Header + Footer
-- Mobile optimization pass
-
-## GitHub Automation
-- CI is active and strengthened
-- Linting is blocking
-- Lighthouse runs on every PR to `main`
-
----
+**Last Updated:** June 2, 2026
 
 ## Workflow & Branching Strategy
 
 **Clear separation of concerns:**
 
-- **Documentation & Project History** (`Notes.md`)  
-  → Always updated on the `main` branch.
+- **Documentation & Project History** (`Notes.md`) → Always updated on the `main` branch.
 
-- **Code & Assets** (`index.html`, `contact.html`, CSS, JavaScript, images)  
-  → All work happens on `refine/landing-page-v2`.
+- **Code & Assets** (`index.html`, `contact.html`, images) → All work on `refine/landing-page-v2`.
 
-- **Asset Structure** (`assets/img/webp/` + `assets/img/original/`)  
-  → Lives on the refinement branch as it is part of the landing page implementation.  
-  These folders will move to `main` only when the refinement branch is merged.
-
-This approach ensures that `main` remains a clean, stable source of truth for documentation while active visual and structural development stays isolated on the working branch.
-
-**Last Updated:** June 1, 2026
+This approach ensures `main` remains the clean source of truth for documentation.
