@@ -501,10 +501,10 @@
       <div class="section-divider"></div>
       <div class="cards">
         <div class="card">
-          <div class="card__icon">𝙏</div>
-          <h3 class="card__title">On 𝙏 (@ThePrinceEcho)</h3>
+          <div class="card__icon">𝕏</div>
+          <h3 class="card__title">On 𝕏 (@ThePrinceEcho)</h3>
           <p class="card__text">The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
-          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on 𝙏 →</a>
+          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on 𝕏 →</a>
         </div>
         <div class="card">
           <div class="card__icon">
@@ -576,7 +576,7 @@
           <span>ThePrinceEcho</span>
         </div>
         <div class="footer__links">
-          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝙏</a>
+          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝕏</a>
           <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
           <a href="contact.html">Contact</a>
           <a href="legal.html">Legal</a>
@@ -602,11 +602,9 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const currentId = entry.target.getAttribute('id');
-
           navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentId}`) {
+            if (link.getAttribute('href') === '#' + entry.target.id) {
               link.classList.add('active');
             }
           });
@@ -616,19 +614,6 @@
 
     sections.forEach(section => {
       observer.observe(section);
-    });
-
-    // Set initial active state on load
-    window.addEventListener('load', () => {
-      const firstSection = document.querySelector('section[id]');
-      if (firstSection) {
-        const firstId = firstSection.getAttribute('id');
-        navLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${firstId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
     });
 
     // Footer year
