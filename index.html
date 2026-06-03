@@ -462,9 +462,12 @@
       </div>
       <div class="about__content">
         <p class="about__text">You have entered the temple – a sovereign space where noise falls away and clarity remains.</p>
+
         <p class="about__text">A calm and sovereign space for clear reflections on macro cycles, sovereignty, energy realignment, and the quiet convergence of human intelligence with advancing technology.</p>
+
         <p class="about__text">Here you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
-        <div class="about__closing">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</div>
+
+        <p class="about__text">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
       </div>
     </div>
   </section>
@@ -565,35 +568,41 @@
   </footer>
 
   <script>
-    // Dynamic Active Navigation
+    // Dynamic Active Navigation - Improved with better rootMargin and priority to Home
     const navLinks = document.querySelectorAll('.nav__link');
     const sections = document.querySelectorAll('section[id]');
 
     const observer = new IntersectionObserver((entries) => {
+      let visibleSection = null;
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const currentId = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentId}`) {
-              link.classList.add('active');
-            }
-          });
+          if (!visibleSection || entry.intersectionRatio > visibleSection.intersectionRatio) {
+            visibleSection = entry;
+          }
         }
       });
-    }, { rootMargin: '-100px 0px -50% 0px' });
 
-    sections.forEach(section => observer.observe(section));
-
-    window.addEventListener('load', () => {
-      const firstSection = document.querySelector('section[id]');
-      if (firstSection) {
-        const firstId = firstSection.getAttribute('id');
+      if (visibleSection) {
+        const currentId = visibleSection.target.getAttribute('id');
         navLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${firstId}`) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentId}`) {
             link.classList.add('active');
           }
         });
+      }
+    }, { 
+      rootMargin: '-80px 0px -40% 0px',
+      threshold: [0.3, 0.6]
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Ensure Home is active on initial load
+    window.addEventListener('load', () => {
+      const homeLink = document.querySelector('a[href="#home"]');
+      if (homeLink) {
+        homeLink.classList.add('active');
       }
     });
 
