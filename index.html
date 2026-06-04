@@ -1,1 +1,618 @@
-COMPLETE FINAL VERSION FROM ARTIFACT index-refine-v3.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThePrinceEcho</title>
+  <style>
+    :root {
+      /* Colors — Charcoal palette aligned with final TPE emblem */
+      --color-bg: #0f0f0f;
+      --color-accent: #d0c4a8;
+      --color-text: #c5b8a0;
+      --color-text-secondary: #c5b8a0;
+
+      /* Spacing Scale — generous but purposeful */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4.5rem;
+      --space-4xl: 6rem;
+
+      /* Typography Scale — fluid and calm */
+      --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --font-size-sm: clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
+      --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+      --font-size-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+      --font-size-xl: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
+      --font-size-2xl: clamp(2rem, 1.75rem + 1vw, 2.5rem);
+      --font-size-3xl: clamp(2.5rem, 2.1rem + 1.6vw, 3.2rem);
+
+      /* Line heights */
+      --line-height-tight: 1.15;
+      --line-height-normal: 1.7;
+      --line-height-relaxed: 1.85;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: Inter, system_ui, sans-serif;
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-normal);
+
+      /* Refined TPE Watermark */
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' fill='none'%3E%3Ctext x='24' y='60' font-size='40' fill='%23161616' fill-opacity='0.28' font-family='Inter, system-ui, sans-serif' font-weight='600'%3ETPE%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px 180px;
+      background-attachment: fixed;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+        background-size: 160px 160px;
+      }
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(18, 18, 18, 0.68);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(197, 164, 110, 0.1);
+    }
+
+    .nav__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo img {
+      display: block;
+      border-radius: 6px;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    .nav__link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav__link:hover {
+      color: var(--color-accent);
+    }
+
+    .nav__link.active {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .nav__link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-accent);
+      box-shadow: 0 0 12px rgba(197, 164, 110, 0.8);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 65%, #0f0f0f 100%);
+    }
+
+    .hero__content {
+      max-width: 720px;
+      text-align: center;
+    }
+
+    .hero__logo {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (max-width: 768px) {
+      .hero__logo {
+        max-width: 280px;
+      }
+    }
+
+    .hero__title {
+      font-size: var(--font-size-3xl);
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: var(--space-lg);
+      letter-spacing: -0.03em;
+      line-height: var(--line-height-tight);
+    }
+
+    .hero__tagline {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: var(--line-height-relaxed);
+    }
+
+    /* Sections */
+    .about, .where-to-find, .transmissions {
+      padding: var(--space-4xl) var(--space-xl);
+      background-color: #0f0f0f;
+    }
+
+    .about__container, .where-to-find__container, .transmissions__container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about__text {
+      margin-bottom: var(--space-lg);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .section-title {
+      font-size: var(--font-size-2xl);
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: var(--space-sm);
+      text-align: center;
+      line-height: var(--line-height-tight);
+    }
+
+    .section-subtitle {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2xl);
+      text-align: center;
+      font-size: var(--font-size-base);
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 1px;
+      background-color: var(--color-accent);
+      margin: 0 auto var(--space-2xl);
+      opacity: 0.7;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+
+    .card {
+      background: rgba(22, 22, 22, 0.75);
+      border: 1px solid rgba(197, 164, 110, 0.25);
+      border-radius: 16px;
+      padding: var(--space-2xl);
+      backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+      border-color: rgba(197, 164, 110, 0.45);
+      transform: translateY(-4px);
+    }
+
+    .card__icon {
+      font-size: var(--font-size-xl);
+      margin-bottom: var(--space-lg);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card__icon img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .card__title {
+      font-size: var(--font-size-lg);
+      color: var(--color-accent);
+      margin-bottom: var(--space-md);
+    }
+
+    .card__text {
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-relaxed);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+
+    .card__link {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: var(--font-size-sm);
+      transition: all 0.2s ease;
+    }
+
+    .card__link:hover {
+      text-decoration: underline;
+      transform: translateX(2px);
+    }
+
+    /* Transmissions */
+    .transmissions__header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .transmissions__list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .transmission {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-lg);
+      padding: var(--space-xl);
+      background-color: #161616;
+      border: 1px solid rgba(197, 164, 110, 0.2);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--color-text-secondary);
+      transition: all 0.2s ease;
+      min-height: 260px;
+    }
+
+    .transmission:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: translateX(4px);
+    }
+
+    .transmission__image {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .transmission__content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .transmission__label {
+      font-size: var(--font-size-xs);
+      color: var(--color-accent);
+      opacity: 0.85;
+      letter-spacing: 0.5px;
+    }
+
+    .transmission__title {
+      font-size: var(--font-size-base);
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #0f0f0f;
+      border-top: 1px solid rgba(197, 164, 110, 0.1);
+      padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+    }
+
+    .footer__container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer__brand img {
+      border-radius: 6px;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer__links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer__bottom {
+      text-align: center;
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(197, 164, 110, 0.1);
+      font-size: var(--font-size-xs);
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .about, .where-to-find, .transmissions {
+        padding-top: var(--space-3xl);
+        padding-bottom: var(--space-3xl);
+      }
+
+      .where-to-find .section-subtitle {
+        margin-bottom: var(--space-4xl);
+      }
+
+      .cards {
+        gap: var(--space-2xl);
+      }
+
+      .transmission {
+        min-height: 200px;
+        gap: var(--space-md);
+        align-items: flex-start;
+      }
+
+      .transmission__image {
+        width: 160px;
+        height: 160px;
+      }
+
+      .nav__container {
+        padding-left: var(--space-lg);
+        padding-right: var(--space-lg);
+      }
+
+      .nav__links {
+        gap: var(--space-xl);
+      }
+    }
+
+    a:focus-visible, .card:focus-visible, .transmission:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__container">
+      <a href="#home" class="nav__logo">
+        <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="32" height="32">
+      </a>
+      <div class="nav__links">
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#recent-transmissions" class="nav__link">Transmissions</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero__content">
+      <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho Emblem" class="hero__logo" width="420" height="420" fetchpriority="high">
+      <h1 class="hero__title">ThePrinceEcho</h1>
+      <p class="hero__tagline">A quiet temple for those who sense the urge.</p>
+    </div>
+  </section>
+
+  <!-- The Threshold -->
+  <section id="about" class="about">
+    <div class="about__container">
+      <div class="about__header">
+        <h2 class="section-title">THE THRESHOLD</h2>
+        <p class="section-subtitle">A sovereign threshold for those who sense the urge.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about__content">
+        <p class="about__text">You have entered the temple – a sovereign space where noise falls away and clarity remains.</p>
+
+        <p class="about__text">A calm and sovereign space for clear reflections on macro cycles, sovereignty, and energy realignment.</p>
+
+        <p class="about__text">Here, in the quiet convergence of human intelligence with advancing technology, you will find high-signal observations that cut through noise and distraction. No urgency. No hype. Only precise insight.</p>
+
+        <p class="about__text">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where to Find What -->
+  <section class="where-to-find">
+    <div class="where-to-find__container">
+      <h2 class="section-title">WHERE TO FIND WHAT</h2>
+      <p class="section-subtitle">The outer court<br>The inner chamber.</p>
+      <div class="section-divider"></div>
+      <div class="cards">
+        <div class="card">
+          <div class="card__icon">𝕏</div>
+          <h3 class="card__title">On 𝕏 (@ThePrinceEcho)</h3>
+          <p class="card__text">The outer court of the temple — short, sharp daily observations and Prince Notes. Real-time sparks that decode unfolding cycles and offer quiet strategic clarity.</p>
+          <a href="https://x.com/theprinceecho" class="card__link" target="_blank" rel="noopener">Follow on 𝕏 →</a>
+        </div>
+        <div class="card">
+          <div class="card__icon">
+            <img src="assets/img/webp/Substack.webp" alt="Substack" width="24" height="24">
+          </div>
+          <h3 class="card__title">On Substack (ThePrinceEcho)</h3>
+          <p class="card__text">The inner chamber — longer, chapter-like essays and deeper reflections. For those who wish to descend further into the architecture of sovereignty and long-term patterns.</p>
+          <a href="https://theprinceecho.substack.com" class="card__link" target="_blank" rel="noopener">Read on Substack →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Transmissions -->
+  <section id="recent-transmissions" class="transmissions">
+    <div class="transmissions__container">
+      <div class="transmissions__header">
+        <h2 class="section-title">RECENT TRANSMISSIONS</h2>
+        <p class="section-subtitle">High-signal observations that cut through noise and distraction.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="transmissions__list">
+        <a href="https://substack.com/@theprinceecho/note/p-194885816?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
+          <img src="assets/img/webp/I.webp" alt="The Mirror of the Will" class="transmission__image" loading="lazy">
+          <div class="transmission__content">
+            <span class="transmission__label">Essay I</span>
+            <span class="transmission__title">The Mirror of the Will</span>
+          </div>
+        </a>
+        <a href="https://substack.com/@theprinceecho/note/p-195718250?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
+          <img src="assets/img/webp/II.webp" alt="The Phoenix Algorithm" class="transmission__image" loading="lazy">
+          <div class="transmission__content">
+            <span class="transmission__label">Essay II</span>
+            <span class="transmission__title">The Phoenix Algorithm</span>
+          </div>
+        </a>
+        <a href="https://substack.com/@theprinceecho/note/p-196100721?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
+          <img src="assets/img/webp/III.webp" alt="The Signal Steps into the Light" class="transmission__image" loading="lazy">
+          <div class="transmission__content">
+            <span class="transmission__label">Essay III</span>
+            <span class="transmission__title">The Signal Steps into the Light</span>
+          </div>
+        </a>
+        <a href="https://substack.com/@theprinceecho/note/p-196520064?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
+          <img src="assets/img/webp/IV.webp" alt="The Friction of Fracture" class="transmission__image" loading="lazy">
+          <div class="transmission__content">
+            <span class="transmission__label">Essay IV</span>
+            <span class="transmission__title">The Friction of Fracture</span>
+          </div>
+        </a>
+        <a href="https://substack.com/@theprinceecho/note/p-197339052?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
+          <img src="assets/img/webp/V.webp" alt="The Expansion" class="transmission__image" loading="lazy">
+          <div class="transmission__content">
+            <span class="transmission__label">Essay V</span>
+            <span class="transmission__title">The Expansion</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="28" height="28">
+          <span>ThePrinceEcho</span>
+        </div>
+        <div class="footer__links">
+          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝕏</a>
+          <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="contact.html">Contact</a>
+          <a href="legal.html">Legal</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> ThePrinceEcho. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic Active Navigation - Improved with better rootMargin and priority to Home
+    const navLinks = document.querySelectorAll('.nav__link');
+    const sections = document.querySelectorAll('section[id]');
+
+    const observer = new IntersectionObserver((entries) => {
+      let visibleSection = null;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!visibleSection || entry.intersectionRatio > visibleSection.intersectionRatio) {
+            visibleSection = entry;
+          }
+        }
+      });
+
+      if (visibleSection) {
+        const currentId = visibleSection.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }, { 
+      rootMargin: '-70px 0px -15% 0px',
+      threshold: [0.2, 0.5, 0.8]
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Ensure Home is active on initial load
+    window.addEventListener('load', () => {
+      const homeLink = document.querySelector('a[href="#home"]');
+      if (homeLink) {
+        homeLink.classList.add('active');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
