@@ -27,7 +27,7 @@
       --font-size-sm: clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
       --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
       --font-size-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
-      --font-size-xl: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
+      --font-size-xl: clamp(1.5rem, 1.35rem + 0.6vw, 1.25rem);
       --font-size-2xl: clamp(2rem, 1.75rem + 1vw, 2.5rem);
       --font-size-3xl: clamp(2.5rem, 2.1rem + 1.6vw, 3.2rem);
 
@@ -574,42 +574,48 @@
   </footer>
 
   <script>
-    // Dynamic Active Navigation - Improved with better rootMargin and priority to Home
+    // Robust Active Navigation
     const navLinks = document.querySelectorAll('.nav__link');
     const sections = document.querySelectorAll('section[id]');
 
-    const observer = new IntersectionObserver((entries) => {
-      let visibleSection = null;
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (!visibleSection || entry.intersectionRatio > visibleSection.intersectionRatio) {
-            visibleSection = entry;
-          }
+    function setActiveLink(id) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
         }
       });
+    }
 
-      if (visibleSection) {
-        const currentId = visibleSection.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${currentId}`) {
-            link.classList.add('active');
-          }
-        });
+    // Highlight Home when near the top of the page
+    function highlightHomeIfAtTop() {
+      if (window.scrollY < 120) {
+        setActiveLink('home');
       }
-    }, { 
-      rootMargin: '-70px 0px -15% 0px',
-      threshold: [0.2, 0.5, 0.8]
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          setActiveLink(id);
+        }
+      });
+    }, {
+      rootMargin: '-80px 0px -20% 0px',
+      threshold: 0.3
     });
 
     sections.forEach(section => observer.observe(section));
 
-    // Ensure Home is active on initial load
+    // Set Home active on initial load
     window.addEventListener('load', () => {
-      const homeLink = document.querySelector('a[href="#home"]');
-      if (homeLink) {
-        homeLink.classList.add('active');
-      }
+      setActiveLink('home');
+    });
+
+    // Keep Home highlighted when scrolling back to the top
+    window.addEventListener('scroll', () => {
+      highlightHomeIfAtTop();
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
