@@ -10,7 +10,7 @@ Every change must preserve clarity, elegance, and long-term maintainability.
 |-----------------------------------|------------------|-------|
 | Repository Foundation             | Complete        | Clean structure, well organized |
 | README.md                         | Complete        | Clean profile description |
-| Notes.md                          | **Updated**     | Reflects major repository cleanup and branch protection activation (June 4, 2026) |
+| Notes.md                          | **Updated**     | Reflects navigation fix + repository cleanup (June 4, 2026) |
 | CI Workflow (`pr-checks.yml`)     | Complete        | Active with HTML Linting + Lighthouse CI |
 | HTML Linting                      | Complete        | Blocking on PRs via HTMLHint |
 | Lighthouse CI                     | Complete        | Active on every PR (relaxed, realistic thresholds) |
@@ -33,8 +33,12 @@ On June 4, 2026, a significant cleanup and stabilization of the repository was c
   - Require `lint-and-audit` status check to pass
   - Require branches to be up to date before merging
 - Successfully triggered and verified `pages-build-deployment`
-- Performed full Cloudflare cache purge
 - Live site now correctly reflects the final v3 state
+
+### Navigation Fix (Late June 4)
+- Fixed active navigation bug where "About" was incorrectly highlighted while viewing the Home/Hero section.
+- Replaced fragile IntersectionObserver logic with a more robust implementation that properly prioritizes the Home section when near the top of the page.
+- Improved `rootMargin` and added explicit scroll handling to maintain correct active states.
 
 ### Current Branch Strategy (Updated)
 
@@ -50,14 +54,14 @@ On June 4, 2026, a significant cleanup and stabilization of the repository was c
 **Major Achievements:**
 - Icon & Branding Consistency: Standardized X using Unicode `𝕏` and official Substack WebP icon.
 - Visual & UX: Improved breathing room in About text and significantly more generous spacing in transmission cards.
-- Technical: Stabilized active navigation, added performance attributes, and accessibility focus styles.
+- Technical: Fixed active navigation logic, added performance attributes, and accessibility focus styles.
 - CI/CD: Implemented blocking quality gates and relaxed Lighthouse thresholds to realistic levels for a static landing page.
 - Performance: Achieved perfect PageSpeed score of 100 on mobile.
 
 **Known Limitation:**
 Third-party preview services may show caching delays. Always verify changes via direct `raw.githubusercontent.com` or local pull.
 
-**Last Updated:** June 4, 2026
+**Last Updated:** June 4, 2026 (22:05 CEST)
 
 ---
 
