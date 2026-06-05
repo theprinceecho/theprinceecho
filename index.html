@@ -574,7 +574,7 @@
   </footer>
 
   <script>
-    // Robust Active Navigation
+    // Robust Active Navigation (Mobile Optimized)
     const navLinks = document.querySelectorAll('.nav__link');
     const sections = document.querySelectorAll('section[id]');
 
@@ -587,36 +587,45 @@
       });
     }
 
-    // Highlight Home when near the top of the page
-    function highlightHomeIfAtTop() {
-      if (window.scrollY < 120) {
+    // More aggressive home detection for mobile
+    function highlightHomeIfNeeded() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      if (scrollY < 180) {
         setActiveLink('home');
       }
     }
 
     const observer = new IntersectionObserver((entries) => {
+      let bestEntry = null;
+
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          setActiveLink(id);
+          if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
+            bestEntry = entry;
+          }
         }
       });
+
+      if (bestEntry) {
+        const id = bestEntry.target.getAttribute('id');
+        setActiveLink(id);
+      }
     }, {
-      rootMargin: '-80px 0px -20% 0px',
-      threshold: 0.3
+      rootMargin: '-60px 0px -25% 0px',
+      threshold: [0.25, 0.5, 0.75]
     });
 
     sections.forEach(section => observer.observe(section));
 
-    // Set Home active on initial load
+    // Initial state
     window.addEventListener('load', () => {
       setActiveLink('home');
     });
 
-    // Keep Home highlighted when scrolling back to the top
+    // Mobile-friendly scroll listener
     window.addEventListener('scroll', () => {
-      highlightHomeIfAtTop();
-    });
+      highlightHomeIfNeeded();
+    }, { passive: true });
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
