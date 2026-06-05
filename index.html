@@ -574,7 +574,7 @@
   </footer>
 
   <script>
-    // Robust Active Navigation (Mobile Optimized)
+    // Clean Active Navigation (Mobile Optimized)
     const navLinks = document.querySelectorAll('.nav__link');
     const sections = document.querySelectorAll('section[id]');
 
@@ -585,14 +585,6 @@
           link.classList.add('active');
         }
       });
-    }
-
-    // More aggressive home detection for mobile
-    function highlightHomeIfNeeded() {
-      const scrollY = window.scrollY || window.pageYOffset;
-      if (scrollY < 180) {
-        setActiveLink('home');
-      }
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -611,21 +603,16 @@
         setActiveLink(id);
       }
     }, {
-      rootMargin: '-60px 0px -25% 0px',
-      threshold: [0.25, 0.5, 0.75]
+      rootMargin: '-70px 0px -30% 0px',
+      threshold: [0.2, 0.4, 0.6, 0.8]
     });
 
     sections.forEach(section => observer.observe(section));
 
-    // Initial state
+    // Only set Home on initial load
     window.addEventListener('load', () => {
       setActiveLink('home');
     });
-
-    // Mobile-friendly scroll listener
-    window.addEventListener('scroll', () => {
-      highlightHomeIfNeeded();
-    }, { passive: true });
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
