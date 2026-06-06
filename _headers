@@ -1,0 +1,7 @@
+# index.html - Revalidate quickly so content updates appear fast
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# All other assets (images, css, etc.) - Cache for a long time
+/*
+  Cache-Control: public, max-age=31536000, immutable
