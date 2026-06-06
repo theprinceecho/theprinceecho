@@ -1,0 +1,2 @@
+# Fallback routing - serve index.html for any path
+/*    /index.html   200
