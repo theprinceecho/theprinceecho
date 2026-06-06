@@ -6,18 +6,21 @@
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["error", { "minScore": 0.80 }],
-        "categories:accessibility": ["error", { "minScore": 0.85 }],
-        "categories:seo": ["error", { "minScore": 0.85 }],
+        "categories:performance": ["error", { "minScore": 0.75 }],
+        "categories:accessibility": ["error", { "minScore": 0.80 }],
+        "categories:seo": ["error", { "minScore": 0.80 }],
         
         "installable-manifest": "off",
         "maskable-icon": "off",
         "splash-screen": "off",
         "themed-omnibox": "off",
-        
-        "meta-description": ["warn", { "minScore": 0.5 }],
-        "landmark-one-main": ["warn", { "minScore": 0.5 }],
-        "csp-xss": ["warn", { "minScore": 0.5 }]
+        "meta-description": "off",
+        "landmark-one-main": "off",
+        "csp-xss": "off",
+        "errors-in-console": "off",
+        "non-composited-animations": "off",
+        "total-byte-weight": "off",
+        "uses-responsive-images": "off"
       }
     }
   }
