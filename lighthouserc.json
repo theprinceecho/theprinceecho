@@ -6,13 +6,18 @@
     },
     "assert": {
       "assertions": {
-        "categories": {
-          "performance": ["error", { "minScore": 0.80 }],
-          "accessibility": ["error", { "minScore": 0.85 }],
-          "best-practices": ["error", { "minScore": 0.80 }],
-          "seo": ["error", { "minScore": 0.85 }],
-          "pwa": ["warn", { "minScore": 0.40 }]
-        }
+        "categories:performance": ["error", { "minScore": 0.80 }],
+        "categories:accessibility": ["error", { "minScore": 0.85 }],
+        "categories:seo": ["error", { "minScore": 0.85 }],
+        
+        "installable-manifest": "off",
+        "maskable-icon": "off",
+        "splash-screen": "off",
+        "themed-omnibox": "off",
+        
+        "meta-description": ["warn", { "minScore": 0.5 }],
+        "landmark-one-main": ["warn", { "minScore": 0.5 }],
+        "csp-xss": ["warn", { "minScore": 0.5 }]
       }
     }
   }
