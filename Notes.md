@@ -4,19 +4,20 @@
 The landing page is built with intention: calm, precise, and sovereign.  
 Every change must preserve clarity, elegance, and long-term maintainability.
 
-## Current Status (as of June 6, 2026)
+## Current Status (as of June 9, 2026)
 
 | Area                              | Status          | Notes |
 |-----------------------------------|------------------|-------|
 | Repository Foundation             | Complete        | Clean structure, well organized |
 | README.md                         | Complete        | Clean profile description |
-| Notes.md                          | **Updated**     | Reflects Cloudflare Pages migration (June 6, 2026) |
+| Notes.md                          | **Updated**     | Reflects Cloudflare Pages + Registrar migration |
 | CI Workflow (`ci.yml`)            | Active          | HTML Linting + Lighthouse CI on PRs |
 | HTML Linting                      | Active          | Blocking on PRs via HTMLHint |
 | Lighthouse CI                     | Active          | Relaxed but realistic thresholds |
 | Branch Protection on `main`       | **Active**      | Requires PR + 1 approval + status checks |
 | Hosting Platform                  | **Cloudflare Pages** | Native hosting (migrated June 6, 2026) |
 | Custom Domain + SSL               | Active          | theprinceecho.com with Full Strict SSL |
+| Domain Registrar                  | **Cloudflare Registrar** | Transferred from Porkbun (June 9, 2026) |
 | Performance                       | Excellent       | Fast edge delivery via Cloudflare Pages |
 | Overall Maturity                  | High            | Clean, sovereign, and well governed |
 
@@ -42,10 +43,29 @@ The previous architecture (GitHub Pages behind Cloudflare proxy) caused persiste
 - **Hosting**: Cloudflare Pages (serves all static files directly from the edge)
 - **Version Control**: GitHub (`theprinceecho/theprinceecho` repository on `main`)
 - **DNS + CDN + SSL**: Fully managed by Cloudflare
-- **Domain Registrar**: Porkbun (unchanged)
+- **Domain Registrar**: Cloudflare Registrar (transferred June 9, 2026)
 - **Caching Control**: Handled via `_headers` file (much more reliable than before)
 
 **Result**: Much faster propagation of changes and significantly better long-term maintainability.
+
+## Domain Registrar Migration – June 9, 2026: Porkbun → Cloudflare Registrar
+
+On June 9, 2026, the domain `theprinceecho.com` was successfully transferred from **Porkbun** to **Cloudflare Registrar**.
+
+### Why the Migration Was Done
+To consolidate the entire stack (hosting, DNS, SSL, and domain registration) under one provider. This reduces external dependencies and aligns with the sovereign, minimal, and long-term maintainable philosophy of the project.
+
+### Completed Steps
+- Unlocked domain and retrieved Authorization Code from Porkbun
+- Initiated transfer in Cloudflare Registrar
+- Approved outgoing transfer from Porkbun
+- Transfer completed successfully (no downtime)
+- Updated ecosystem diagram to reflect new registrar
+
+### Benefits
+- Single provider for the full stack (Cloudflare Pages + Registrar)
+- Simplified management and billing
+- Stronger integration and future flexibility within the Cloudflare ecosystem
 
 ## Previous Major Update – June 4, 2026: Repository Cleanup & Protection
 
@@ -56,10 +76,12 @@ On June 4, 2026, a significant cleanup and stabilization of the repository was c
 **Major Achievements:**
 - Icon & Branding Consistency: Standardized X using Unicode `𝕏`
 - Technical: Migrated to Cloudflare Pages with proper `_headers` and `_redirects`
+- Domain: Transferred registration to Cloudflare Registrar (June 9, 2026)
 - CI/CD: Quality gates maintained (HTML Linting + Lighthouse)
 - Performance: Fast global delivery via Cloudflare edge
+- Documentation: Updated ecosystem diagram (includes Cockpit hosting)
 
-**Last Updated:** June 6, 2026 (19:30 CEST)
+**Last Updated:** June 9, 2026
 
 ---
 
