@@ -7,13 +7,11 @@
   <link rel="icon" href="assets/img/webp/TPE_Logo.webp" type="image/webp">
   <style>
     :root {
-      /* Colors — Charcoal palette aligned with final TPE emblem */
       --color-bg: #0f0f0f;
       --color-accent: #d0c4a8;
       --color-text: #c5b8a0;
       --color-text-secondary: #c5b8a0;
 
-      /* Spacing Scale — generous but purposeful */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
@@ -23,7 +21,6 @@
       --space-3xl: 4.5rem;
       --space-4xl: 6rem;
 
-      /* Typography Scale — fluid and calm */
       --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
       --font-size-sm: clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
       --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
@@ -32,7 +29,6 @@
       --font-size-2xl: clamp(2rem, 1.75rem + 1vw, 2.5rem);
       --font-size-3xl: clamp(2.5rem, 2.1rem + 1.6vw, 3.2rem);
 
-      /* Line heights */
       --line-height-tight: 1.15;
       --line-height-normal: 1.7;
       --line-height-relaxed: 1.85;
@@ -51,7 +47,6 @@
       font-size: var(--font-size-base);
       line-height: var(--line-height-normal);
 
-      /* Refined TPE Watermark */
       background-image: 
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' fill='none'%3E%3Ctext x='24' y='60' font-size='40' fill='%23161616' fill-opacity='0.28' font-family='Inter, system-ui, sans-serif' font-weight='600'%3ETPE%3C/text%3E");
       background-repeat: repeat;
@@ -66,7 +61,6 @@
       }
     }
 
-    /* Navigation */
     .nav {
       position: fixed;
       top: 0;
@@ -128,7 +122,6 @@
       box-shadow: 0 0 12px rgba(197, 164, 110, 0.8);
     }
 
-    /* Hero */
     .hero {
       min-height: 100dvh;
       display: flex;
@@ -174,7 +167,6 @@
       line-height: var(--line-height-relaxed);
     }
 
-    /* Sections */
     .about, .where-to-find, .transmissions {
       padding: var(--space-4xl) var(--space-xl);
       background-color: #0f0f0f;
@@ -214,7 +206,6 @@
       opacity: 0.7;
     }
 
-    /* Cards */
     .cards {
       display: flex;
       flex-direction: column;
@@ -277,7 +268,6 @@
       transform: translateX(2px);
     }
 
-    /* Transmissions */
     .transmissions__header {
       text-align: center;
       margin-bottom: var(--space-3xl);
@@ -344,7 +334,6 @@
       display: block;
     }
 
-    /* Footer */
     .footer {
       background-color: #0f0f0f;
       border-top: 1px solid rgba(197, 164, 110, 0.1);
@@ -476,17 +465,32 @@
         <div class="section-divider"></div>
       </div>
 
+      <!-- 4-Card About Section -->
       <div class="about__content">
         <div class="cards">
+
+          <!-- Card 1 -->
           <div class="card">
-            <p class="about__text">You have entered the temple – a place where the noise falls away and clarity remains.</p>
-            <p class="about__text">A calm and sovereign space for clear reflections on macro cycles, sovereignty, and the emerging architecture of programmable money and power.</p>
+            <p class="about__text">You have entered the temple. A place where the noise falls away and clarity remains. This is not another feed. It is a threshold for those who sense that something fundamental is shifting beneath current events.</p>
           </div>
 
+          <!-- Card 2 -->
           <div class="card">
-            <p class="about__text">Here you will find high-signal observations on the structural shifts underway — from multi-polar systems and programmable rails to the deeper questions of sovereignty. No urgency. No hype. Only precise insight.</p>
-            <p class="about__text">If you have already sensed that something fundamental is shifting beneath the surface, you are in the right place.</p>
+            <p class="about__text">For decades, the global monetary system operated under a single dominant model, anchored by the dollar. That structure is now fragmenting. States, institutions, and private actors are simultaneously building alternative settlement systems and reducing dependence on legacy rails. What emerges is not one new order, but multiple competing and overlapping architectures of money and power.</p>
           </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <p class="about__text">In the context of this global shift, ThePrinceEcho functions as a sovereign threshold for those who seek to understand the architecture that is forming. Here, macro cycles, sovereignty, and the emerging rails of programmable money and power are observed without urgency or noise.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <p class="about__text">You will find two layers of observation:</p>
+            <p class="about__text">• Short, sharp signals on X.<br>
+            • Longer, deeper reflections in the essays.</p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -527,7 +531,7 @@
       </div>
 
       <div class="transmissions__list">
-        <!-- Essay VI (newest first) -->
+        <!-- Essay VI -->
         <a href="https://open.substack.com/pub/theprinceecho/p/essay-vi-track-3?r=89c6xn&utm_campaign=post-expanded-share&utm_medium=web" class="transmission" target="_blank" rel="noopener">
           <img src="assets/img/webp/VI.webp" alt="Essay VI - Track 3 - The Multi-Polar Challenge" class="transmission__image" loading="lazy">
           <div class="transmission__content">
@@ -577,7 +581,7 @@
           </div>
         </a>
 
-        <!-- Essay I (oldest) -->
+        <!-- Essay I -->
         <a href="https://substack.com/@theprinceecho/note/p-194885816?r=89c6xn&utm_medium=ios&utm_source=notes-share-action" class="transmission" target="_blank" rel="noopener">
           <img src="assets/img/webp/I.webp" alt="Essay I - The Mirror of the Will - The Quiet Handoff Where the Will Beholds Itself" class="transmission__image" loading="lazy">
           <div class="transmission__content">
