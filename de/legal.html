@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rechtliches • ThePrinceEcho</title>
+  <link rel="icon" href="../assets/img/webp/TPE_Logo.webp" type="image/webp">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="alternate" hreflang="en" href="../legal.html">
+  <link rel="alternate" hreflang="de" href="legal.html">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="../assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="32" height="32">
+      </a>
+      <div class="nav__links">
+        <a href="../index.html" class="nav__link">Home</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#recent-transmissions" class="nav__link">Transmissions</a>
+        <div class="nav__lang" role="navigation" aria-label="Sprache">
+          <a href="../legal.html" class="nav__lang-link" lang="en" hreflang="en">EN</a>
+          <span class="nav__lang-sep" aria-hidden="true">·</span>
+          <a href="legal.html" class="nav__lang-link is-active" lang="de" hreflang="de" aria-current="true">DE</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="locale-stub">
+    <div class="locale-stub__card">
+      <h1 class="locale-stub__title">Rechtliches</h1>
+      <p class="locale-stub__text">Inhalt folgt.</p>
+      <p class="locale-stub__text">German content for this page is not ready yet. Please use the English version for now.</p>
+      <p class="locale-stub__text"><a href="../legal.html" hreflang="en">Continue in English →</a></p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="../assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="28" height="28">
+          <span>ThePrinceEcho</span>
+        </div>
+        <div class="footer__links">
+          <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝕏</a>
+          <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
+          <a href="contact.html">Contact</a>
+          <a href="legal.html">Legal</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> ThePrinceEcho. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

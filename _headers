@@ -1,7 +1,20 @@
-# index.html - Revalidate quickly so content updates appear fast
+# HTML — always revalidate so content updates appear promptly
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
 
-# All other assets (images, css, etc.) - Cache for a long time
-/*
+/contact.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/legal.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/de/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Shared CSS — short cache; avoid immutable pin after polish deploys
+/assets/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Images and other static assets — long cache
+/assets/img/*
   Cache-Control: public, max-age=31536000, immutable

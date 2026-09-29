@@ -4,8 +4,18 @@
   "version": "1.0.0",
   "repository": "theprinceecho/theprinceecho",
   "paths": {
-    "html": ["index.html", "contact.html", "legal.html"],
-    "config": "config/"
+    "html": [
+      "index.html",
+      "contact.html",
+      "legal.html",
+      "de/index.html",
+      "de/contact.html",
+      "de/legal.html"
+    ],
+    "config": "config/",
+    "css": [
+      "assets/css/site.css"
+    ]
   },
   "automation": {
     "htmlLinting": true,
@@ -13,7 +23,7 @@
     "pullRequestChecks": true
   },
   "styling": {
-    "theme": "navy-gold",
+    "theme": "charcoal-gold",
     "typography": "Inter"
   },
   "notes": "This file serves as the central project configuration. Expand as needed."
