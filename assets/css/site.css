@@ -343,6 +343,18 @@ body {
   text-decoration: underline;
 }
 
+/* Content card alignment (2026-09-29): justify body copy; center About layers card.
+   Transmissions and contact are intentionally untouched. No hyphens (none in base CSS). */
+.about .cards > .card:not(:last-child) .about__text,
+.where-to-find .card__text,
+.legal__section p {
+  text-align: justify;
+}
+
+.about .cards > .card:last-child {
+  text-align: center;
+}
+
 .transmissions__header {
   text-align: center;
   margin-bottom: var(--space-3xl);
