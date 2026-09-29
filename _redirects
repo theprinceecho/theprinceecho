@@ -1,2 +1,3 @@
-# Fallback routing - serve index.html for any path
-/*    /index.html   200
+# Static multi-page site (index / contact / legal / de/*).
+# Do not use /* → /index.html 200 — that SPA fallback can serve HTML for
+# /assets/* misses or races and poison edge cache as text/css.
