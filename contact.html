@@ -4,258 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact • ThePrinceEcho</title>
-  <style>
-    :root {
-      /* Colors — Charcoal palette aligned with final TPE emblem */
-      --color-bg: #0f0f0f;
-      --color-accent: #d0c4a8;
-      --color-text: #c5b8a0;
-      --color-text-secondary: #c5b8a0;
-
-      /* Spacing Scale — generous but purposeful */
-      --space-xs: 0.25rem;
-      --space-sm: 0.5rem;
-      --space-md: 1rem;
-      --space-lg: 1.5rem;
-      --space-xl: 2rem;
-      --space-2xl: 3rem;
-      --space-3xl: 4.5rem;
-      --space-4xl: 6rem;
-
-      /* Typography Scale — fluid and calm */
-      --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --font-size-sm: clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
-      --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
-      --font-size-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
-      --font-size-xl: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
-      --font-size-2xl: clamp(2rem, 1.75rem + 1vw, 2.5rem);
-      --font-size-3xl: clamp(2.5rem, 2.1rem + 1.6vw, 3.2rem);
-
-      /* Line heights */
-      --line-height-tight: 1.15;
-      --line-height-normal: 1.7;
-      --line-height-relaxed: 1.85;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      font-family: Inter, system_ui, sans-serif;
-      font-size: var(--font-size-base);
-      line-height: var(--line-height-normal);
-    }
-
-    /* Navigation — identical to final index.html */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(18, 18, 18, 0.68);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(197, 164, 110, 0.1);
-    }
-
-    .nav__container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: var(--space-lg) var(--space-2xl);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav__logo img {
-      display: block;
-      border-radius: 6px;
-    }
-
-    .nav__links {
-      display: flex;
-      gap: var(--space-2xl);
-      align-items: center;
-    }
-
-    .nav__link {
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      font-size: var(--font-size-sm);
-      font-weight: 500;
-      position: relative;
-      padding-bottom: 4px;
-      transition: color 0.2s ease;
-    }
-
-    .nav__link:hover {
-      color: var(--color-accent);
-    }
-
-    /* Contact Content */
-    .contact {
-      padding: var(--space-4xl) var(--space-xl);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .contact__header {
-      text-align: center;
-      margin-bottom: var(--space-3xl);
-    }
-
-    .contact__title {
-      font-size: var(--font-size-3xl);
-      font-weight: 600;
-      color: var(--color-accent);
-      margin-bottom: var(--space-md);
-      letter-spacing: -0.025em;
-    }
-
-    .contact__subtitle {
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-lg);
-      max-width: 420px;
-      margin: 0 auto;
-    }
-
-    .contact__form {
-      background: rgba(22, 22, 22, 0.75);
-      border: 1px solid rgba(197, 164, 110, 0.25);
-      border-radius: 16px;
-      padding: var(--space-xl) var(--space-md);
-      backdrop-filter: blur(16px);
-    }
-
-    .form-group {
-      margin-bottom: var(--space-lg);
-    }
-
-    .form-group label {
-      display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-accent);
-      margin-bottom: var(--space-xs);
-      font-weight: 500;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      background: rgba(15, 15, 15, 0.8);
-      border: 1px solid rgba(197, 164, 110, 0.3);
-      border-radius: 8px;
-      padding: 14px 16px;
-      color: var(--color-text);
-      font-size: var(--font-size-base);
-      font-family: inherit;
-      transition: border-color 0.2s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--color-accent);
-    }
-
-    .form-group textarea {
-      min-height: 160px;
-      resize: vertical;
-    }
-
-    .form-button {
-      width: 100%;
-      background: var(--color-accent);
-      color: #0f0f0f;
-      border: none;
-      padding: 16px 24px;
-      font-size: var(--font-size-base);
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .form-button:hover {
-      background: #e0d4b8;
-      transform: translateY(-1px);
-    }
-
-    .contact__note {
-      text-align: center;
-      margin-top: var(--space-xl);
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      opacity: 0.85;
-    }
-
-    /* Footer — identical to final index.html */
-    .footer {
-      background-color: #0f0f0f;
-      border-top: 1px solid rgba(197, 164, 110, 0.1);
-      padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
-      color: var(--color-text-secondary);
-      font-size: var(--font-size-sm);
-    }
-
-    .footer__container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .footer__content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-2xl);
-      margin-bottom: var(--space-xl);
-    }
-
-    .footer__brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer__brand img {
-      border-radius: 6px;
-    }
-
-    .footer__links {
-      display: flex;
-      gap: var(--space-xl);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .footer__links a {
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer__links a:hover {
-      color: var(--color-accent);
-    }
-
-    .footer__bottom {
-      text-align: center;
-      padding-top: var(--space-lg);
-      border-top: 1px solid rgba(197, 164, 110, 0.1);
-      font-size: var(--font-size-xs);
-      color: #888;
-    }
-  </style>
+  <link rel="icon" href="assets/img/webp/TPE_Logo.webp" type="image/webp">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="alternate" hreflang="en" href="contact.html">
+  <link rel="alternate" hreflang="de" href="de/contact.html">
 </head>
 <body>
 
-  <!-- Navigation — identical to final index.html -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Primary">
     <div class="nav__container">
       <a href="index.html" class="nav__logo">
         <img src="assets/img/webp/TPE_Logo.webp" alt="ThePrinceEcho" width="32" height="32">
@@ -264,11 +20,15 @@
         <a href="index.html" class="nav__link">Home</a>
         <a href="index.html#about" class="nav__link">About</a>
         <a href="index.html#recent-transmissions" class="nav__link">Transmissions</a>
+        <div class="nav__lang" role="navigation" aria-label="Language">
+          <a href="contact.html" class="nav__lang-link is-active" lang="en" hreflang="en" aria-current="true">EN</a>
+          <span class="nav__lang-sep" aria-hidden="true">·</span>
+          <a href="de/contact.html" class="nav__lang-link" lang="de" hreflang="de">DE</a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- Contact Content -->
   <main class="contact">
     <div class="contact__header">
       <h1 class="contact__title">Contact</h1>
@@ -276,13 +36,13 @@
     </div>
 
     <div class="contact__form">
-      <iframe 
-        src="https://tally.so/r/A7AjNe" 
-        width="100%" 
-        height="780" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0" 
+      <iframe
+        src="https://tally.so/r/A7AjNe"
+        width="100%"
+        height="780"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
         title="Contact form">
       </iframe>
     </div>
@@ -293,7 +53,6 @@
     </p>
   </main>
 
-  <!-- Footer — identical to final index.html -->
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__content">
@@ -315,7 +74,6 @@
   </footer>
 
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
