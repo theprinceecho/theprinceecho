@@ -343,6 +343,12 @@ body {
   text-decoration: underline;
 }
 
+/* About layers card only (2026-09-29): center the short two-layers card.
+   Longer About / WHERE TO FIND / legal / transmissions / contact unchanged. */
+.about .cards > .card:last-child {
+  text-align: center;
+}
+
 .transmissions__header {
   text-align: center;
   margin-bottom: var(--space-3xl);
