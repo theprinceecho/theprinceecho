@@ -212,34 +212,45 @@
   <script>
     const navLinks = document.querySelectorAll('.nav__link');
     const sections = document.querySelectorAll('section[id]');
+    /* Track all currently intersecting sections — IO callbacks only include
+       *changed* entries, so picking best from `entries` alone leaves the
+       underline stuck (e.g. About exits → no intersecting entry in that
+       batch → Transmissions never becomes active). */
+    const intersecting = new Map();
 
     function setActiveLink(id) {
       navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-          link.classList.add('active');
-        }
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
       });
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      let bestEntry = null;
-
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
-            bestEntry = entry;
-          }
+    function syncActiveFromIntersecting() {
+      let bestId = null;
+      let bestRatio = -1;
+      intersecting.forEach((ratio, id) => {
+        if (ratio >= bestRatio) {
+          bestRatio = ratio;
+          bestId = id;
         }
       });
+      if (bestId) setActiveLink(bestId);
+    }
 
-      if (bestEntry) {
-        const id = bestEntry.target.getAttribute('id');
-        setActiveLink(id);
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (!id) return;
+        if (entry.isIntersecting) {
+          intersecting.set(id, entry.intersectionRatio);
+        } else {
+          intersecting.delete(id);
+        }
+      });
+      syncActiveFromIntersecting();
     }, {
-      rootMargin: '-70px 0px -30% 0px',
-      threshold: [0.2, 0.4, 0.6, 0.8]
+      /* Sticky nav (~70px) + prefer content under the header band */
+      rootMargin: '-70px 0px -45% 0px',
+      threshold: [0, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 1]
     });
 
     sections.forEach(section => observer.observe(section));
