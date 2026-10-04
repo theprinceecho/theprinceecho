@@ -7,8 +7,7 @@
   <link rel="icon" href="assets/img/webp/TPE_Logo.webp" type="image/webp">
   <link rel="preload" as="image" href="assets/img/webp/TPE_Logo.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/site.css">
-  <link rel="alternate" hreflang="en" href="index.html">
-  <link rel="alternate" hreflang="de" href="de/index.html">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -22,11 +21,6 @@
         <a href="#home" class="nav__link">Home</a>
         <a href="#about" class="nav__link">About</a>
         <a href="#recent-transmissions" class="nav__link">Transmissions</a>
-        <div class="nav__lang" role="navigation" aria-label="Language">
-          <a href="index.html" class="nav__lang-link is-active" lang="en" hreflang="en" aria-current="true">EN</a>
-          <span class="nav__lang-sep" aria-hidden="true">·</span>
-          <a href="de/index.html" class="nav__lang-link" lang="de" hreflang="de">DE</a>
-        </div>
       </div>
     </div>
   </nav>
@@ -258,6 +252,38 @@
     window.addEventListener('load', () => {
       setActiveLink('home');
     });
+
+    /* Card / transmission fade-in (index only; play once) */
+    const revealGroups = [
+      document.querySelectorAll('.about .card'),
+      document.querySelectorAll('.where-to-find .card'),
+      document.querySelectorAll('.transmissions__list .transmission')
+    ];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    revealGroups.forEach(group => {
+      group.forEach((el, index) => {
+        el.style.transitionDelay = `${Math.min(index, 5) * 70}ms`;
+        if (reduceMotion) el.classList.add('is-in');
+      });
+    });
+
+    if (!reduceMotion) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          revealObserver.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.18,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      revealGroups.forEach(group => {
+        group.forEach(el => revealObserver.observe(el));
+      });
+    }
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
