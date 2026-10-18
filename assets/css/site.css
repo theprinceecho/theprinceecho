@@ -507,6 +507,41 @@ body {
   border: 0;
 }
 
+.contact__consent {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.contact__consent p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.contact__consent a {
+  color: var(--color-accent);
+}
+
+.contact__consent-button {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.6);
+  border-radius: 999px;
+  padding: var(--space-sm) var(--space-xl);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact__consent-button:hover,
+.contact__consent-button:focus-visible {
+  background: var(--color-accent);
+  color: #0f0f0f;
+}
+
 .contact__note {
   text-align: center;
   margin-top: var(--space-xl);

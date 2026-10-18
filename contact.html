@@ -28,16 +28,12 @@
       <p class="contact__subtitle">A direct line for those who sense the urge.</p>
     </div>
 
-    <div class="contact__form">
-      <iframe
-        src="https://tally.so/r/A7AjNe"
-        width="100%"
-        height="780"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Contact form">
-      </iframe>
+    <div class="contact__form" id="contact-form">
+      <div class="contact__consent">
+        <p>The contact form is provided by Tally (Belgium). It uses Sentry for error monitoring. It is only loaded after you click the button below. Loading it sends data such as your IP address to Tally and Sentry, partly in the USA (basis: EU-U.S. Data Privacy Framework, Art. 45 GDPR), and stores entries in your browser that remain until you delete them. Details and how to withdraw consent: <a href="privacy.html#contact">Privacy Policy</a>.</p>
+        <button type="button" class="contact__consent-button" id="load-contact-form">Load contact form</button>
+        <noscript><p><a href="https://tally.so/r/A7AjNe" target="_blank" rel="noopener">Open the contact form on tally.so</a></p></noscript>
+      </div>
     </div>
 
     <p class="contact__note">
@@ -57,7 +53,8 @@
           <a href="https://x.com/theprinceecho" target="_blank" rel="noopener">𝕏</a>
           <a href="https://theprinceecho.substack.com" target="_blank" rel="noopener">Substack</a>
           <a href="contact.html">Contact</a>
-          <a href="legal.html">Legal</a>
+          <a href="legal.html">Impressum</a>
+          <a href="privacy.html">Privacy</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -68,6 +65,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Two-click embed: the Tally form loads only after an explicit click. Nothing is stored before that. */
+    document.getElementById('load-contact-form').addEventListener('click', function () {
+      const holder = document.getElementById('contact-form');
+      const frame = document.createElement('iframe');
+      frame.src = 'https://tally.so/r/A7AjNe';
+      frame.width = '100%';
+      frame.height = '780';
+      frame.title = 'Contact form';
+      frame.setAttribute('frameborder', '0');
+      holder.replaceChildren(frame);
+    });
   </script>
 </body>
 </html>
