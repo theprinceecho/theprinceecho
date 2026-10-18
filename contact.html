@@ -30,7 +30,7 @@
 
     <div class="contact__form" id="contact-form">
       <div class="contact__consent">
-        <p>The contact form is provided by Tally (Belgium). It uses Google reCAPTCHA for spam protection and Sentry for error monitoring. It is only loaded after you click the button below. Loading it sends data such as your IP address to Tally, Google and Sentry, partly in the USA (basis: EU-U.S. Data Privacy Framework, Art. 45 GDPR), and stores entries in your browser that remain until you delete them. Details and how to withdraw consent: <a href="privacy.html#contact">Privacy Policy</a>.</p>
+        <p>The contact form is provided by Tally (Belgium). It uses Sentry for error monitoring. It is only loaded after you click the button below. Loading it sends data such as your IP address to Tally and Sentry, partly in the USA (basis: EU-U.S. Data Privacy Framework, Art. 45 GDPR), and stores entries in your browser that remain until you delete them. Details and how to withdraw consent: <a href="privacy.html#contact">Privacy Policy</a>.</p>
         <button type="button" class="contact__consent-button" id="load-contact-form">Load contact form</button>
         <noscript><p><a href="https://tally.so/r/A7AjNe" target="_blank" rel="noopener">Open the contact form on tally.so</a></p></noscript>
       </div>
@@ -66,7 +66,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* Two-click embed: Tally (and its reCAPTCHA) load only after an explicit click. Nothing is stored before that. */
+    /* Two-click embed: the Tally form loads only after an explicit click. Nothing is stored before that. */
     document.getElementById('load-contact-form').addEventListener('click', function () {
       const holder = document.getElementById('contact-form');
       const frame = document.createElement('iframe');
