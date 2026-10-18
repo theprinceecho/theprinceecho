@@ -8,6 +8,9 @@
 /legal.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/privacy.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /de/*
   Cache-Control: public, max-age=0, must-revalidate
 
