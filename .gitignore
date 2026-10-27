@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Secrets and local config (never commit)
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies, caches and build output
+node_modules/
+__pycache__/
+*.pyc
+.cache/
+.lighthouseci/
+dist/
+
+# Logs
+*.log
