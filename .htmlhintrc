@@ -1,6 +1,6 @@
 {
   "doctype-first": true,
-  "head-script-disabled": true,
+  "head-script-disabled": false,
   "style-disabled": false,
   "inline-style-disabled": false,
   "alt-require": true,
@@ -12,6 +12,5 @@
   "title-require": true,
   "space-tab-mixed-disabled": true,
   "attr-no-duplication": true,
-  "href-abs-or-rel": "rel",
   "img-alt-require": true
 }
