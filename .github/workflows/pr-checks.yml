@@ -29,11 +29,15 @@ jobs:
         run: npx serve . -l 8080 &
 
       - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v11
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.json --upload.target=temporary-public-storage
+
+      - name: Upload Lighthouse results
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          configPath: './lighthouserc.json'
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+          name: lighthouse-results
+          path: .lighthouseci
+          if-no-files-found: ignore
 
       - name: Basic file check
         run: |
