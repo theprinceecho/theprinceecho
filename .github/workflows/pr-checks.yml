@@ -23,7 +23,7 @@ jobs:
       - name: Lint HTML files
         run: |
           echo "Running HTMLHint..."
-          htmlhint index.html contact.html legal.html --config .htmlhintrc || true
+          htmlhint "**/*.html" --config .htmlhintrc
 
       - name: Serve site
         run: npx serve . -l 8080 &
