@@ -1,8 +1,12 @@
-/* ThePrinceEcho — shared site styles (charcoal + cream-gold)
+/* ThePrinceEcho — shared site styles (navy + cream-gold)
    Extracted for cross-page consistency. Logo assets untouched. */
 
 :root {
-  --color-bg: #0f0f0f;
+  --color-bg: #000c1a; /* navy, locked brand tone */
+  /* Surface navy (cards, transmissions, nav, hero glow), locked by Neo 28 Oct 2026.
+     Keep --color-surface-rgb and the watermark fill in body background-image in sync. */
+  --color-surface: #071a2e;
+  --color-surface-rgb: 7, 26, 46;
   --color-accent: #d0c4a8;
   --color-text: #c5b8a0;
   --color-text-secondary: #a89a82;
@@ -51,7 +55,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' fill='none'%3E%3Ctext x='24' y='60' font-size='40' fill='%23161616' fill-opacity='0.28' font-family='system-ui, sans-serif' font-weight='600'%3ETPE%3C/text%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' fill='none'%3E%3Ctext x='24' y='60' font-size='40' fill='%23071a2e' fill-opacity='0.28' font-family='system-ui, sans-serif' font-weight='600'%3ETPE%3C/text%3E");
   background-repeat: repeat;
   background-size: 180px 180px;
   /* scroll (not fixed): fixed attachment taxes main-thread paint under LH CPU throttle */
@@ -72,7 +76,7 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(18, 18, 18, 0.68);
+  background: rgba(var(--color-surface-rgb), 0.68);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
 }
@@ -195,7 +199,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 65%, #0f0f0f 100%);
+  background: radial-gradient(circle at center, var(--color-surface) 0%, var(--color-bg) 65%, var(--color-bg) 100%);
 }
 
 .hero__content {
@@ -239,7 +243,7 @@ body {
 .where-to-find,
 .transmissions {
   padding: var(--space-4xl) var(--space-xl);
-  background-color: #0f0f0f;
+  background-color: var(--color-bg);
 }
 
 .about__container,
@@ -289,7 +293,7 @@ body {
 }
 
 .card {
-  background: rgba(22, 22, 22, 0.75);
+  background: rgba(var(--color-surface-rgb), 0.75);
   border: 1px solid rgba(var(--color-accent-rgb), 0.25);
   border-radius: 16px;
   padding: var(--space-2xl);
@@ -365,7 +369,7 @@ body {
   align-items: flex-start;
   gap: var(--space-lg);
   padding: var(--space-xl);
-  background-color: #161616;
+  background-color: var(--color-surface);
   border: 1px solid rgba(var(--color-accent-rgb), 0.2);
   border-radius: 12px;
   text-decoration: none;
@@ -494,7 +498,7 @@ body {
 }
 
 .contact__form {
-  background: rgba(22, 22, 22, 0.75);
+  background: rgba(var(--color-surface-rgb), 0.75);
   border: 1px solid rgba(var(--color-accent-rgb), 0.25);
   border-radius: 16px;
   padding: var(--space-xl) var(--space-md);
@@ -539,7 +543,7 @@ body {
 .contact__consent-button:hover,
 .contact__consent-button:focus-visible {
   background: var(--color-accent);
-  color: #0f0f0f;
+  color: var(--color-bg);
 }
 
 .contact__note {
@@ -576,7 +580,7 @@ body {
 }
 
 .legal__section {
-  background: rgba(22, 22, 22, 0.75);
+  background: rgba(var(--color-surface-rgb), 0.75);
   border: 1px solid rgba(var(--color-accent-rgb), 0.25);
   border-radius: 16px;
   padding: var(--space-2xl);
@@ -613,7 +617,7 @@ body {
 }
 
 .locale-stub__card {
-  background: rgba(22, 22, 22, 0.75);
+  background: rgba(var(--color-surface-rgb), 0.75);
   border: 1px solid rgba(var(--color-accent-rgb), 0.25);
   border-radius: 16px;
   padding: var(--space-2xl);
@@ -638,7 +642,7 @@ body {
 
 /* —— Footer —— */
 .footer {
-  background-color: #0f0f0f;
+  background-color: var(--color-bg);
   border-top: 1px solid rgba(var(--color-accent-rgb), 0.1);
   padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
   color: var(--color-text-secondary);

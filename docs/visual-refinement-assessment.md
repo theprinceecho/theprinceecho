@@ -20,7 +20,7 @@
 | Legal | `legal.html` | EN copy; cites German DDG |
 | Shared CSS | Inline `<style>` × 3 | Duplicated tokens/chrome; drift risk |
 | i18n | None | No DE pages, no switcher |
-| Logo | `assets/img/webp/TPE_Logo.webp` | Untouched (lock) |
+| Logo | `assets/img/webp/TPE_Logo_2026.webp` | Untouched (lock) |
 
 Public layer labels already correct: **X = Applied**, **Substack = Bridge**. No temple/outer/inner/transcendental on landing.
 
