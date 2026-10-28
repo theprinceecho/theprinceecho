@@ -84,16 +84,27 @@ body {
 .nav__container {
   max-width: var(--nav-max);
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-2xl);
+  padding: var(--space-md) var(--space-2xl);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-lg);
 }
 
+.nav__logo {
+  display: block;
+  line-height: 0;
+}
+
+/* The logo file has transparent padding around the crest (art fills about
+   49% of the width and 75% of the height). Render the image larger and pull
+   the padding in with negative margins, so the visible crest is about 48px
+   tall on desktop and the link box hugs the artwork. */
 .nav__logo img {
   display: block;
-  border-radius: 6px;
+  width: 64px;
+  height: 64px;
+  margin: -8px -16px;
 }
 
 .nav__links {
@@ -174,6 +185,12 @@ body {
   .nav__container {
     padding-left: var(--space-lg);
     padding-right: var(--space-lg);
+  }
+
+  .nav__logo img {
+    width: 56px;
+    height: 56px;
+    margin: -7px -14px;
   }
 
   .nav__links {
