@@ -32,6 +32,6 @@
 /assets/css/*
   Cache-Control: public, max-age=3600, must-revalidate
 
-# Images and other static assets — long cache
+# Images — 1h cache, then revalidate (ETag 304s are cheap); rename files on big swaps
 /assets/img/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=3600, must-revalidate
