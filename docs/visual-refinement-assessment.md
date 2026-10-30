@@ -1,3 +1,5 @@
+> **Superseded 2026-10-30 (Neo):** the site is English-only. The EN/DE switcher and `de/` stubs described below were dropped; old `/de/*` links 301 to the English pages.
+
 # Visual Refinement Assessment
 
 **Site:** https://www.theprinceecho.com  
