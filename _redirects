@@ -3,6 +3,9 @@
 # /assets/* misses or races and poison edge cache as text/css.
 
 # Former DE stubs (dropped 2026-10-30): send old links to the English pages.
+/de / 301
 /de/contact /contact 301
+/de/contact.html /contact 301
 /de/legal /legal 301
+/de/legal.html /legal 301
 /de/* / 301
