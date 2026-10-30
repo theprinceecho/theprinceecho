@@ -25,9 +25,6 @@
 /privacy.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/de/*
-  Cache-Control: public, max-age=0, must-revalidate
-
 # Shared CSS — short cache; avoid immutable pin after polish deploys
 /assets/css/*
   Cache-Control: public, max-age=3600, must-revalidate

@@ -145,42 +145,6 @@ body {
   box-shadow: 0 0 12px rgba(var(--color-accent-rgb), 0.8);
 }
 
-.nav__lang {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-left: var(--space-md);
-  padding-left: var(--space-md);
-  border-left: 1px solid rgba(var(--color-accent-rgb), 0.2);
-}
-
-.nav__lang-link {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 4px;
-  border-radius: 4px;
-  transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-.nav__lang-link:hover {
-  color: var(--color-accent);
-}
-
-.nav__lang-link.is-active {
-  color: var(--color-accent);
-  background: rgba(var(--color-accent-rgb), 0.12);
-}
-
-.nav__lang-sep {
-  color: rgba(var(--color-accent-rgb), 0.35);
-  font-size: var(--font-size-xs);
-  user-select: none;
-}
-
 @media (max-width: 768px) {
   .nav__container {
     padding-left: var(--space-lg);
@@ -195,11 +159,6 @@ body {
 
   .nav__links {
     gap: var(--space-md);
-  }
-
-  .nav__lang {
-    margin-left: var(--space-sm);
-    padding-left: var(--space-sm);
   }
 }
 
@@ -625,7 +584,7 @@ body {
   color: var(--color-accent);
 }
 
-/* —— DE stub —— */
+/* —— Stub card (404) —— */
 .locale-stub {
   padding: calc(var(--nav-offset) + var(--space-3xl)) var(--space-xl) var(--space-4xl);
   max-width: var(--content-max);
@@ -717,8 +676,7 @@ body {
 /* —— Focus —— */
 a:focus-visible,
 .card:focus-visible,
-.transmission:focus-visible,
-.nav__lang-link:focus-visible {
+.transmission:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }

@@ -1,3 +1,8 @@
-# Static multi-page site (index / contact / legal / de/*).
+# Static multi-page site (index / contact / legal / privacy), English only.
 # Do not use /* → /index.html 200 — that SPA fallback can serve HTML for
 # /assets/* misses or races and poison edge cache as text/css.
+
+# Former DE stubs (dropped 2026-10-30): send old links to the English pages.
+/de/contact /contact 301
+/de/legal /legal 301
+/de/* / 301
