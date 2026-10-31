@@ -4,6 +4,7 @@
 # <script> block, recompute its hash and update script-src, or it will not run.
 # Hashes: index.html (2 blocks), contact.html (1), footer year script (shared).
 # frame-src tally.so is for the click-to-load contact form.
+# The ! line drops the Pages default Access-Control-Allow-Origin: * header.
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo=' 'sha256-X0WsWzKvV/ikioA34oo4n1VK4avg3mtKX2m+PF7K56M=' 'sha256-HcgzxZbPAZpohGxHm2nEO80s3IWiRGSoZ30S2hzmYNM=' 'sha256-XzgUe5OFqmw92fRcUj4AjwYpGUNdPyxTpzMkUICgemM='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://tally.so; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; manifest-src 'self'; upgrade-insecure-requests
   X-Frame-Options: DENY
@@ -11,6 +12,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
   Cross-Origin-Opener-Policy: same-origin
+  ! Access-Control-Allow-Origin
 
 # HTML — always revalidate so content updates appear promptly
 /index.html
