@@ -21,7 +21,7 @@
     "pullRequestChecks": true
   },
   "styling": {
-    "theme": "charcoal-gold",
+    "theme": "navy-gold",
     "typography": "Inter"
   },
   "notes": "This file serves as the central project configuration. Expand as needed."
