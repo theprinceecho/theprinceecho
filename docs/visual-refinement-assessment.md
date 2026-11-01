@@ -2,6 +2,8 @@
 
 # Visual Refinement Assessment
 
+> **Superseded 1 Nov 2026:** the charcoal + cream-gold palette referenced below is superseded by Neo's colour lock of 1 Nov 2026. The landing now uses navy `#10284a` (page) and `#163257` (cards) with cream-gold `#d0c4a8` as accent, and `config/project.json` theme is `navy-gold`. Charcoal mentions below are kept as historical audit notes.
+
 **Site:** https://www.theprinceecho.com  
 **Repo:** `theprinceecho/theprinceecho`  
 **Date:** 2026-09-29 (Europe/Berlin)  
