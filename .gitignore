@@ -25,3 +25,7 @@ dist/
 
 # Logs
 *.log
+
+# Obsidian editor state (Neo 2026-11-24)
+.obsidian/
+.trash/
